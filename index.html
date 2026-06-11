@@ -3,2178 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Null Store | Top Up Game Premium</title>
-        <!-- PANGGIL FILE MANIFEST APLIKASI -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#00E1FF">
-
+    <title>NULL.STORE | Hyper-Futuristic Top Up</title>
     
-    <!-- === SEO & META TAGS (BIAR SHARE DI WA MUNCUL GAMBAR) === -->
-    <meta name="description" content="Layanan Top Up Game Tercepat, Termurah, dan Terpercaya. Proses otomatis 1-5 menit. Jaminan 100% Legal & Aman.">
-    <meta name="keywords" content="top up ml, diamond ml murah, top up free fire, null store top up">
-    <meta name="author" content="Ainul Riskian">
-    
-    <!-- Pengaturan Tampilan Link untuk WhatsApp / Facebook / dll -->
-    <meta property="og:title" content="Null Store | Top Up Game Murah & Aman">
-    <meta property="og:description" content="Top Up Diamond ML & FF harga Reseller. Proses masuk secepat kilat! Klik untuk order sekarang.">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mobile_Legends_Bang_Bang_logo.png/640px-Mobile_Legends_Bang_Bang_logo.png">
-    <meta property="og:type" content="website">
-
-    <!-- Ikon Tab Browser (Favicon) -->
-    <link rel="icon" href="logo.png" type="image/png">
-    
-    <!-- Fonts Canggih: Syne & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts: Rajdhani untuk nuansa Cyberpunk, Inter untuk teks body -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <style>    
-            /* === TEMA LIGHT MODE === */
-        body.light-mode {
-            --bg-base: #F8FAFC;
-            --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(0, 0, 0, 0.1);
-            --text-main: #0F172A;
-            --text-dim: #475569;
-            background-color: var(--bg-base);
-        }
-        body.light-mode .title-elegant, body.light-mode .step-title, 
-        body.light-mode .card-title, body.light-mode .calc-title, 
-        body.light-mode .reseller-content ul, body.light-mode .faq-question {
-            color: var(--text-main) !important;
-        }
-        body.light-mode input, body.light-mode select, body.light-mode textarea { color: var(--text-main) !important; background: #fff !important; }
-        body.light-mode nav { background: rgba(255, 255, 255, 0.8); }
-        body.light-mode .nav-menu { background: rgba(255, 255, 255, 0.98); }
-        body.light-mode .logo, body.light-mode .menu-toggle { color: var(--text-main); }
-        body.light-mode .card, body.light-mode .form-box, body.light-mode .calc-box { background: #fff; }
-        body.light-mode .live-toast { background: #fff; color: var(--text-main); border-color: rgba(0,0,0,0.1); }
-        body.light-mode .live-toast span { color: var(--text-dim); }
-        body.light-mode .aurora-bg { opacity: 0.3; } /* Biar auranya nggak terlalu nabrak di siang hari */
-        body.light-mode .particles span { background: rgba(0, 0, 0, 0.1); box-shadow: none; } /* Gelapin partikel pas mode terang */
-
-        /* === EFEK PARTIKEL BINTANG JATUH / DEBU CAHAYA === */
-        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; overflow: hidden; }
-        .particles span { position: absolute; display: block; width: 4px; height: 4px; background: rgba(0, 225, 255, 0.5); box-shadow: 0 0 10px rgba(0, 225, 255, 0.8); border-radius: 50%; animation: animateParticle 15s linear infinite; bottom: -10px; }
-        .particles span:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
-        .particles span:nth-child(2) { left: 25%; width: 6px; height: 6px; animation-duration: 18s; animation-delay: 2s; }
-        .particles span:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: 4s; }
-        .particles span:nth-child(4) { left: 55%; width: 3px; height: 3px; animation-duration: 14s; animation-delay: 0s; }
-        .particles span:nth-child(5) { left: 70%; animation-duration: 19s; animation-delay: 3s; }
-        .particles span:nth-child(6) { left: 85%; width: 5px; height: 5px; animation-duration: 11s; animation-delay: 1s; }
-        .particles span:nth-child(7) { left: 15%; animation-duration: 16s; animation-delay: 5s; }
-        .particles span:nth-child(8) { left: 50%; width: 7px; height: 7px; animation-duration: 20s; animation-delay: 2s; }
-        .particles span:nth-child(9) { left: 75%; animation-duration: 13s; animation-delay: 4s; }
-        .particles span:nth-child(10){ left: 90%; animation-duration: 17s; animation-delay: 0s; }
-        
-        @keyframes animateParticle {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-1000px) scale(0); opacity: 0; }
-        }
-
-        /* Tombol Toggle */
-        .theme-toggle {
-            background: transparent; border: 1px solid var(--glass-border);
-            color: var(--text-main); padding: 8px 15px; border-radius: 20px;
-            cursor: pointer; font-size: 1.1rem; transition: 0.3s;
-            margin-right: 15px; display: inline-flex; align-items: center; justify-content: center;
-        }
-        .theme-toggle:hover { background: rgba(255,255,255,0.1); }
-
-        /* === TEMA ELEGAN MIDNIGHT AURORA === */
+    <style>
         :root {
-            --bg-base: #0B0F19;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --primary: #00E1FF;
-            --mlbb: #FACC15;
-            --ff: #FF4B2B;
-            --success: #10B981;
-            --error: #EF4444;
-            --text-main: #F8FAFC;
-            --text-dim: #94A3B8;
+            --bg-deep: #05050A;
+            --panel-bg: rgba(16, 18, 27, 0.6);
+            --neon-cyan: #00F0FF;
+            --neon-purple: #8A2BE2;
+            --neon-pink: #FF003C;
+            --text-main: #FFFFFF;
+            --text-dim: #8B949E;
+            --glass-border: rgba(0, 240, 255, 0.2);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        body { background-color: var(--bg-base); color: var(--text-main); overflow-x: hidden; }
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        /* === NAVBAR KACA === */
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            padding-bottom: 120px;
+        }
+
+        /* BACKGROUND GRID & GLOW EFEK */
+        .cyber-grid {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 100% { transform: perspective(500px) rotateX(60deg) translateY(40px); } }
+
+        .ambient-glow {
+            position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+            z-index: -1; filter: blur(50px);
+        }
+        .ambient-glow.right { left: auto; right: -10%; top: 20%; background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%); }
+
+        /* HEADINGS */
+        h1, h2, h3, .cyber-font { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* NAVBAR CYBER */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(11, 15, 25, 0.6); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border);
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(5, 5, 10, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 240, 255, 0.05);
         }
-        .logo { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; text-decoration: none; }
-        .logo span { background: linear-gradient(90deg, #00E1FF, #B800FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .nav-menu { display: flex; align-items: center; }
-        .nav-links { display: flex; align-items: center; }
-        .nav-links a { color: var(--text-main); text-decoration: none; margin-right: 35px; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .btn-contact { background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); border: 1px solid var(--glass-border); padding: 10px 24px; border-radius: 30px; color: #fff; text-decoration: none; transition: 0.3s; }
-        .btn-contact:hover { background: #fff; color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.3); }
+        .logo { font-size: 2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+        .logo i { color: var(--neon-pink); font-size: 1.5rem; }
 
-        /* HAMBURGER MENU FIX */
-        .menu-toggle { display: none; color: #fff; font-size: 1.5rem; cursor: pointer; background: none; border: none; }
-        
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-menu {
-                display: none; /* Disembunyikan dulu biar nggak berantakan */
-                flex-direction: column; position: absolute;
-                top: 100%; left: 0; width: 100%; background: rgba(11, 15, 25, 0.98);
-                backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border);
-                padding: 20px 5%; text-align: left; align-items: flex-start;
-            }
-            .nav-menu.active { display: flex; /* Munculin pas tombol diklik */ }
-            .nav-links { flex-direction: column; width: 100%; align-items: flex-start; }
-            .nav-links a { margin: 15px 0; font-size: 1.1rem; }
-            .btn-contact { margin-top: 10px; }
+        /* HERO SECTION */
+        .hero { padding: 120px 5% 50px; text-align: center; position: relative; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 15px; }
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        .hero p { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* CONTAINER UTAMA */
+        .main-container { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
+
+        /* CYBER TABS */
+        .tab-wrapper { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
+        .cyber-tab {
+            background: var(--panel-bg); border: 1px solid var(--glass-border);
+            color: var(--text-dim); padding: 12px 30px; font-size: 1.2rem; font-weight: 600;
+            cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
+            border-radius: 4px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+        .cyber-tab:hover { color: #fff; border-color: var(--neon-purple); }
+        .cyber-tab.active {
+            color: #fff; border-color: var(--neon-cyan);
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2) inset;
         }
 
-        /* === HERO ELEGAN PREMIUM === */
-        .hero { padding: 150px 5% 80px; text-align: center; position: relative; }
-        .hero-container { 
-            max-width: 800px; margin: 0 auto; 
-            background: radial-gradient(circle at top, rgba(255,255,255,0.03), transparent 70%); 
-            padding: 50px 20px; border-radius: 30px; 
-            border-top: 1px solid rgba(255,255,255,0.08); 
-        }
-        .title-elegant { 
-            font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 6vw, 4.2rem); 
-            font-weight: 800; line-height: 1.15; margin-bottom: 20px; color: #fff; 
-        }
-        .title-elegant span { color: var(--text-dim); font-weight: 600; }
-        .subtitle-elegant { 
-            color: var(--text-dim); font-size: 1.1rem; max-width: 550px; 
-            margin: 0 auto 35px; line-height: 1.6; 
-        }
-        .hero-buttons { 
-            display: flex; justify-content: center; gap: 15px; 
-            margin-bottom: 40px; flex-wrap: wrap; 
-        }
-        .btn-gacor { 
-            background: #fff; color: #000; padding: 14px 32px; 
-            border-radius: 12px; font-weight: 600; text-decoration: none; 
-            transition: 0.3s; box-shadow: 0 10px 20px rgba(255,255,255,0.1); 
-            animation: pulse-gacor 2s infinite;
-        }
-        @keyframes pulse-gacor {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-        .btn-gacor:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255,255,255,0.2); }
-        .btn-outline { 
-            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); 
-            color: #fff; padding: 14px 32px; border-radius: 12px; 
-            font-weight: 600; text-decoration: none; transition: 0.3s; 
-        }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); }
-        
-        .mini-stats { 
-            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; 
-            border-top: 1px solid var(--glass-border); padding-top: 30px; margin-top: 20px; 
-        }
-        .m-stat { color: var(--text-dim); font-size: 0.9rem; font-weight: 500; display: flex; align-items: center; gap: 8px; }
-        .m-stat i { color: #D4AF37; font-size: 1.1rem; }
-        
-                /* === SERVER STATUS BAR === */
-        .server-status-bar {
-            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
-            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--glass-border);
-            padding: 10px 25px; border-radius: 50px; margin: 0 auto 30px;
-            font-size: 0.85rem; font-weight: 600; color: var(--text-dim); max-width: 650px;
-        }
-        .status-item { display: flex; align-items: center; gap: 8px; }
-        .text-green { color: var(--success); text-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
-        .server-status-bar i { color: var(--primary); }
-
-        /* === CATALOG TABS === */
-        .catalog { padding: 50px 5%; max-width: 1200px; margin: 0 auto; }
-        .tabs { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
-        .tab-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 16px 40px; border-radius: 16px; color: var(--text-dim); font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: 0.4s; display: flex; align-items: center; gap: 10px; }
-        .tab-btn:hover { background: rgba(255,255,255,0.05); }
-        .tab-btn.active.mlbb { background: rgba(250, 204, 21, 0.1); color: var(--mlbb); border-color: rgba(250, 204, 21, 0.4); box-shadow: 0 0 30px rgba(250, 204, 21, 0.15); }
-        .tab-btn.active.ff { background: rgba(255, 75, 43, 0.1); color: var(--ff); border-color: rgba(255, 75, 43, 0.4); box-shadow: 0 0 30px rgba(255, 75, 43, 0.15); }
-        .tab-content { display: none; animation: fadeIn 0.6s ease forwards; }
+        /* TAB CONTENT ANIMATION */
+        .tab-content { display: none; animation: glitchIn 0.4s ease-out forwards; }
         .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* === 4-STEPS FORM UI === */
-        .step-container { margin-bottom: 40px; }
-        .step-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; color: #fff; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; }
-        .step-title span { background: var(--primary); color: #000; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.1rem; }
-        
-        .form-box { background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; }
-        .input-group-row { display: flex; gap: 20px; flex-wrap: wrap; }
-        .input-box { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
-        .input-box label { color: var(--text-dim); font-size: 0.95rem; font-weight: 600; }
-        .input-box input { background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 12px; padding: 15px; color: #fff; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none; transition: 0.3s; width: 100%; }
-        .input-box input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0, 225, 255, 0.2); }
-        input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-
-        /* === 3D TILT PRODUCT & PAYMENT CARDS === */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .card { background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border: 1px solid var(--glass-border); border-radius: 20px; padding: 25px 20px; text-align: center; cursor: pointer; color: #fff; transition: 0.3s; position: relative; overflow: hidden; transform-style: preserve-3d; }
-        .card .inner { transform: translateZ(20px); pointer-events: none; }
-        .card-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
-        .card-price { color: var(--text-dim); font-size: 1rem; font-weight: 500; }
-        
-        /* Interactive Selection States */
-        .card::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transform: skewX(-20deg); transition: 0.5s; }
-        .card:hover::before { left: 150%; }
-        
-        .card.selected { background: rgba(0, 225, 255, 0.1); border-color: var(--primary); box-shadow: 0 0 25px rgba(0, 225, 255, 0.2); transform: scale(1.02); }
-        .card.selected .card-title { color: var(--primary); }
-
-        .badge-recom { position: absolute; top: 0; right: 0; background: var(--success); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 5px 15px; border-bottom-left-radius: 15px; z-index: 2;}
-        .badge-hot { position: absolute; top: 0; right: 0; background: linear-gradient(90deg, #FF4B2B, #FF416C); color: #fff; font-size: 0.7rem; font-weight: 800; padding: 5px 15px; border-bottom-left-radius: 15px; box-shadow: 0 4px 10px rgba(255, 75, 43, 0.4); z-index: 2; animation: pulse-hot 1.5s infinite; }
-        @keyframes pulse-hot { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-
-        /* === CHECKOUT BUTTON (FLOATING ALA CODASHOP) === */
-        .checkout-wrapper {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg-card);
-            padding: 15px 5%;
-            border-top: 1px solid var(--glass-border);
-            z-index: 999;
-            display: flex;
-            justify-content: flex-end; /* Taruh tombol di kanan */
-            align-items: center;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .btn-checkout { 
-            background: linear-gradient(90deg, #00E1FF, #00A3FF); 
-            border: none; 
-            padding: 15px 40px; 
-            border-radius: 50px; 
-            color: #fff; 
-            font-family: 'Syne', sans-serif; 
-            font-size: 1.1rem; 
-            font-weight: 700; 
-            cursor: pointer; 
-            transition: 0.3s; 
-            box-shadow: 0 4px 15px rgba(0, 225, 255, 0.3); 
-            width: auto; 
-            min-width: 250px;
-            animation: pulse-checkout 2s infinite;
-        }
-        @keyframes pulse-checkout {
-            0% { box-shadow: 0 0 0 0 rgba(0, 225, 255, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 225, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 225, 255, 0); }
-        }
-        
-        .btn-checkout:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(0, 225, 255, 0.4); 
+        @keyframes glitchIn {
+            0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(4px); }
+            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
 
-        /* Biar footer gak ketutupan tombol mengambang */
-        body { padding-bottom: 80px; } 
+        /* SECTION HEADERS */
+        .step-header {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+            border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;
+        }
+        .step-num {
+            background: var(--neon-cyan); color: #000; width: 30px; height: 30px;
+            display: flex; justify-content: center; align-items: center;
+            font-weight: 700; clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+        }
+        .step-title { font-size: 1.5rem; color: #fff; }
 
-        @media (max-width: 768px) {
-            .btn-checkout {
-                width: 100%; /* Kalau di HP, tombolnya jadi memanjang penuh */
-                max-width: none;
-            }
+        /* INPUT FIELDS */
+        .input-group { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+        .input-box { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 8px; }
+        .input-box label { color: var(--neon-cyan); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; }
+        .input-box input {
+            background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border);
+            padding: 15px; color: #fff; outline: none; transition: 0.3s;
+            border-radius: 4px; border-left: 3px solid var(--glass-border);
+        }
+        .input-box input:focus {
+            border-color: var(--neon-cyan); border-left-color: var(--neon-pink);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); background: rgba(0, 240, 255, 0.05);
+        }
+        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+        /* CYBER CARDS (DIAMOND & PAYMENT) */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .cyber-card {
+            background: linear-gradient(145deg, rgba(16, 18, 27, 0.8), rgba(5, 5, 10, 0.9));
+            border: 1px solid var(--glass-border); border-radius: 8px;
+            padding: 20px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
         }
         
-        /* === KALKULATOR EVENT === */
-        .calc-section { padding: 50px 5%; max-width: 900px; margin: 0 auto; text-align: center; }
-        .calc-box { background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; text-align: left; }
-        .calc-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 20px; color: #fff; text-align: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px;}
-        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-        .calc-input label { display: block; color: var(--text-dim); font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
-        .calc-input select, .calc-input input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); padding: 15px; border-radius: 12px; color: #fff; outline: none; font-size: 1rem; font-family: 'Inter', sans-serif;}
-        .calc-input select:focus, .calc-input input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0, 225, 255, 0.2); }
-        .calc-input select option { background: var(--bg-base); color: #fff; }
-        .btn-calc { background: linear-gradient(90deg, #00E1FF, #B800FF); color: #fff; border: none; padding: 15px 40px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: 0.3s; width: 100%; font-family: 'Syne', sans-serif; }
-        .btn-calc:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 225, 255, 0.3); }
-        .calc-result { margin-top: 25px; padding: 20px; background: rgba(0, 225, 255, 0.1); border: 1px solid var(--primary); border-radius: 12px; display: none; text-align: center; animation: fadeIn 0.5s; }
-        .calc-result h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
-        .calc-result p { color: #fff; margin: 5px 0; line-height: 1.5; }
-        @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+        /* Efek Hover Garis Scanline */
+        .cyber-card::before {
+            content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 2px;
+            background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); transition: 0.5s; opacity: 0;
+        }
+        .cyber-card:hover::before { top: 100%; opacity: 1; }
+        .cyber-card:hover { border-color: var(--neon-purple); transform: translateY(-3px); }
         
-        /* === PROGRAM RESELLER === */
-        .reseller-section { padding: 20px 5% 60px; max-width: 1000px; margin: 0 auto; }
-        .reseller-box {
-            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(11,15,25,0.8) 100%);
-            border: 1px solid rgba(212,175,55,0.3); border-radius: 20px;
-            padding: 40px; display: flex; align-items: center; justify-content: space-between;
-            flex-wrap: wrap; gap: 30px; position: relative; overflow: hidden;
+        /* State Selected */
+        .cyber-card.selected {
+            background: rgba(0, 240, 255, 0.05); border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.1);
         }
-        .reseller-content { flex: 1; min-width: 300px; z-index: 1; }
-        .reseller-content h2 { font-family: 'Syne', sans-serif; font-size: 2.2rem; color: #D4AF37; margin-bottom: 15px; }
-        .reseller-content p { color: var(--text-dim); line-height: 1.6; margin-bottom: 25px; }
-        .reseller-content ul { list-style: none; margin-bottom: 25px; color: #fff; }
-        .reseller-content ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
-        .reseller-content ul li i { color: #D4AF37; }
-        .btn-reseller {
-            background: linear-gradient(90deg, #D4AF37, #F3E5AB); color: #000;
-            padding: 15px 35px; border-radius: 12px; font-weight: 700; text-decoration: none;
-            display: inline-block; transition: 0.3s; font-family: 'Syne', sans-serif;
-            box-shadow: 0 10px 20px rgba(212,175,55,0.2);
-        }
-        .btn-reseller:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212,175,55,0.4); }
-        .reseller-icon { font-size: 12rem; color: rgba(212,175,55,0.05); position: absolute; right: -30px; bottom: -30px; z-index: 0; transform: rotate(-15deg); }
+        .cyber-card.selected .item-name { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
+
+        .item-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; transition: 0.3s; }
+        .item-price { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }
         
-        /* === MITRA PEMBAYARAN BERJALAN === */
-        .payment-partners { 
-            padding: 40px 0; border-top: 1px solid var(--glass-border); 
-            border-bottom: 1px solid var(--glass-border); 
-            background: rgba(0,0,0,0.2); overflow: hidden; margin-top: 20px; 
-        }
-        .partners-title { 
-            text-align: center; color: var(--text-dim); font-size: 0.9rem; 
-            font-weight: 600; margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; 
-        }
-        .marquee-container { width: 100%; overflow: hidden; position: relative; display: flex; }
-        
-        /* Efek bayangan di pinggir biar keluarnya mulus */
-        .marquee-container::before, .marquee-container::after { 
-            content: ''; position: absolute; top: 0; width: 80px; height: 100%; z-index: 2; 
-        }
-        .marquee-container::before { left: 0; background: linear-gradient(to right, var(--bg-base), transparent); }
-        .marquee-container::after { right: 0; background: linear-gradient(to left, var(--bg-base), transparent); }
-        
-        /* Lintasan animasinya */
-        .marquee-track { 
-            display: flex; width: calc(200px * 14); 
-            animation: scrollMarquee 20s linear infinite; 
-        }
-        .partner-item { 
-            width: 200px; flex-shrink: 0; display: flex; justify-content: center; 
-            align-items: center; gap: 10px; color: var(--text-dim); font-size: 1.2rem; 
-            font-weight: 700; font-family: 'Syne', sans-serif; opacity: 0.6; transition: 0.3s; 
-        }
-        .partner-item i { font-size: 1.5rem; }
-        
-        /* Rumus Berjalan Tanpa Henti */
-        @keyframes scrollMarquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-200px * 7)); } 
+        .badge-hot {
+            position: absolute; top: 10px; right: -25px; background: var(--neon-pink); color: #fff;
+            font-size: 0.7rem; font-weight: 700; padding: 3px 25px; transform: rotate(45deg);
+            box-shadow: 0 0 10px var(--neon-pink);
         }
 
-        /* === TOMBOL MEMBER ILUSI === */
-        .btn-login {
-            background: rgba(0, 225, 255, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary) !important;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-right: 0 !important;
+        /* FLOATING CHECKOUT BAR (HOLOGRAPHIC) */
+        .checkout-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999;
+            background: rgba(5, 5, 10, 0.85); backdrop-filter: blur(15px);
+            border-top: 1px solid var(--neon-cyan);
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 -5px 30px rgba(0, 240, 255, 0.1);
         }
-        .btn-login:hover {
-            background: var(--primary);
-            color: #000 !important;
-            box-shadow: 0 0 15px rgba(0, 225, 255, 0.4);
+        .price-display { display: flex; flex-direction: column; }
+        .price-display span { color: var(--text-dim); font-size: 0.85rem; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; }
+        .price-display strong { color: var(--neon-cyan); font-size: 1.8rem; font-weight: 700; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
+
+        .btn-buy {
+            background: linear-gradient(45deg, var(--neon-cyan), #00A3FF);
+            color: #000; border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: 700;
+            cursor: pointer; border-radius: 4px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            transition: 0.3s; position: relative; overflow: hidden;
         }
+        .btn-buy:hover { box-shadow: 0 0 20px var(--neon-cyan); transform: scale(1.02); }
+        /* Animasi kilap di tombol */
+        .btn-buy::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg); animation: shine 3s infinite;
+        }
+        @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
-        /* === FAQ CANGGIH === */
-        .faq-section { padding: 80px 5%; max-width: 900px; margin: 0 auto; }
-        .faq-header { text-align: center; margin-bottom: 40px; font-family: 'Syne'; font-size: 2.5rem; }
-        .faq-item { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 12px; margin-bottom: 15px; overflow: hidden; }
-        .faq-question { padding: 20px; width: 100%; text-align: left; background: none; border: none; color: #fff; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--text-dim); line-height: 1.6; }
-        .faq-item.active .faq-answer { padding: 0 20px 20px; max-height: 200px; }
-        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary); }
-
-        /* === FOOTER === */
-        footer { border-top: 1px solid var(--glass-border); background: rgba(0,0,0,0.3); padding: 80px 5% 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-        .footer-brand { font-family: 'Syne'; font-size: 2rem; font-weight: 800; margin-bottom: 15px; }
-        .footer-brand span { color: var(--primary); }
-        .footer-links h4 { font-size: 1.2rem; margin-bottom: 20px; color: #fff; }
-        .footer-links a { display: block; color: var(--text-dim); text-decoration: none; margin-bottom: 12px; transition: 0.3s; }
-        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
-        .copyright { text-align: center; color: var(--text-dim); font-size: 0.9rem; border-top: 1px solid var(--glass-border); padding-top: 30px; }
-
-        /* === LIVE TOAST NOTIFICATION === */
-        #toast-container { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; align-items: center; width: 100%; }
-        .live-toast { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); padding: 8px 20px; border-radius: 50px; display: flex; align-items: center; gap: 15px; color: #fff; width: auto; max-width: 90%; animation: slideInDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards, fadeOutUp 0.5s 4.5s forwards; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .toast-icon { width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1rem; }
-        .toast-text p { margin: 0; font-size: 0.85rem; }
-        .toast-text span { color: var(--text-dim); font-size: 0.7rem; }
+        /* SYSTEM TOAST */
+        #system-toast { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+        .alert-box {
+            background: rgba(16, 18, 27, 0.95); border-left: 4px solid var(--neon-cyan);
+            padding: 12px 25px; color: #fff; font-size: 0.95rem; border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 15px;
+            animation: dropDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeOutUp 0.4s 3s forwards;
+        }
+        .alert-box i { color: var(--neon-cyan); font-size: 1.2rem; }
+        .alert-box.error { border-left-color: var(--neon-pink); }
+        .alert-box.error i { color: var(--neon-pink); }
         
-        @keyframes slideInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes dropDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeOutUp { to { opacity: 0; transform: translateY(-20px); } }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero { padding: 110px 5% 40px; } /* Ngurangin jarak kosong di area atas khusus HP */
-            .title-elegant { font-size: 2.2rem; } /* Nyesuain ukuran judul biar gak kebesaran di layar HP */
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .tabs { flex-direction: row; justify-content: flex-start; overflow-x: auto; padding-bottom: 10px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-            .tabs::-webkit-scrollbar { display: none; }
-            .tab-btn { flex: 0 0 auto; white-space: nowrap; padding: 12px 25px; }
-            .btn-checkout { max-width: 100%; }
-            
-            /* === TAMBAHAN: JADIKAN 2 KOLOM DI HP === */
-            .grid { 
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 12px; 
-            }
-            .card { 
-                padding: 15px 10px; 
-            }
-            .card-title { 
-                font-size: 1.1rem; 
-                margin-bottom: 5px; 
-            }
-            .card-price { 
-                font-size: 0.85rem; 
-            }
+            .checkout-bar { flex-direction: column; gap: 15px; padding: 20px 5%; text-align: center; }
+            .btn-buy { width: 100%; }
+            .grid-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .cyber-card { padding: 15px 10px; text-align: center; }
+            .item-name { font-size: 1.1rem; }
         }
-        
-                /* === FITUR GEMBOK KATALOG (OPSI 3) === */
-        .katalog-terkunci {
-            opacity: 0.4;
-            filter: grayscale(100%);
-            pointer-events: none; /* Bikin item nggak bisa diklik */
-            transition: all 0.5s ease; /* Transisi halus saat gembok kebuka */
-            position: relative;
-        }
-        /* Tambahan ikon gembok kecil di tengah (Opsional) */
-        .katalog-terkunci::after {
-            content: "\f023"; /* Ikon Gembok FontAwesome */
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            color: rgba(255,255,255,0.3);
-            z-index: 10;
-        }
-        
-                /* === WARNA ASLI NULL STORE (LAYOUT CLEAN) === */
-        :root {
-            --bg-base: #0B0F19; /* Biru Gelap Original */
-            --bg-card: #161D2E; /* Box Biru Lebih Terang */
-            --primary: #00E1FF; /* Biru Neon Original */
-            --text-main: #FFFFFF;
-            --text-dim: #94A3B8;
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        body.light-mode {
-            --bg-base: #F8FAFC;
-            --bg-card: #FFFFFF;
-            --primary: #00A3FF;
-            --text-main: #0F172A;
-            --text-dim: #475569;
-            --glass-border: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Layout Kotak Solid ala Codashop */
-        .form-box, .card { 
-            background: var(--bg-card) !important; 
-            border: 1px solid var(--glass-border) !important; 
-            border-radius: 16px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
-            backdrop-filter: none !important;
-        }
-        
-        .card { transition: all 0.2s ease; }
-        .card:hover { border-color: var(--primary); }
-
-        /* === FITUR PENCARIAN LIVE (OPSI 1) === */
-        .search-container {
-            max-width: 500px;
-            margin: 0 auto 30px;
-            position: relative;
-            display: none; /* Disembunyikan dulu sampai pembeli milih game */
-            animation: fadeIn 0.5s;
-        }
-        .search-container input {
-            width: 100%;
-            background: rgba(0,0,0,0.4);
-            border: 1px solid var(--glass-border);
-            padding: 15px 20px 15px 50px;
-            border-radius: 50px;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-        .search-container input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(0, 225, 255, 0.2);
-            background: rgba(0,0,0,0.6);
-        }
-        .search-container i {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        /* === GAYA HEADER ALA CODASHOP ASLI === */
-        .game-header { margin-bottom: 30px; }
-        .game-banner { 
-            position: relative; 
-            height: auto; 
-            display: none; 
-            align-items: center; /* Sejajarkan ikon dan teks */
-            gap: 20px; 
-        }
-        
-        .game-banner img { 
-            width: 85px; 
-            height: 85px; 
-            border-radius: 20px; /* Bikin melengkung kayak ikon aplikasi */
-            object-fit: cover; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            flex-shrink: 0; /* Biar ikonnya gak gepeng */
-        }
-        
-        .game-info { 
-            position: static; 
-            padding: 0; 
-            background: none;
-            color: var(--text-main);
-        }
-        .game-info h2 { 
-            font-family: 'Inter', sans-serif; 
-            font-size: 1.4rem; 
-            font-weight: 700;
-            margin: 0 0 10px 0; 
-        }
-        .game-info p { 
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--text-dim); 
-            font-size: 0.85rem; 
-            margin: 0; 
-            background: var(--bg-card); 
-            border: 1px solid var(--glass-border);
-            padding: 6px 14px;
-            border-radius: 20px;
-        }
-        
-        /* Tampilkan default pakai flex */
-        #game-banner-mlbb { display: flex; } 
-
-        /* === WARNA TOMBOL BERANDA === */
-        .tab-btn.active.beranda { 
-            background: rgba(0, 225, 255, 0.1); 
-            color: var(--primary); 
-            border-color: rgba(0, 225, 255, 0.4); 
-            box-shadow: 0 0 30px rgba(0, 225, 255, 0.15); 
-        }
-
-        /* === TESTIMONI / ULASAN SLIDER === */
-        .testimonial-section { padding: 60px 5%; max-width: 1200px; margin: 0 auto; position: relative; }
-        .section-title-center { text-align: center; font-family: 'Syne', sans-serif; font-size: 2.2rem; margin-bottom: 40px; color: var(--text-main); }
-        .testi-card { 
-            background: var(--bg-card); border: 1px solid var(--glass-border); 
-            border-radius: 16px; padding: 25px; transition: 0.3s; height: 100%;
-        }
-        .testi-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .testi-avatar { 
-            width: 50px; height: 50px; border-radius: 50%; 
-            font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; 
-            display: flex; justify-content: center; align-items: center; flex-shrink: 0;
-        }
-        .testi-name { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
-        .testi-text { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; font-style: italic; margin-bottom: 15px; }
-        .testi-game { display: inline-block; background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; color: var(--text-dim); border: 1px solid var(--glass-border); }
-        
-        /* === KONTROL TESTIMONI (PANAH & TOMBOL) === */
-        .testi-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px; /* Jarak dari kartu ke bawah */
-        }
-        
-        /* Modifikasi Panah Swiper Biar Pindah ke Bawah */
-        .swiper-button-next.testi-nav, .swiper-button-prev.testi-nav {
-            position: static !important; /* Cabut dari posisi absolute (tengah kartu) */
-            margin: 0 !important;
-            width: 45px !important;
-            height: 45px !important;
-            background-color: var(--glass-bg) !important; 
-            border: 1px solid var(--primary) !important;
-            color: var(--primary) !important;
-            border-radius: 50% !important;
-            transition: 0.3s;
-        }
-        .swiper-button-next.testi-nav:hover, .swiper-button-prev.testi-nav:hover {
-            background-color: var(--primary) !important;
-            color: #000 !important;
-        }
-        .swiper-button-next::after, .swiper-button-prev::after {
-            font-size: 16px !important;
-            font-weight: bold !important;
-        }
-
-        /* Tombol "Lihat Ulasan Lainnya" */
-        .btn-more-testi {
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-more-testi:hover {
-            background: rgba(0, 225, 255, 0.1);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* MODE GRID (Aktif saat "Lihat Ulasan Lainnya" diklik) */
-        .testi-swiper.grid-mode .swiper-wrapper {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-            gap: 20px !important;
-            transform: none !important; /* Matikan sistem geser Swiper */
-        }
-        .testi-swiper.grid-mode .swiper-slide {
-            width: 100% !important;
-            margin: 0 !important;
-        }
-        .testi-swiper.grid-mode .testi-nav {
-            display: none !important; /* Hilangkan panah kalau lagi mode grid */
-        }
-        
-        /* === EFEK KARTU TERPILIH (LEBIH MENYALA & TEBAL) === */
-        .card.selected { 
-            background: linear-gradient(135deg, rgba(0, 225, 255, 0.2), rgba(184, 0, 255, 0.2)) !important; 
-            border: 2px solid var(--primary) !important; /* Border dilipatgandakan */
-            box-shadow: 0 0 20px rgba(0, 225, 255, 0.6), inset 0 0 10px rgba(0, 225, 255, 0.2) !important; /* Efek glowing dalam dan luar */
-            transform: translateY(-5px) scale(1.03); /* Kartu agak maju ke depan */
-        }
-        .card.selected .card-title { 
-            color: #fff !important; 
-            text-shadow: 0 0 10px var(--primary); /* Teks diamond ikut nyala */
-        }
-        .card.selected .card-price { 
-            color: var(--primary) !important; 
-            font-weight: 800 !important; 
-            text-shadow: 0 0 8px rgba(0, 225, 255, 0.5); 
-        }
-
-        /* Efek Menyala Spesifik untuk Metode Pembayaran */
-        .pay-qris.selected { border: 2px solid #ED1C24 !important; background: rgba(237, 28, 36, 0.15) !important; box-shadow: 0 0 20px rgba(237, 28, 36, 0.5) !important; }
-        .pay-dana.selected { border: 2px solid #118EEA !important; background: rgba(17, 142, 234, 0.15) !important; box-shadow: 0 0 20px rgba(17, 142, 234, 0.5) !important; }
-        .pay-gopay.selected { border: 2px solid #00AED6 !important; background: rgba(0, 174, 214, 0.15) !important; box-shadow: 0 0 20px rgba(0, 174, 214, 0.5) !important; }
-        .pay-shopee.selected { border: 2px solid #EE4D2D !important; background: rgba(238, 77, 45, 0.15) !important; box-shadow: 0 0 20px rgba(238, 77, 45, 0.5) !important; }
-        
-        /* === MODAL ULASAN (POP-UP) === */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.7); backdrop-filter: blur(5px);
-            display: none; justify-content: center; align-items: center; z-index: 2000;
-            animation: fadeInModal 0.3s forwards;
-        }
-        
-        @keyframes fadeInModal {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .modal-box {
-            background: var(--bg-card); border: 1px solid var(--glass-border);
-            border-radius: 20px; padding: 30px; width: 90%; max-width: 400px;
-            position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        .close-modal {
-            position: absolute; top: 15px; right: 20px; font-size: 1.5rem;
-            color: var(--text-dim); cursor: pointer; background: none; border: none; transition: 0.3s;
-        }
-        .close-modal:hover { color: var(--error); transform: scale(1.1); }
-        .modal-title { font-family: 'Syne'; color: #fff; margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
-        .modal-box .input-box { margin-bottom: 15px; display: flex; flex-direction: column; gap: 8px; }
-        .modal-box input, .modal-box textarea {
-            width: 100%; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border);
-            padding: 15px; border-radius: 12px; color: #fff; font-family: 'Inter'; outline: none; transition: 0.3s;
-        }
-        .modal-box input:focus, .modal-box textarea:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0,225,255,0.2); }
-        .modal-box textarea { resize: vertical; min-height: 100px; }
-        .btn-submit-review {
-            width: 100%; background: linear-gradient(90deg, #00E1FF, #00A3FF); color: #fff; border: none;
-            padding: 15px; border-radius: 12px; font-family: 'Syne'; font-weight: 700; font-size: 1.1rem; 
-            cursor: pointer; transition: 0.3s; margin-top: 10px;
-        }
-        .btn-submit-review:hover { box-shadow: 0 5px 20px rgba(0,225,255,0.4); transform: translateY(-2px); }
-
-        .disclaimer-text { 
-            display: block; 
-            margin-top: 8px; 
-            font-size: 0.75rem; 
-            color: rgba(255, 255, 255, 0.5); 
-            font-style: italic; 
-            display: flex; 
-            align-items: center; 
-            gap: 5px; 
-        }
-        .disclaimer-text i { font-size: 0.7rem; color: #D4AF37; } 
-        
-                        /* === REVISI 1: MENU PILIH GAME ALA TAKAPEDIA === */
-        .populer-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; color: #fff; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
-        .populer-subtitle { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 25px; }
-        
-        .game-selection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 40px; }
-        @media (min-width: 768px) { .game-selection-grid { grid-template-columns: repeat(4, 1fr); } }
-        
-        .game-card { 
-            background: var(--bg-card); border-radius: 12px; overflow: hidden; cursor: pointer; 
-            transition: all 0.3s ease; 
-            filter: grayscale(100%); 
-            border: 2px solid transparent; 
-        }
-        .game-card:hover { filter: grayscale(50%); transform: translateY(-3px); }
-        .game-card.active { 
-            filter: grayscale(0%); 
-            border-color: var(--primary); /* Kembali ke warna tema */
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 20px rgba(0, 225, 255, 0.2); 
-        }
-        .game-card-img { width: 100%; height: 100px; object-fit: cover; }
-        .game-card-info { background: var(--primary); padding: 10px 12px; color: #000; position: relative; } /* Kembali ke warna tema */
-        .game-card-info h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
-        .game-card-info p { font-size: 0.75rem; font-weight: 500; opacity: 0.8; margin: 0; }
-        
-        .game-card-info::after { 
-            content: ''; position: absolute; bottom: 0; right: 0; width: 25px; height: 25px; 
-            background: rgba(0,0,0,0.1); clip-path: polygon(100% 0, 100% 100%, 0 100%); 
-        }
-
-        /* === REVISI 2: BANNER GAME ALA TAKAPEDIA === */
-        .taka-banner {
-            position: relative;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.6) 100%);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .taka-banner-top { display: flex; align-items: center; gap: 15px; position: relative; z-index: 1; }
-        .taka-banner-logo { width: 80px; height: 80px; border-radius: 16px; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.1); }
-        .taka-banner-text h2 { font-family: 'Inter', sans-serif; font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .taka-banner-text p { color: var(--text-dim); font-size: 0.9rem; font-weight: 500; margin: 0; }
-        .taka-banner-features { display: flex; flex-wrap: wrap; gap: 15px; position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; font-size: 0.8rem; color: var(--text-dim); font-weight: 500; }
-        .taka-banner-features span { display: flex; align-items: center; gap: 6px; }
-        .taka-banner-features i.fa-bolt { color: var(--primary); } /* Kembali ke warna tema */
-        .taka-banner-features i.fa-headset { color: #B800FF; } 
-        .taka-banner-features i.fa-check-circle { color: var(--success); }
-
-        /* === REVISI 3: STEP & INPUT ALA TAKAPEDIA === */
-        .taka-step-container { background: var(--bg-card); border-radius: 12px; margin-bottom: 25px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .taka-step-header { display: flex; align-items: stretch; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--glass-border); }
-        .taka-step-num {
-            background: var(--primary); /* Kembali ke warna tema */
-            color: #000; font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; padding: 15px 25px; display: flex; align-items: center; justify-content: center;
-        }
-        .taka-step-title { padding: 15px 20px; font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; width: 100%; }
-        .taka-step-body { padding: 20px; }
-        
-        .taka-input-row { display: flex; gap: 15px; flex-wrap: wrap; }
-        .taka-input-group { flex: 1; min-width: 150px; }
-        .taka-input-group label { display: block; color: var(--text-dim); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; }
-        .taka-input-group input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid transparent; border-radius: 8px; padding: 14px 15px; color: #fff; font-size: 0.95rem; outline: none; transition: 0.3s; }
-        .taka-input-group input:focus { border-color: var(--primary); background: rgba(255,255,255,0.08); } /* Kembali ke warna tema */
-        
-        /* === REVISI 4: ULASAN ALA TAKAPEDIA === */
-        .taka-rating-header { text-align: center; margin-bottom: 30px; }
-        .taka-rating-score { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .taka-rating-score i { color: #FACC15; font-size: 2.8rem; }
-        .taka-rating-score span { font-size: 1.5rem; color: var(--text-dim); font-weight: 500; }
-        .taka-rating-desc { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; margin-top: 5px; }
-        
-        .taka-rating-bars { margin-bottom: 30px; padding: 0 10%; }
-        .taka-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 0.95rem; font-weight: 700; color: #fff; }
-        .taka-bar-row i { color: #FACC15; font-size: 0.85rem; }
-        .taka-bar-line { flex: 1; height: 12px; background: rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden; }
-        .taka-bar-fill { height: 100%; background: #FACC15; border-radius: 6px; }
-        .taka-bar-count { width: 60px; text-align: right; color: var(--text-dim); font-size: 0.85rem; font-weight: 500; }
-
-        .taka-review-list { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
-        .taka-review-item { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .taka-review-item:last-child { border-bottom: none; }
-        .taka-review-user { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-        .taka-review-name { font-weight: 700; color: #fff; }
-        .taka-review-stars i { color: #FACC15; font-size: 0.8rem; letter-spacing: 2px;}
-        .taka-review-product { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px; }
-        .taka-review-text { font-size: 0.95rem; color: #fff; font-style: italic; line-height: 1.5; }
-        
-        @media (max-width: 768px) { .taka-rating-bars { padding: 0; } }
-
-        /* === REVISI 5 & 6: PAYMENT & KONTAK ALA TAKAPEDIA === */
-        .taka-pay-item { background: rgba(255, 255, 255, 0.05); border: 2px solid transparent; border-radius: 12px; padding: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden; }
-        .taka-pay-item:hover { background: rgba(255, 255, 255, 0.08); }
-        .taka-pay-item.selected { 
-            border-color: var(--primary); /* Kembali ke warna tema */
-            background: rgba(0, 225, 255, 0.05);
-        }
-        .taka-pay-title { font-weight: 700; color: #fff; margin-bottom: 8px; font-size: 0.95rem; }
-        .taka-pay-logos { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; opacity: 0.7; }
-        .taka-pay-logos i, .taka-pay-logos img { font-size: 1.2rem; height: 18px; filter: grayscale(100%); }
-        .taka-pay-item.selected .taka-pay-logos { opacity: 1; }
-        .taka-pay-desc { font-size: 0.8rem; color: #E11D48; font-weight: 600; }
-        
-        .taka-ribbon {
-            position: absolute; top: 12px; right: -28px;
-            background: var(--primary); color: #000; /* Kembali ke warna tema */
-            font-size: 0.7rem; font-weight: 800; padding: 4px 30px; transform: rotate(45deg); box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* Detail Kontak CSS */
-        .taka-wa-box { display: flex; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid transparent; transition: 0.3s; margin-top: 5px; }
-        .taka-wa-box:focus-within { border-color: var(--primary); } /* Kembali ke warna tema */
-        .taka-wa-flag { padding: 12px 15px; background: rgba(0,0,0,0.2); display: flex; align-items: center; gap: 8px; color: #fff; border-right: 1px solid rgba(255,255,255,0.05); }
-        .taka-wa-input { flex: 1; border: none; background: transparent; color: #fff; padding: 12px 15px; font-size: 1rem; outline: none; }
-        
-        .taka-contact-info { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 15px; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-top: 15px; display: flex; gap: 15px; align-items: flex-start; }
-        .taka-contact-info i { margin-top: 3px; font-size: 1.2rem; color: #fff; opacity: 0.8; }
-        
-        /* === SUB-TAB FITUR MENARIK (MLBB) === */
-        .sub-tabs { display: flex; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 12px; margin-bottom: 25px; overflow: hidden; }
-        .sub-tab-btn { flex: 1; padding: 15px; text-align: center; background: transparent; border: none; color: var(--text-dim); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .sub-tab-btn.active { background: rgba(0, 225, 255, 0.1); color: var(--primary); border-bottom: 3px solid var(--primary); }
-        .sub-tab-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: #fff; }
-
-        /* === FITUR PM: SMART BUTTON & FOKUS PROGRESS === */
-        .taka-step-container { transition: all 0.5s ease; }
-        .step-dimmed { opacity: 0.3 !important; filter: grayscale(100%) !important; pointer-events: none !important; }
-        .btn-checkout.disabled-btn {
-            background: #2A303C !important;
-            color: #64748B !important;
-            box-shadow: none !important;
-            animation: none !important;
-            transform: none !important;
-        }
-
-        /* === FITUR PM: KATEGORI PILLS & SKELETON LOADING === */
-        .category-pills { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 15px; scrollbar-width: none; }
-        .category-pills::-webkit-scrollbar { display: none; }
-        .pill-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--text-dim); padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: 0.3s; }
-        .pill-btn.active { background: rgba(0, 225, 255, 0.1); color: var(--primary); border-color: var(--primary); box-shadow: 0 0 15px rgba(0,225,255,0.2); }
-        .pill-btn:hover:not(.active) { background: rgba(255,255,255,0.1); color: #fff; }
-
-        .skeleton { position: relative; overflow: hidden; background: rgba(255,255,255,0.05) !important; border-color: transparent !important; pointer-events: none; }
-        .skeleton::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: skeleton-load 1s infinite; }
-        @keyframes skeleton-load { 100% { left: 150%; } }
-        .skeleton * { opacity: 0; } /* Sembunyiin isi pas loading */
-
-        /* === FITUR PM: ACCORDION PAYMENT & INVOICE === */
-        .taka-pay-body { max-height: 0; overflow: hidden; transition: all 0.4s ease; opacity: 0; }
-        .taka-pay-item.selected .taka-pay-body { max-height: 200px; opacity: 1; margin-top: 15px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 15px; }
-        .pay-chevron { transition: transform 0.3s ease; color: var(--text-dim); }
-        .taka-pay-item.selected .pay-chevron { transform: rotate(180deg); color: var(--primary); }
-
     </style>
 </head>
 <body>
 
-    <div class="aurora-bg"></div>
-    
-    <!-- EFEK PARTIKEL BINTANG / CAHAYA -->
-    <div class="particles">
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <!-- BACKGROUND ELEMENTS -->
+    <div class="cyber-grid"></div>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow right"></div>
 
-        <!-- INI KANVAS FOTO BACKGROUNDNYA -->
-    <div id="game-bg" class="game-bg"></div>
-    <div id="toast-container"></div>
-
+    <!-- NAVBAR -->
     <nav>
-        <!-- LOGO TYPOGRAFI MEWAH + IKON -->
-        <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px; font-family: 'Syne', sans-serif; font-style: italic; font-size: 1.6rem; letter-spacing: -0.5px;">
-            <img src="logo.png" alt="Logo" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 10px rgba(0, 225, 255, 0.4); border: 2px solid var(--primary);">
-            Null<span>Store</span>
-        </a>
+        <a href="#" class="logo"><i class="fas fa-bolt"></i> NULL<span>.STORE</span></a>
         
-           <!-- BANNER INSTALL APLIKASI (MUNCUL OTOMATIS) -->
-    <div id="pwa-banner" style="display: none; position: fixed; top: 15px; left: 5%; width: 90%; background: linear-gradient(90deg, #161D2E, #0B0F19); border: 1px solid var(--primary); border-radius: 12px; padding: 12px 15px; z-index: 9999; box-shadow: 0 10px 30px rgba(0, 225, 255, 0.3); justify-content: space-between; align-items: center; animation: slideInDown 0.5s ease forwards;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="logo.png" style="width: 40px; height: 40px; border-radius: 8px;">
-            <div>
-                <div style="color: #fff; font-weight: 700; font-size: 0.95rem; font-family: 'Syne', sans-serif;">Install Null Store</div>
-                <div style="color: var(--text-dim); font-size: 0.75rem;">Akses super cepat dari layar HP</div>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <!-- INI KOTAK OMSET RAHASIA -->
+            <div class="cyber-font" style="background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); padding: 5px 12px; border-radius: 4px; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-chart-line" style="color: #0f0;"></i>
+                <span style="color: var(--text-dim); font-size: 0.8rem;">REVENUE:</span>
+                <span id="cyber-omset" style="color: #0f0; font-weight: 700; font-size: 1rem; text-shadow: 0 0 8px rgba(0,255,0,0.5); transition: 0.3s;">Rp 0</span>
+            </div>
+
+            <div class="cyber-font" style="color: var(--neon-cyan); font-size: 0.9rem; display: none;">SYS.STATUS: <span style="color: #0f0;">ONLINE</span></div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1 class="cyber-font">HYPER<span>CHARGE</span> YOUR ACCOUNT</h1>
+        <p>Sistem top up otomatis dengan enkripsi tingkat tinggi. Pilih game, masukkan ID, diamond masuk sebelum kamu berkedip.</p>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+        
+        <!-- GAME TABS -->
+        <div class="tab-wrapper cyber-font">
+            <div class="cyber-tab active" onclick="switchSystem('mlbb', this)">MLBB</div>
+            <div class="cyber-tab" onclick="switchSystem('ff', this)">FREE FIRE</div>
+        </div>
+
+        <!-- ================= MLBB SYSTEM ================= -->
+        <div id="sys-mlbb" class="tab-content active">
+            <div class="step-header cyber-font">
+                <div class="step-num">01</div><h2 class="step-title">TARGET IDENTIFICATION</h2>
+            </div>
+            <div class="input-group">
+                <div class="input-box"><label>USER ID</label><input type="number" id="ml-id" placeholder="Ex: 12345678"></div>
+                <div class="input-box"><label>ZONE ID</label><input type="number" id="ml-zone" placeholder="Ex: 1234"></div>
+            </div>
+
+            <div class="step-header cyber-font">
+                <div class="step-num">02</div><h2 class="step-title">SELECT PAYLOAD (DIAMONDS)</h2>
+            </div>
+            <div class="grid-cards" data-type="item">
+                <div class="cyber-card" data-val="86 Diamonds" data-price="Rp 22.000">
+                    <div class="item-name">86 💎</div><div class="item-price">Rp 22.000</div>
+                </div>
+                <div class="cyber-card" data-val="257 Diamonds" data-price="Rp 65.500">
+                    <div class="item-name">257 💎</div><div class="item-price">Rp 65.500</div>
+                </div>
+                <div class="cyber-card" data-val="706 Diamonds" data-price="Rp 177.500">
+                    <div class="badge-hot">HOT</div>
+                    <div class="item-name">706 💎</div><div class="item-price">Rp 177.500</div>
+                </div>
+                <div class="cyber-card" data-val="Weekly Pass" data-price="Rp 28.250">
+                    <div class="item-name">Weekly Pass</div><div class="item-price">Rp 28.250</div>
+                </div>
+                <div class="cyber-card" data-val="Starlight" data-price="Rp 82.000">
+                    <div class="item-name">Starlight</div><div class="item-price">Rp 82.000</div>
+                </div>
             </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button id="btn-install-pwa" style="background: var(--primary); color: #000; border: none; padding: 8px 18px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; cursor: pointer;">INSTALL</button>
-            <button onclick="document.getElementById('pwa-banner').style.display='none'" style="background: none; border: none; color: var(--text-dim); font-size: 1.2rem; cursor: pointer;"><i class="fas fa-times"></i></button>
+
+        <!-- ================= FREE FIRE SYSTEM ================= -->
+        <div id="sys-ff" class="tab-content">
+            <div class="step-header cyber-font">
+                <div class="step-num">01</div><h2 class="step-title">TARGET IDENTIFICATION</h2>
+            </div>
+            <div class="input-group">
+                <div class="input-box"><label>PLAYER ID</label><input type="number" id="ff-id" placeholder="Ex: 1234567890"></div>
+            </div>
+
+            <div class="step-header cyber-font">
+                <div class="step-num">02</div><h2 class="step-title">SELECT PAYLOAD (DIAMONDS)</h2>
+            </div>
+            <div class="grid-cards" data-type="item">
+                <div class="cyber-card" data-val="70 Diamonds FF" data-price="Rp 9.500">
+                    <div class="item-name">70 💎</div><div class="item-price">Rp 9.500</div>
+                </div>
+                <div class="cyber-card" data-val="140 Diamonds FF" data-price="Rp 18.000">
+                    <div class="item-name">140 💎</div><div class="item-price">Rp 18.000</div>
+                </div>
+                <div class="cyber-card" data-val="355 Diamonds FF" data-price="Rp 44.000">
+                    <div class="badge-hot">HOT</div>
+                    <div class="item-name">355 💎</div><div class="item-price">Rp 44.000</div>
+                </div>
+            </div>
         </div>
+
+        <!-- ================= GLOBAL SECURE PAYMENT ================= -->
+        <div id="secure-payment">
+            <div class="step-header cyber-font">
+                <div class="step-num">03</div><h2 class="step-title">PAYMENT GATEWAY</h2>
+            </div>
+            <div class="grid-cards" data-type="payment">
+                <div class="cyber-card" data-method="QRIS">
+                    <div class="item-name"><i class="fas fa-qrcode"></i> QRIS</div><div class="item-price">All Payment</div>
+                </div>
+                <div class="cyber-card" data-method="DANA">
+                    <div class="item-name"><i class="fas fa-wallet"></i> DANA</div><div class="item-price">E-Wallet</div>
+                </div>
+                <div class="cyber-card" data-method="GOPAY">
+                    <div class="item-name"><i class="fas fa-wallet"></i> GOPAY</div><div class="item-price">E-Wallet</div>
+                </div>
+            </div>
+
+            <div class="step-header cyber-font" style="margin-top: 20px;">
+                <div class="step-num">04</div><h2 class="step-title">CONTACT NODE</h2>
+            </div>
+            <div class="input-group">
+                <div class="input-box"><label>WHATSAPP NUMBER</label><input type="number" id="wa-number" placeholder="0812..."></div>
+            </div>
+        </div>
+
     </div>
 
-        
-                <!-- Tombol Dark/Light Mode -->
-        <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" title="Ganti Tema">
-            <i class="fas fa-sun"></i>
-        </button>
-
-        <!-- Tombol Garis 3 (Muncul cuma di HP) -->
-        <button class="menu-toggle" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Menu Bungkus -->
-        <div class="nav-menu" id="mobileMenu">
-                        <div class="nav-links">
-                            <a href="#">Beranda</a>
-                            <a href="#katalog">Katalog</a>
-                            <a href="#faq">Bantuan</a>
-                            <a href="#" class="btn-login" onclick="showToast('error', 'Pendaftaran Member VIP saat ini sedang penuh / ditutup sementara.'); return false;"><i class="fas fa-user-circle"></i> Member Area</a>
-                        </div>
-                    </div>
-                </nav>
-
-    <!-- KITA HAPUS DASHBOARD HERO BIAR LANGSUNG KE KATALOG -->
-    <section class="catalog" id="katalog" style="padding-top: 120px;">
-        
-        <!-- FITUR SAPAAN CERDAS OTOMATIS -->
-        <div id="sapaan-cerdas" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--primary); font-weight: 600; margin-bottom: 5px; letter-spacing: 0.5px; text-transform: uppercase; animation: fadeIn 1s ease;">
-            Halo bosku!
+    <!-- HOLOGRAPHIC CHECKOUT BAR -->
+    <div class="checkout-bar">
+        <div class="price-display">
+            <span>TOTAL AMOUNT</span>
+            <strong id="final-price">Rp 0</strong>
         </div>
-
-        <!-- JUDUL ALA TAKAPEDIA -->
-        <div class="populer-title"><i class="fas fa-fire" style="color: #FF4B2B;"></i> POPULER SEKARANG!</div>
-        <p class="populer-subtitle">Berikut adalah beberapa produk yang paling populer saat ini.</p>
-        
-        <!-- GRID KARTU GAME -->
-        <div class="game-selection-grid">
-            <!-- Card MLBB -->
-            <div class="game-card" onclick="switchTab('mlbb', this)">
-                <img src="bg-mlbb.png" alt="Mobile Legends" class="game-card-img">
-                <div class="game-card-info">
-                    <h3>Mobile Legends</h3>
-                    <p>Moonton</p>
-                </div>
-            </div>
-            
-            <!-- Card FF -->
-            <div class="game-card" onclick="switchTab('ff', this)">
-                <img src="bg-ff.png" alt="Free Fire" class="game-card-img">
-                <div class="game-card-info">
-                    <h3>Free Fire</h3>
-                    <p>Garena</p>
-                </div>
-            </div>
-            
-            <!-- Card Dummy 1 (Biar kelihatan penuh kayak Takapedia) -->
-            <div class="game-card" style="opacity: 0.5; cursor: not-allowed;" onclick="showToast('error', 'Nantikan produk ini segera! Kami sedang menyiapkannya buat kamu.')">
-                <img src="bg-pubg.png" alt="PUBG" class="game-card-img">
-                <div class="game-card-info" style="background: #ccc;">
-                    <h3>PUBG Mobile</h3>
-                    <p>Tencent Games</p>
-                </div>
-            </div>
-            
-            <!-- Card Dummy 2 -->
-            <div class="game-card" style="opacity: 0.5; cursor: not-allowed;" onclick="showToast('error', 'Nantikan produk ini segera! Kami sedang menyiapkannya buat kamu.')">
-                <img src="bg-valo.png" alt="Valorant" class="game-card-img">
-                <div class="game-card-info" style="background: #ccc;">
-                    <h3>Valorant</h3>
-                    <p>Riot Games</p>
-                </div>
-            </div>
-        </div>
-        
-                <!-- KOTAK PENCARIAN LIVE -->
-        <div class="search-container" id="liveSearchBox">
-            <i class="fas fa-search"></i>
-            <input type="text" id="inputCariItem" placeholder="Ketik nominal atau item (contoh: Weekly, 86)..." onkeyup="cariItemLive()">
-        </div>
-
-        <!-- ==================== MLBB CONTENT ==================== -->
-        <div id="content-mlbb" class="tab-content">
-            <!-- BANNER ALA TAKAPEDIA -->
-            <div class="taka-banner" id="game-banner-mlbb">
-                <div class="taka-banner-top">
-                    <img src="bg-mlbb.png" alt="MLBB" class="taka-banner-logo">
-                    <div class="taka-banner-text">
-                        <h2>Mobile Legends</h2>
-                        <p>Moonton</p>
-                    </div>
-                </div>
-                <div class="taka-banner-features">
-                    <span><i class="fas fa-bolt"></i> Proses Otomatis</span>
-                    <span><i class="fas fa-headset"></i> CS 08:00 - 22:00</span>
-                    <span><i class="fas fa-check-circle"></i> 100% Aman & Legal</span>
-                </div>
-            </div>
-
-            <!-- === SUB-TAB MENU (TOP UP & FITUR) === DIPINDAH KE LUAR BIAR GAK ILANG -->
-            <div class="sub-tabs">
-                <button class="sub-tab-btn active" id="btn-tab-topup" onclick="switchMLBBView('topup')"><i class="fas fa-shopping-cart"></i> Top Up</button>
-                <button class="sub-tab-btn" id="btn-tab-fitur" onclick="switchMLBBView('features')"><i class="fas fa-magic"></i> Fitur Menarik</button>
-            </div>
-
-            <!-- BUNGKUSAN MENU TOP UP -->
-            <div id="mlbb-topup-view">
-
-            <!-- STEP 1: AKUN MLBB -->
-            <div class="taka-step-container">
-                <div class="taka-step-header">
-                    <div class="taka-step-num">1</div>
-                    <div class="taka-step-title">Masukkan Data Akun</div>
-                </div>
-                <div class="taka-step-body">
-                    <div class="taka-input-row">
-                        <div class="taka-input-group">
-                            <label>ID</label>
-                            <input type="number" id="mlbb-id" placeholder="Masukkan ID" oninput="bukaGembok()">
-                        </div>
-                        <div class="taka-input-group">
-                            <label>Server</label>
-                            <input type="number" id="mlbb-server" placeholder="Masukkan Server">
-                        </div>
-                    </div>
-                    
-                    <!-- FITUR CEK ID ILUSI (MLBB) -->
-                    <button id="btn-cek-mlbb" class="btn-outline" style="width: 100%; margin-top: 15px; padding: 10px; border-radius: 8px; font-size: 0.9rem;" onclick="cekIdIlusi('mlbb')">Cek ID Server</button>
-                    <div id="hasil-cek-mlbb" style="margin-top: 10px; font-size: 0.85rem; font-weight: 600; text-align: center; display: none;"></div>
-
-                    <small class="disclaimer-text" style="margin-top: 15px;">
-                        <i class="fas fa-shield-alt"></i> Pastikan User ID & Server benar. Kesalahan bukan tanggung jawab kami.
-                    </small>
-                </div>
-            </div>
-
-            <!-- STEP 2: NOMINAL MLBB -->
-            <div class="taka-step-container step-dimmed">
-                <div class="taka-step-header">
-                    <div class="taka-step-num">2</div>
-                    <div class="taka-step-title">Pilih Nominal</div>
-                </div>
-                <div class="taka-step-body">    
-
-                    <!-- KATEGORI PILLS (MLBB) -->
-                    <div class="category-pills" id="pills-mlbb">
-                        <button class="pill-btn active" onclick="filterKategori('mlbb', 'semua', this)">Semua</button>
-                        <button class="pill-btn" onclick="filterKategori('mlbb', 'diamond', this)">💎 Diamond</button>
-                        <button class="pill-btn" onclick="filterKategori('mlbb', 'pass', this)">🎟️ Pass & Member</button>
-                    </div>
-
-                    <div class="grid nominal-grid" data-game="mlbb">
-    <div class="card tilt-card" data-val="5 💎 (Rp 2.000)"><div class="inner"><div class="card-title">5 💎</div><div class="card-price">Rp 2.000</div></div></div>
-    <div class="card tilt-card" data-val="12 💎 (Rp 4.000)"><div class="inner"><div class="card-title">12 💎</div><div class="card-price">Rp 4.000</div></div></div>
-    <div class="card tilt-card" data-val="19 💎 (Rp 5.700)"><div class="inner"><div class="card-title">19 💎</div><div class="card-price">Rp 5.700</div></div></div>
-    <div class="card tilt-card" data-val="28 💎 (Rp 8.000)"><div class="inner"><div class="card-title">28 💎</div><div class="card-price">Rp 8.000</div></div></div>
-    <div class="card tilt-card" data-val="36 💎 (Rp 10.500)"><div class="inner"><div class="card-title">36 💎</div><div class="card-price">Rp 10.500</div></div></div>
-    <div class="card tilt-card" data-val="44 💎 (Rp 11.800)"><div class="inner"><div class="card-title">44 💎</div><div class="card-price">Rp 11.800</div></div></div>
-    <div class="card tilt-card" data-val="56 💎 (Rp 15.000)"><div class="inner"><div class="card-title">56 💎</div><div class="card-price">Rp 15.000</div></div></div>
-    <div class="card tilt-card" data-val="59 💎 (Rp 15.500)"><div class="inner"><div class="card-title">59 💎</div><div class="card-price">Rp 15.500</div></div></div>
-    <div class="card tilt-card" data-val="86 💎 (Rp 22.000)"><div class="inner"><div class="card-title">86 💎</div><div class="card-price">Rp 22.000</div></div></div>
-    <div class="card tilt-card" data-val="112 💎 (Rp 29.500)"><div class="inner"><div class="card-title">112 💎</div><div class="card-price">Rp 29.500</div></div></div>
-    <div class="card tilt-card" data-val="172 💎 (Rp 45.000)"><div class="inner"><div class="card-title">172 💎</div><div class="card-price">Rp 45.000</div></div></div>
-    <div class="card tilt-card" data-val="185 💎 (Rp 47.000)"><div class="inner"><div class="card-title">185 💎</div><div class="card-price">Rp 47.000</div></div></div>
-    <div class="card tilt-card" data-val="257 💎 (Rp 65.500)"><div class="inner"><div class="card-title">257 💎</div><div class="card-price">Rp 65.500</div></div></div>
-    <div class="card tilt-card" data-val="296 💎 (Rp 75.000)"><div class="inner"><div class="card-title">296 💎</div><div class="card-price">Rp 75.000</div></div></div>
-    <div class="card tilt-card" data-val="344 💎 (Rp 90.000)"><div class="inner"><div class="card-title">344 💎</div><div class="card-price">Rp 90.000</div></div></div>
-    <div class="card tilt-card" data-val="429 💎 (Rp 110.000)"><div class="inner"><div class="card-title">429 💎</div><div class="card-price">Rp 110.000</div></div></div>
-    <div class="card tilt-card" data-val="514 💎 (Rp 132.500)"><div class="inner"><div class="card-title">514 💎</div><div class="card-price">Rp 132.500</div></div></div>
-    <div class="card tilt-card" data-val="600 💎 (Rp 152.000)"><div class="inner"><div class="card-title">600 💎</div><div class="card-price">Rp 152.000</div></div></div>
-    <div class="card tilt-card" data-val="706 💎 (Rp 177.500)"><div class="inner"><div class="card-title">706 💎</div><div class="card-price">Rp 177.500</div></div></div>
-    <div class="card tilt-card" data-val="875 💎 (Rp 218.000)"><div class="inner"><div class="card-title">875 💎</div><div class="card-price">Rp 218.000</div></div></div>
-    <div class="card tilt-card" data-val="963 💎 (Rp 239.000)"><div class="inner"><div class="card-title">963 💎</div><div class="card-price">Rp 239.000</div></div></div>
-    <div class="card tilt-card" data-val="1050 💎 (Rp 262.000)"><div class="inner"><div class="card-title">1050 💎</div><div class="card-price">Rp 262.000</div></div></div>
-    <div class="card tilt-card" data-val="1220 💎 (Rp 316.500)"><div class="inner"><div class="card-title">1220 💎</div><div class="card-price">Rp 316.500</div></div></div>
-    <div class="card tilt-card" data-val="1412 💎 (Rp 365.000)"><div class="inner"><div class="card-title">1412 💎</div><div class="card-price">Rp 365.000</div></div></div>
-    <div class="card tilt-card" data-val="2195 💎 (Rp 536.000)"><div class="inner"><div class="card-title">2195 💎</div><div class="card-price">Rp 536.000</div></div></div>
-    
-    <!-- Membership & Pass -->
-    <div class="card tilt-card" data-val="1x Weekly Pass (Rp 28.250)">
-        <div class="badge-hot"><i class="fas fa-fire"></i> Paling Laris</div>
-        <div class="inner"><div class="card-title">1x Weekly Pass</div><div class="card-price">Rp 28.250</div></div>
-    </div>
-        <div class="card tilt-card" data-val="2x Weekly Pass (Rp 55.500)"><div class="inner"><div class="card-title">2x Weekly Pass</div><div class="card-price">Rp 55.500</div></div></div>
-    <div class="card tilt-card" data-val="3x Weekly Pass (Rp 83.000)"><div class="inner"><div class="card-title">3x Weekly Pass</div><div class="card-price">Rp 83.000</div></div></div>        
-        <div class="card tilt-card" data-val="4x Weekly Pass (Rp 110.000)"><div class="inner"><div class="card-title">4x Weekly Pass</div><div class="card-price">Rp 110.000</div></div></div>
-            <div class="card tilt-card" data-val="5x Weekly Pass (Rp 138.000)"><div class="inner"><div class="card-title">5x Weekly Pass</div><div class="card-price">Rp 138.000</div></div></div>
-    <div class="card tilt-card" data-val="Starlight Membership (Rp 82.000)"><div class="inner"><div class="card-title">Starlight Membership</div><div class="card-price">Rp 82.000</div></div></div>
-    <div class="card tilt-card" data-val="Starlight Member Plus (Rp 198.000)"><div class="inner"><div class="card-title">Starlight Member Plus</div><div class="card-price">Rp 198.000</div></div></div>
-                    </div>
-                </div>
-            </div>
-            
-            </div> <!-- INI PENUTUP BUNGKUSAN MENU TOP UP -->
-
-            <!-- BUNGKUSAN MENU FITUR MENARIK (KALKULATOR) -->
-            <div id="mlbb-features-view" style="display: none;">
-                
-                <!-- KALKULATOR EVENT -->
-                <div class="calc-box" style="margin-bottom: 30px;">
-                    <h2 class="calc-title"><i class="fas fa-calculator"></i> Kalkulator Event MLBB</h2>
-                    <div class="calc-grid">
-                        <div class="calc-input">
-                            <label>Pilih Jenis Event</label>
-                            <select id="calc-type">
-                                <option value="magic">🔮 Magic Wheel (Maks 200 Poin)</option>
-                                <option value="zodiac">⭐ Zodiac Summon (Maks 100 Poin)</option>
-                            </select>
-                        </div>
-                        <div class="calc-input">
-                            <label>Poin Kamu Saat Ini</label>
-                            <input type="number" id="calc-points" placeholder="Contoh: 120">
-                        </div>
-                    </div>
-                    <button class="btn-calc" onclick="hitungEvent()">Hitung Kebutuhan 💎</button>
-                    <div class="calc-result" id="calc-result">
-                        <h4><i class="fas fa-check-circle"></i> Hasil Kalkulasi</h4>
-                        <p id="calc-desc"></p>
-                    </div>
-                </div>
-
-                <!-- KALKULATOR WINRATE MLBB -->
-                <div class="calc-box" style="margin-bottom: 30px;">
-                    <h2 class="calc-title"><i class="fas fa-percent"></i> Kalkulator WinRate MLBB</h2>
-                    <div class="calc-grid">
-                        <div class="calc-input">
-                            <label>Total Match Saat Ini</label>
-                            <input type="number" id="wr-total-match" placeholder="Contoh: 150">
-                        </div>
-                        <div class="calc-input">
-                            <label>WinRate Saat Ini (%)</label>
-                            <input type="number" id="wr-current" placeholder="Contoh: 50.5" step="0.1">
-                        </div>
-                        <div class="calc-input" style="grid-column: 1 / -1;">
-                            <label>Target WinRate (%)</label>
-                            <input type="number" id="wr-target" placeholder="Contoh: 60" step="0.1">
-                        </div>
-                    </div>
-                    <button class="btn-calc" onclick="hitungWR()">Hitung Kebutuhan Win</button>
-                    <div class="calc-result" id="wr-result">
-                        <h4><i class="fas fa-check-circle"></i> Hasil Kalkulasi</h4>
-                        <p id="wr-desc"></p>
-                    </div>
-                </div>
-                
-            </div> <!-- INI PENUTUP BUNGKUSAN MENU FITUR MENARIK -->
-
-        </div> <!-- Ini penutup kardus MLBB -->
-
-        <!-- ==================== FF CONTENT ==================== -->
-        <div id="content-ff" class="tab-content">
-            <!-- BANNER ALA TAKAPEDIA -->
-            <div class="taka-banner" id="game-banner-ff" style="display: none;">
-                <div class="taka-banner-top">
-                    <img src="bg-ff.png" alt="Free Fire" class="taka-banner-logo">
-                    <div class="taka-banner-text">
-                        <h2>Free Fire</h2>
-                        <p>Garena</p>
-                    </div>
-                </div>
-                <div class="taka-banner-features">
-                    <span><i class="fas fa-bolt"></i> Proses Otomatis</span>
-                    <span><i class="fas fa-headset"></i> CS 08:00 - 22:00</span>
-                    <span><i class="fas fa-check-circle"></i> 100% Aman & Legal</span>
-                </div>
-            </div>
-
-            <!-- STEP 1: AKUN FF -->
-            <div class="taka-step-container">
-                <div class="taka-step-header">
-                    <div class="taka-step-num">1</div>
-                    <div class="taka-step-title">Masukkan Data Akun</div>
-                </div>
-                <div class="taka-step-body">
-                    <div class="taka-input-row">
-                        <div class="taka-input-group">
-                            <label>User ID</label>
-                            <input type="number" id="ff-id" placeholder="Masukkan ID">
-                        </div>
-                    </div>
-
-                    <!-- FITUR CEK ID ILUSI (FF) -->
-                    <button id="btn-cek-ff" class="btn-outline" style="width: 100%; margin-top: 15px; padding: 10px; border-radius: 8px; font-size: 0.9rem;" onclick="cekIdIlusi('ff')">Cek ID Server</button>
-                    <div id="hasil-cek-ff" style="margin-top: 10px; font-size: 0.85rem; font-weight: 600; text-align: center; display: none;"></div>
-
-                    <small class="disclaimer-text" style="margin-top: 15px;">
-                        <i class="fas fa-shield-alt"></i> Pastikan User ID benar. Kesalahan bukan tanggung jawab kami.
-                    </small>
-                </div>
-            </div>
-
-            <!-- STEP 2: NOMINAL FF -->
-            <div class="taka-step-container step-dimmed">
-                <div class="taka-step-header">
-                    <div class="taka-step-num">2</div>
-                    <div class="taka-step-title">Pilih Nominal</div>
-                </div>
-                <div class="taka-step-body">    
-
-                    <!-- KATEGORI PILLS (FF) -->
-                    <div class="category-pills" id="pills-ff">
-                        <button class="pill-btn active" onclick="filterKategori('ff', 'semua', this)">Semua</button>
-                        <button class="pill-btn" onclick="filterKategori('ff', 'diamond', this)">💎 Diamond</button>
-                        <button class="pill-btn" onclick="filterKategori('ff', 'pass', this)">🎟️ Pass & Member</button>
-                    </div>
-
-                    <div class="grid nominal-grid" data-game="ff">
-    <div class="card tilt-card" data-val="5 💎 (Rp 1.000)"><div class="inner"><div class="card-title">5 💎</div><div class="card-price">Rp 1.000</div></div></div>
-    <div class="card tilt-card" data-val="12 💎 (Rp 2.000)"><div class="inner"><div class="card-title">12 💎</div><div class="card-price">Rp 2.000</div></div></div>
-    <div class="card tilt-card" data-val="50 💎 (Rp 7.000)"><div class="inner"><div class="card-title">50 💎</div><div class="card-price">Rp 7.000</div></div></div>
-    <div class="card tilt-card" data-val="70 💎 (Rp 9.500)"><div class="inner"><div class="card-title">70 💎</div><div class="card-price">Rp 9.500</div></div></div>
-    <div class="card tilt-card" data-val="100 💎 (Rp 13.000)"><div class="inner"><div class="card-title">100 💎</div><div class="card-price">Rp 13.000</div></div></div>
-    <div class="card tilt-card" data-val="140 💎 (Rp 18.000)"><div class="inner"><div class="card-title">140 💎</div><div class="card-price">Rp 18.000</div></div></div>
-    <div class="card tilt-card" data-val="210 💎 (Rp 26.500)"><div class="inner"><div class="card-title">210 💎</div><div class="card-price">Rp 26.500</div></div></div>
-    <div class="card tilt-card" data-val="355 💎 (Rp 44.000)"><div class="inner"><div class="card-title">355 💎</div><div class="card-price">Rp 44.000</div></div></div>
-    <div class="card tilt-card" data-val="500 💎 (Rp 63.700)"><div class="inner"><div class="card-title">500 💎</div><div class="card-price">Rp 63.700</div></div></div>
-    <div class="card tilt-card" data-val="720 💎 (Rp 89.000)"><div class="inner"><div class="card-title">720 💎</div><div class="card-price">Rp 89.000</div></div></div>
-    <div class="card tilt-card" data-val="1000 💎 (Rp 125.000)"><div class="inner"><div class="card-title">1000 💎</div><div class="card-price">Rp 125.000</div></div></div>
-    <div class="card tilt-card" data-val="1450 💎 (Rp 178.000)"><div class="inner"><div class="card-title">1450 💎</div><div class="card-price">Rp 178.000</div></div></div>
-    <div class="card tilt-card" data-val="2180 💎 (Rp 269.000)"><div class="inner"><div class="card-title">2180 💎</div><div class="card-price">Rp 269.000</div></div></div>
-    <div class="card tilt-card" data-val="3640 💎 (Rp 448.000)"><div class="inner"><div class="card-title">3640 💎</div><div class="card-price">Rp 448.000</div></div></div>
-    <div class="card tilt-card" data-val="7290 💎 (Rp 890.000)"><div class="inner"><div class="card-title">7290 💎</div><div class="card-price">Rp 890.000</div></div></div>
-    
-    <!-- Membership & Pass -->
-    <div class="card tilt-card" data-val="Membership Mingguan (Rp 28.000)"><div class="inner"><div class="card-title">Membership Mingguan</div><div class="card-price">Rp 28.000</div></div></div>
-    <div class="card tilt-card" data-val="Membership Bulanan (Rp 82.00)"><div class="inner"><div class="card-title">Membership Bulanan</div><div class="card-price">Rp 82.000</div></div></div>
-    <div class="card tilt-card" data-val="Booyah Pass (Rp 41.000)"><div class="inner"><div class="card-title">Booyah Pass</div><div class="card-price">Rp 41.000</div></div></div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- Ini penutup kardus FF -->
-
-        <!-- ==================== GLOBAL STEPS 3 & 4 ==================== -->
-        <div class="global-steps" id="global-steps" style="display: none;">
-            
-            <!-- STEP 3: PEMBAYARAN -->
-            <div class="taka-step-container">
-                <div class="taka-step-header">
-                    <div class="taka-step-num" style="background:var(--primary); color:#000;">3</div>
-                    <div class="taka-step-title">Pilih Pembayaran</div>
-                </div>
-                <div class="taka-step-body" style="padding: 15px;">
-                    
-                    <!-- QRIS (ACCORDION) -->
-                    <div class="taka-pay-item" data-method="QRIS">
-                        <div class="taka-ribbon">BEST PRICE</div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div class="taka-pay-title" style="margin-bottom: 0;">QRIS (Semua Payment)</div>
-                            <i class="fas fa-chevron-down pay-chevron"></i>
-                        </div>
-                        <div class="taka-pay-body">
-                            <div class="taka-pay-logos" style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-qrcode" style="font-size: 1.4rem;"></i>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA" style="height: 16px;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg" alt="GoPay" style="height: 16px;">
-                                <span style="font-weight: 900; font-style: italic; font-size: 0.9rem; letter-spacing: 0.5px;">ShopeePay</span>
-                                <span style="font-weight: 900; font-size: 0.9rem; letter-spacing: 1px;">OVO</span>
-                            </div>
-                            <div class="taka-pay-desc" style="color: #E11D48; text-align: center; margin-top: 15px; background: rgba(225,29,72,0.1); padding: 5px; border-radius: 5px;">Satu QR Code untuk semua Payment</div>
-                        </div>
-                    </div>
-
-                    <!-- E-Wallet (ACCORDION) -->
-                    <div class="taka-pay-item" data-method="E-Wallet">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div class="taka-pay-title" style="margin-bottom: 0;">E-Wallet</div>
-                            <i class="fas fa-chevron-down pay-chevron"></i>
-                        </div>
-                        <div class="taka-pay-body">
-                            <div class="taka-pay-logos" style="display: flex; align-items: center; gap: 12px;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA" style="height: 16px;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg" alt="GoPay" style="height: 16px;">
-                                <span style="font-weight: 900; font-style: italic; font-size: 0.9rem; letter-spacing: 0.5px;">ShopeePay</span>
-                                <span style="font-weight: 900; font-size: 0.9rem; letter-spacing: 1px;">OVO</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <!-- STEP 4: KONTAK -->
-            <div class="taka-step-container">
-                <div class="taka-step-header">
-                    <div class="taka-step-num" style="background:var(--primary); color:#000;">4</div>
-                    <div class="taka-step-title">Detail Kontak</div>
-                </div>
-                <div class="taka-step-body">
-                    <label style="color: #fff; font-weight: 600; font-size: 0.9rem;">No. WhatsApp</label>
-                    <div class="taka-wa-box">
-                        <div class="taka-wa-flag">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" style="width: 22px; border-radius: 2px;">
-                            <i class="fas fa-chevron-down" style="font-size: 0.7rem; color: var(--text-dim);"></i>
-                        </div>
-                        <input type="number" id="user-wa" class="taka-wa-input" placeholder="+62 Masukkan nomor WA...">
-                    </div>
-                    <p style="font-size: 0.75rem; font-style: italic; color: var(--text-dim); margin-top: 8px;">**Nomor ini akan dihubungi jika terjadi masalah</p>
-
-                    <div class="taka-contact-info">
-                        <i class="fas fa-info-circle" style="font-size: 0.9rem;"></i>
-                        <div>Pastikan nomor WhatsApp benar, agar kami bisa menghubungi jika transaksi bermasalah. Tulis tanpa angka 0 di depan. Contoh: 8960xxxx</div>
-                    </div>
-
-                    <a href="https://wa.me/6285757568455" target="_blank" style="text-decoration: none;">
-                        <div class="taka-contact-info" style="align-items: center; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
-                            <i class="fas fa-headset" style="font-size: 1.5rem; margin-right: 5px;"></i>
-                            <div>
-                                <strong style="color: #fff; display: block; margin-bottom: 2px;">Butuh Bantuan?</strong>
-                                Kamu bisa hubungi admin disini.
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="checkout-wrapper">
-                <button class="btn-checkout disabled-btn" id="btn-master-beli" onclick="prosesCheckout()">Pilih Nominal Dulu</button>
-            </div>
-            
-        </div> <!-- Ini penutup buat global-steps -->
-    </section>
-
-    <!-- Program Reseller VIP -->
-    <section class="reseller-section">
-        <div class="reseller-box">
-            <i class="fas fa-crown reseller-icon"></i>
-            <div class="reseller-content">
-                <h2>Join VIP Reseller</h2>
-                <p>Ingin jualan diamond dengan modal minim? Bergabunglah menjadi mitra Null Store dan nikmati harga khusus yang jauh lebih murah dari harga normal!</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Harga Khusus Reseller (Untung Lebih Gede)</li>
-                    <li><i class="fas fa-check-circle"></i> Tanpa Syarat Ribet, Langsung Jualan</li>
-                    <li><i class="fas fa-check-circle"></i> Prioritas Layanan CS VIP 24/7</li>
-                </ul>
-                <a href="https://wa.me/6285757568455?text=Halo%20Mimin%20Null%20Store%2C%20saya%20tertarik%20mau%20daftar%20jadi%20Reseller%20VIP!" target="_blank" class="btn-reseller">
-                    <i class="fab fa-whatsapp"></i> Daftar Sekarang
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- === SECTION TESTIMONI / ULASAN SLIDER === -->
-            <!-- === SECTION ULASAN TAKAPEDIA === -->
-    <section class="taka-step-container" id="ulasan" style="max-width: 900px; margin: 0 auto 50px;">
-        <div class="taka-step-header">
-            <!-- Ikon Bintang Kotak Kuning di kiri -->
-            <div class="taka-step-num" style="padding: 15px 22px;"><i class="fas fa-star" style="font-size: 1.1rem;"></i></div>
-            <div class="taka-step-title">Ulasan</div>
-        </div>
-        
-        <div class="taka-step-body">
-            <!-- Header Rating -->
-            <div class="taka-rating-header">
-                <div class="taka-rating-score"><i class="fas fa-star"></i> 4.9 <span>/ 5.0</span></div>
-                <p class="taka-rating-desc">Pelanggan merasa puas dengan produk ini.<br>Dari <b>128</b> ulasan.</p>
-            </div>
-            
-            <!-- Rating Bars (Garis Kuning) -->
-            <div class="taka-rating-bars">
-                <div class="taka-bar-row"><span>5</span><i class="fas fa-star"></i> <div class="taka-bar-line"><div class="taka-bar-fill" style="width: 90%;"></div></div> <span class="taka-bar-count">115</span></div>
-                <div class="taka-bar-row"><span>4</span><i class="fas fa-star"></i> <div class="taka-bar-line"><div class="taka-bar-fill" style="width: 7%;"></div></div> <span class="taka-bar-count">9</span></div>
-                <div class="taka-bar-row"><span>3</span><i class="fas fa-star"></i> <div class="taka-bar-line"><div class="taka-bar-fill" style="width: 2%;"></div></div> <span class="taka-bar-count">3</span></div>
-                <div class="taka-bar-row"><span>2</span><i class="fas fa-star"></i> <div class="taka-bar-line"><div class="taka-bar-fill" style="width: 1%;"></div></div> <span class="taka-bar-count">1</span></div>
-                <div class="taka-bar-row"><span>1</span><i class="fas fa-star"></i> <div class="taka-bar-line"><div class="taka-bar-fill" style="width: 0%;"></div></div> <span class="taka-bar-count">0</span></div>
-            </div>
-
-            <p style="color: var(--text-dim); text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Apakah kamu menyukai produk ini? Beri tahu kami dan calon pembeli lainnya tentang pengalamanmu.</p>
-
-            <!-- List Komentar Teks (Tanpa Avatar) -->
-            <div class="taka-review-list">
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">ran***</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">Weekly Diamonds Pass • <span class="tgl-otomatis" data-mundur="0">Hari ini</span></div>
-                    <div class="taka-review-text">“Puas banget topup disini, adminnya fast respon.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">rio*****</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">720 Diamonds Free Fire • <span class="tgl-otomatis" data-mundur="0">Hari ini</span></div>
-                    <div class="taka-review-text">“Mantap min, fast respon walaupun order jam 8 malem, lgsg masuk.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">put**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">86 Diamonds • <span class="tgl-otomatis" data-mundur="0">Hari ini</span></div>
-                    <div class="taka-review-text">“Langganan terus di Null Store, harga reseller beneran wkwk.”</div>
-                </div>
-                
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">bim*</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">257 Diamonds • <span class="tgl-otomatis" data-mundur="1">Kemarin</span></div>
-                    <div class="taka-review-text">“gileee sih, saking cepetnya masuk dm gue sampe kaget wkwk, blm ada 1mnt anjir”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">kev**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">Booyah Pass • <span class="tgl-otomatis" data-mundur="1">Kemarin</span></div>
-                    <div class="taka-review-text">“Akhirnya bisa beli booyah pass, makasih min proses cepet banget”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">nov**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">1x Weekly Pass • <span class="tgl-otomatis" data-mundur="1">Kemarin</span></div>
-                    <div class="taka-review-text">“Amanah 100%, jangan ragu beli disini gais.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">din*</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">Starlight Member • <span class="tgl-otomatis" data-mundur="2">Kemarin lusa</span></div>
-                    <div class="taka-review-text">“miminya ramah bgt sukakkk, luv bgt”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">faw**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">140 Diamonds Free Fire • <span class="tgl-otomatis" data-mundur="2">Kemarin lusa</span></div>
-                    <div class="taka-review-text">“gokil lu min”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">sar******</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">706 Diamonds • <span class="tgl-otomatis" data-mundur="3">3 hari lalu</span></div>
-                    <div class="taka-review-text">“Makasih min, langsung buat gacha event nih hehe.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">ega*****</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">3x Weekly Pass • <span class="tgl-otomatis" data-mundur="3">3 hari lalu</span></div>
-                    <div class="taka-review-text">“Murah parah dibanding yg laen”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">wah****</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">Membership Bulanan • <span class="tgl-otomatis" data-mundur="4">4 hari lalu</span></div>
-                    <div class="taka-review-text">“Joss gandoss kotos kotos, the best lah”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">ari***</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">28 Diamonds • <span class="tgl-otomatis" data-mundur="4">4 hari lalu</span></div>
-                    <div class="taka-review-text">“Walau beli dikit tetep dilayanin cepet, mantap bg.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">dew**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">Starlight Member Plus • <span class="tgl-otomatis" data-mundur="5">5 hari lalu</span></div>
-                    <div class="taka-review-text">“Terbaik emang, admin ramah bgt.”</div>
-                </div>
-
-                <div class="taka-review-item">
-                    <div class="taka-review-user">
-                        <span class="taka-review-name">fik**</span>
-                        <span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    </div>
-                    <div class="taka-review-product">500 Diamonds Free Fire • <span class="tgl-otomatis" data-mundur="5">5 hari lalu</span></div>
-                    <div class="taka-review-text">“Beliin buat adek main ff, order lgsg diproses. Sukses terus min.”</div>
-                </div>
-            </div>
-            
-            <button class="btn-outline" style="width: 100%; margin-top: 15px;" onclick="bukaModalUlasan()">Tulis Ulasan Kamu</button>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section" id="faq">
-        <h2 class="faq-header">Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <button class="faq-question">Berapa lama proses top up nya? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>Sistem kami terhubung langsung secara real-time. Jika tidak ada gangguan server dari pihak game, pesanan Anda akan masuk dalam hitungan detik hingga maksimal 5 menit.</p></div>
-        </div>
-        
-        <div class="faq-item">
-            <button class="faq-question">Apakah layanan ini aman dan legal? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>100% Aman dan Legal. Kami hanya menggunakan metode top up resmi via ID/Server tanpa perlu login, sehingga akun Anda dijamin 100% aman dan anti-banned.</p></div>
-        </div>
-
-        <!-- FAQ BARU 1 -->
-        <div class="faq-item">
-            <button class="faq-question">Metode pembayaran apa saja yang didukung? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>Kami menerima berbagai metode pembayaran otomatis yang memudahkan Anda. Mulai dari QRIS (Support All Payment), E-Wallet (DANA, GoPay, OVO, ShopeePay). Pembayaran akan terverifikasi secara otomatis oleh sistem.</p></div>
-        </div>
-
-        <!-- FAQ BARU 2 -->
-        <div class="faq-item">
-            <button class="faq-question">Bagaimana jika saya salah memasukkan User ID? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>Mohon teliti dan pastikan kembali User ID / Server game Anda sudah benar sebelum melakukan konfirmasi pembayaran. Kesalahan input ID murni kelalaian pembeli dan pesanan yang sudah diproses tidak dapat dibatalkan atau di-refund.</p></div>
-        </div>
-
-        <!-- FAQ BARU 3 -->
-        <div class="faq-item">
-            <button class="faq-question">Apakah sistem dan Customer Service aktif 24 Jam? <i class="fas fa-chevron-down"></i></button>
-            <div class="faq-answer"><p>Sistem top up kami berjalan otomatis 24 Jam penuh (24/7). Anda bebas transaksi jam berapapun. Namun, untuk layanan Customer Service (WhatsApp), tim kami aktif membantu kendala Anda mulai dari pukul 08:00 hingga 22:00 WIB.</p></div>
-        </div>        
-    </section>
-
-
-    <!-- === BANNER MITRA PEMBAYARAN (JALAN OTOMATIS) === -->
-    <section class="payment-partners">
-        <h3 class="partners-title">Mendukung Berbagai Metode Pembayaran</h3>
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <!-- SET PERTAMA (5 Item Murni E-Wallet & QRIS) -->
-                <div class="partner-item"><i class="fas fa-qrcode"></i> QRIS ALL</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #118EEA;"></i> DANA</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #00AED6;"></i> GoPay</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #4C3494;"></i> OVO</div>
-                <div class="partner-item"><i class="fas fa-shopping-bag" style="color: #EE4D2D;"></i> ShopeePay</div>
-                
-                <!-- SET KEDUA (Duplikat) -->
-                <div class="partner-item"><i class="fas fa-qrcode"></i> QRIS ALL</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #118EEA;"></i> DANA</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #00AED6;"></i> GoPay</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #4C3494;"></i> OVO</div>
-                <div class="partner-item"><i class="fas fa-shopping-bag" style="color: #EE4D2D;"></i> ShopeePay</div>
-
-                <!-- SET KETIGA (Biar putarannya panjang dan gak putus) -->
-                <div class="partner-item"><i class="fas fa-qrcode"></i> QRIS ALL</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #118EEA;"></i> DANA</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #00AED6;"></i> GoPay</div>
-                <div class="partner-item"><i class="fas fa-wallet" style="color: #4C3494;"></i> OVO</div>
-                <div class="partner-item"><i class="fas fa-shopping-bag" style="color: #EE4D2D;"></i> ShopeePay</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <div class="footer-brand">Null<span>Store.</span></div>
-                <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 20px; max-width: 300px;">Platform Top Up Game Terpercaya. Elevasi pengalaman bermainmu tanpa batasan.</p>
-            </div>
-         <div class="footer-links">
-             <h4>Social Media</h4>
-             <a href="https://www.instagram.com/null.topup?igsh=MTJiZzdrd3N0MzhlOA==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-             <a href="https://www.tiktok.com/@nullstore.id?_r=1&_t=ZS-96tYpcAFGJI" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-             <a href="https://chat.whatsapp.com/KA6cAAofwQ9JEwym9pIBHQ?s=cl&p=a&mlu=3" target="_blank"><i class="fab fa-whatsapp"></i> Grup Komunitas</a>
-         </div>
-         <div class="footer-links">
-             <h4>Pusat Bantuan</h4>
-             <a href="https://wa.me/6285757568455" target="_blank"><i class="fas fa-headset"></i> Customer Service</a>
-             <a href="mailto:nullstoregaming@gmail.com"><i class="fas fa-envelope"></i> Email Support</a>
-         </div>
-        </div>
-        <div class="copyright">&copy; 2026 Null Store By Ainul Riskian. Crafted with <i class="fas fa-heart" style="color:var(--ff)"></i> & Advanced Tech.</div>
-    </footer>
-
-    <!-- === MODAL KONFIRMASI PESANAN (INVOICE STRUK) === -->
-    <div class="modal-overlay" id="modal-invoice">
-        <div class="modal-box" style="padding: 0; overflow: hidden; max-width: 380px;">
-            <div style="background: linear-gradient(90deg, #0B0F19, #161D2E); padding: 20px; border-bottom: 1px solid var(--glass-border); text-align: center; position: relative;">
-                <button class="close-modal" onclick="tutupModalInvoice()" style="top: 15px; right: 15px;"><i class="fas fa-times"></i></button>
-                <h3 style="color: #fff; font-family: 'Syne', sans-serif; font-size: 1.2rem; margin: 0;">Konfirmasi Pesanan</h3>
-            </div>
-            <div style="padding: 20px;">
-                <!-- Tambahan Baris Nomor Resi -->
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 10px;">
-                    <span style="color: var(--text-dim); font-size: 0.9rem;">No. Pesanan</span>
-                    <strong style="color: var(--success); font-size: 0.9rem;" id="inv-resi">-</strong>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 10px;">
-                    <span style="color: var(--text-dim); font-size: 0.9rem;">Game</span>
-                    <strong style="color: #fff; font-size: 0.9rem;" id="inv-game">-</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 10px;">
-                    <span style="color: var(--text-dim); font-size: 0.9rem;">ID / Server</span>
-                    <strong style="color: #fff; font-size: 0.9rem;" id="inv-id">-</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 10px;">
-                    <span style="color: var(--text-dim); font-size: 0.9rem;">Item</span>
-                    <strong style="color: var(--primary); font-size: 0.9rem;" id="inv-item">-</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 10px;">
-                    <span style="color: var(--text-dim); font-size: 0.9rem;">Pembayaran</span>
-                    <strong style="color: #fff; font-size: 0.9rem;" id="inv-pay">-</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; background: rgba(0, 225, 255, 0.1); padding: 15px; border-radius: 8px; border: 1px solid var(--primary);">
-                    <span style="color: #fff; font-size: 1rem; font-weight: 600;">Total Harga</span>
-                    <strong style="color: var(--primary); font-size: 1.1rem; font-family: 'Syne', sans-serif;" id="inv-total">-</strong>
-                </div>
-                <button class="btn-submit-review" onclick="lanjutBayarWA()" id="btn-lanjut-wa">Lanjut Bayar <i class="fab fa-whatsapp"></i></button>
-            </div>
-        </div>
+        <button class="btn-buy cyber-font" onclick="initiateSequence()">INITIALIZE CHECKOUT <i class="fas fa-angle-double-right"></i></button>
     </div>
 
-    <!-- KOTAK POP UP ISI ULASAN (Dipindah ke luar footer) -->
-    <div class="modal-overlay" id="modal-ulasan">
-        <div class="modal-box">
-            <button class="close-modal" onclick="tutupModalUlasan()"><i class="fas fa-times"></i></button>
-            <h3 class="modal-title">Tulis Ulasan Kamu</h3>
-            <div class="input-box">
-                <input type="text" id="ulasan-nama" placeholder="Nama Akun (Contoh: Bima S**)">
-            </div>
-            <div class="input-box">
-                <textarea id="ulasan-teks" placeholder="Kasih tau dong gimana rasanya top up di Null Store..."></textarea>
-            </div>
-            <button class="btn-submit-review" onclick="kirimUlasan()">Kirim Ulasan <i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
+    <!-- SYSTEM ALERTS -->
+    <div id="system-toast"></div>
 
     <script>
-        // State Management
-        let currentGame = 'mlbb';
-        let selectedNominal = null;
-        let selectedPayment = null;
+        let activeSystem = 'mlbb';
+        let orderData = { item: null, price: 'Rp 0', payment: null };
 
-        // FITUR ANGKA JALAN 
-        const counters = document.querySelectorAll('.stat-num');
-        function startCounter() {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const inc = target / 50;
-                let count = 0;
-                const updateCount = () => {
-                    count += inc;
-                    if (count < target) { counter.innerText = Math.ceil(count); setTimeout(updateCount, 30); } 
-                    else { counter.innerText = target; }
-                };
-                updateCount();
+        // FUNGSI SWITCH GAME TAB
+        function switchSystem(sysId, element) {
+            activeSystem = sysId;
+            
+            // UI Tab Update
+            document.querySelectorAll('.cyber-tab').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+
+            // UI Content Update
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('sys-' + sysId).classList.add('active');
+
+            // Reset Selections
+            resetSelections();
+            playSfx(800, 1200, 0.05); // Suara klik tab
+        }
+
+        // FUNGSI KLIK KARTU CYBER
+        document.querySelectorAll('.cyber-card').forEach(card => {
+            card.addEventListener('click', function() {
+                playSfx(1000, 1500, 0.1); // Suara klik kartu
+                let type = this.parentElement.getAttribute('data-type');
+                
+                // Hapus state aktif di grid yang sama
+                this.parentElement.querySelectorAll('.cyber-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+
+                if(type === 'item') {
+                    orderData.item = this.getAttribute('data-val');
+                    orderData.price = this.getAttribute('data-price');
+                    document.getElementById('final-price').innerText = orderData.price;
+                } else if(type === 'payment') {
+                    orderData.payment = this.getAttribute('data-method');
+                }
             });
-        }
-        setTimeout(startCounter, 500);
+        });
 
-        function showToast(type, message) {
-            const container = document.getElementById('toast-container');
-            const toast = document.createElement('div');
-            const color = type === 'error' ? 'var(--error)' : 'var(--primary)';
+        function resetSelections() {
+            orderData = { item: null, price: 'Rp 0', payment: null };
+            document.querySelectorAll('.cyber-card').forEach(c => c.classList.remove('selected'));
+            document.getElementById('final-price').innerText = 'Rp 0';
+        }
+
+        // CUSTOM CYBER ALERT
+        function sysAlert(msg, type = 'success') {
+            const container = document.getElementById('system-toast');
+            const alert = document.createElement('div');
+            alert.className = `alert-box ${type}`;
+            
             const icon = type === 'error' ? 'fa-exclamation-triangle' : 'fa-check-circle';
-            const title = type === 'error' ? 'Peringatan Sistem' : 'Berhasil';
-
-            toast.className = 'live-toast';
-            toast.style.borderLeft = `4px solid ${color}`;
-            toast.innerHTML = `
-                <div class="toast-icon" style="color: ${color}; background: ${color}22;"><i class="fas ${icon}"></i></div>
-                <div class="toast-text"><p><b>${title}</b></p><span>${message}</span></div>
-            `;
-            container.appendChild(toast);
-            setTimeout(() => { toast.remove(); }, 4000);
+            alert.innerHTML = `<i class="fas ${icon}"></i> <span>${msg}</span>`;
+            
+            container.appendChild(alert);
+            setTimeout(() => { alert.remove(); }, 3500);
+            
+            if(type === 'error') playSfx(300, 100, 0.2); // Nada error turun
         }
 
-        // ==========================================
-        // FITUR PM: BUKA STRUK INVOICE
-        // ==========================================
-        function prosesCheckout() {
-            let gameName = '';
-            let accountData = '';
+        // FUNGSI PROSES CHECKOUT (KE WHATSAPP)
+        function initiateSequence() {
+            let accountId = '';
+            let waNum = document.getElementById('wa-number').value;
 
-            let tombolBeli = document.getElementById('btn-master-beli');
-            if(tombolBeli.classList.contains('disabled-btn')) return showToast('error', 'Selesaikan langkah-langkah di atas terlebih dahulu bosku!');
-
-            if (currentGame === 'mlbb') {
-                gameName = 'Mobile Legends';
-                const id = document.getElementById('mlbb-id').value;
-                const server = document.getElementById('mlbb-server').value;
-                if (!id) return showToast('error', 'User ID MLBB belum diisi!');
-                if (!server) return showToast('error', 'Server ID MLBB belum diisi!');
-                accountData = `${id} (${server})`;
-            } else if (currentGame === 'ff') {
-                gameName = 'Free Fire';
-                const id = document.getElementById('ff-id').value;
-                if (!id) return showToast('error', 'User ID Free Fire belum diisi!');
-                accountData = `${id}`;
+            // Validasi Akun berdasarkan Game
+            if(activeSystem === 'mlbb') {
+                let id = document.getElementById('ml-id').value;
+                let zone = document.getElementById('ml-zone').value;
+                if(!id || !zone) return sysAlert('Error: Target ID or Zone missing!', 'error');
+                accountId = `${id} (${zone})`;
+            } else {
+                let id = document.getElementById('ff-id').value;
+                if(!id) return sysAlert('Error: Target Player ID missing!', 'error');
+                accountId = id;
             }
 
-            if (!selectedNominal) return showToast('error', 'Pilih nominal top up terlebih dahulu!');
-            if (!selectedPayment) return showToast('error', 'Metode pembayaran belum dipilih!');
+            // Validasi Umum
+            if(!orderData.item) return sysAlert('Error: Payload (Diamond) not selected!', 'error');
+            if(!orderData.payment) return sysAlert('Error: Payment Gateway not selected!', 'error');
+            if(!waNum) return sysAlert('Error: Contact Node (WhatsApp) missing!', 'error');
 
-            const wa = document.getElementById('user-wa').value;
-            if (!wa) return showToast('error', 'Nomor WhatsApp belum diisi!');
+            // Animasi Loading Tombol
+            const btn = document.querySelector('.btn-buy');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ESTABLISHING LINK...`;
+            sysAlert('Sequence Initiated. Routing to secure gateway...', 'success');
 
-            // Generate Resi Otomatis (Format: INV-Random)
-            let resi = "INV-" + Math.floor(Math.random() * 900000 + 100000);
-            document.getElementById('inv-resi').innerText = resi;
+            // Format Pesan WA
+            let message = `*CYBER ORDER NODE*\n` +
+                          `Game: ${activeSystem.toUpperCase()}\n` +
+                          `Target ID: ${accountId}\n` +
+                          `Payload: ${orderData.item}\n` +
+                          `Total: ${orderData.price}\n` +
+                          `Gateway: ${orderData.payment}\n\n` +
+                          `_Execute order._`;
 
-            // Masukin data ke Struk Modal
-            document.getElementById('inv-game').innerText = gameName;
-            document.getElementById('inv-id').innerText = accountData;
-            document.getElementById('inv-item').innerText = selectedNominal;
-            document.getElementById('inv-pay').innerText = selectedPayment;
-            
-            let activeCard = document.querySelector('.nominal-grid[data-game="'+currentGame+'"] .card.selected');
-            document.getElementById('inv-total').innerText = activeCard ? activeCard.querySelector('.card-price').innerText : '-';
+            let waLink = `https://wa.me/6285757568455?text=${encodeURIComponent(message)}`;
 
-            // Tampilkan Modal Struk
-            document.getElementById('modal-invoice').style.display = 'flex';
-        }
-
-        // ==========================================
-        // FITUR PM: LANJUT BAYAR KE WHATSAPP
-        // ==========================================
-        window.lanjutBayarWA = function() {
-            let btnWa = document.getElementById('btn-lanjut-wa');
-            let teksAsli = btnWa.innerHTML;
-            btnWa.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menyiapkan...`;
-            btnWa.style.pointerEvents = 'none';
-
-            let resiBaru = document.getElementById('inv-resi').innerText;
-            let gameName = document.getElementById('inv-game').innerText;
-            let accountData = document.getElementById('inv-id').innerText;
-            
-            const targetWaNumber = '6285757568455';
-            const formatPesan = `🛒 *NULL STORE | ORDER BARU*\n` +
-                                `🧾 *Resi: ${resiBaru}*\n\n` +
-                                `Game       : ${gameName}\n` +
-                                `ID/Server  : ${accountData}\n` +
-                                `Pesanan    : ${selectedNominal}\n` +
-                                `Pembayaran : ${selectedPayment}\n\n` +
-                                `Halo min, ini detail orderan saya. Ditunggu instruksi pembayarannya ya.`;
-                                
-            const encodedText = encodeURIComponent(formatPesan);
-            const urlWhatsApp = `https://wa.me/${targetWaNumber}?text=${encodedText}`;
-            
+            // Eksekusi buka WA setelah delay efek loading
             setTimeout(() => {
-                window.open(urlWhatsApp, '_blank');
-                btnWa.innerHTML = teksAsli;
-                btnWa.style.pointerEvents = 'auto';
-                document.getElementById('modal-invoice').style.display = 'none';
+                window.open(waLink, '_blank');
+                btn.innerHTML = originalText; // Kembalikan teks asli
             }, 1500);
         }
 
-        window.tutupModalInvoice = function() {
-            document.getElementById('modal-invoice').style.display = 'none';
-        }
-
-        // Fake Live Purchase
-        const toastContainerLive = document.getElementById('toast-container');
-        const items = ['19 Diamond MLBB', '86 Diamond MLBB', '1x Weekly Pass MLBB', '50 Diamond Free Fire', 'Booyah Pass FF'];
-        function spawnLiveToast() {
-            const phoneStr = '08' + Math.floor(Math.random() * 90 + 10) + '****' + Math.floor(Math.random() * 900 + 100);
-            const itemStr = items[Math.floor(Math.random() * items.length)];
-            const toast = document.createElement('div');
-            toast.className = 'live-toast';
-            toast.style.borderLeft = '4px solid var(--primary)';
-            toast.innerHTML = `<div class="toast-icon" style="color: var(--primary); background: rgba(0, 225, 255, 0.1);"><i class="fas fa-shopping-cart"></i></div><div class="toast-text"><p><b>${phoneStr}</b> baru saja order</p><span>${itemStr} • Beberapa detik lalu</span></div>`;
-            toastContainerLive.appendChild(toast);
-            setTimeout(() => { toast.remove(); }, 5000);
-            setTimeout(spawnLiveToast, Math.floor(Math.random() * 45000) + 45000);
-        }
-        setTimeout(spawnLiveToast, 30000);
-        
-        function toggleMenu() { document.getElementById("mobileMenu").classList.toggle("active"); }
-        function updateClock() {
-            const now = new Date();
-            const clockEl = document.getElementById('live-clock');
-            if(clockEl) clockEl.innerText = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-        }
-        setInterval(updateClock, 1000); updateClock();
-        
-        function hitungEvent() {
-            const type = document.getElementById('calc-type').value;
-            const pointsStr = document.getElementById('calc-points').value;
-            const resultBox = document.getElementById('calc-result');
-            const descEl = document.getElementById('calc-desc');
-            if (!pointsStr || pointsStr < 0) return showToast('error', 'Masukkan jumlah poin yang benar!');
-            
-            let points = parseInt(pointsStr), sisaPoin = 0, estDiamond = 0, textOutput = '';
-            if (type === 'magic') {
-                if (points >= 200) textOutput = 'Poin sudah maksimal!';
-                else { sisaPoin = 200 - points; estDiamond = (Math.floor(sisaPoin / 5) * 270) + ((sisaPoin % 5) * 60); textOutput = `Kamu butuh <b>${sisaPoin}</b> poin lagi.<br>Estimasi diamond: <b>~${estDiamond} 💎</b>`; }
-            } else if (type === 'zodiac') {
-                if (points >= 100) textOutput = 'Poin sudah maksimal!';
-                else { sisaPoin = 100 - points; estDiamond = sisaPoin * 20; textOutput = `Kamu butuh <b>${sisaPoin}</b> poin lagi.<br>Estimasi diamond: <b>~${estDiamond} 💎</b>`; }
-            }
-            descEl.innerHTML = textOutput; resultBox.style.display = 'block';
-        }
-
-        function toggleTheme() {
-            const body = document.body; const themeBtn = document.getElementById('theme-btn');
-            body.classList.toggle('light-mode');
-            if (body.classList.contains('light-mode')) { themeBtn.innerHTML = '<i class="fas fa-moon"></i>'; themeBtn.style.color = '#000'; } 
-            else { themeBtn.innerHTML = '<i class="fas fa-sun"></i>'; themeBtn.style.color = '#fff'; }
-        }
-        
-        function resetFocusStep() {
-            document.querySelectorAll('.taka-step-container').forEach(step => {
-                if (step.id === 'ulasan') return; 
-                let titleNum = step.querySelector('.taka-step-num').innerText;
-                if(titleNum !== "1") step.classList.add('step-dimmed'); else step.classList.remove('step-dimmed');
-            });
-        }
-
-        let katalogML = document.querySelector('.nominal-grid[data-game="mlbb"]');
-        let katalogFF = document.querySelector('.nominal-grid[data-game="ff"]');
-        let inputML = document.getElementById('mlbb-id');
-        let inputFF = document.getElementById('ff-id');
-
-        if(katalogML) katalogML.classList.add('katalog-terkunci');
-        if(katalogFF) katalogFF.classList.add('katalog-terkunci');
-
-        window.bukaGembok = function() {
-            if (inputML && inputML.value.length >= 5) {
-                katalogML.classList.remove('katalog-terkunci');
-                katalogML.closest('.taka-step-container').classList.remove('step-dimmed');
-            } else if (inputML) katalogML.classList.add('katalog-terkunci');
-        };
-
-        if (inputFF) {
-            inputFF.addEventListener('input', function() {
-                if (this.value.length >= 5) {
-                    katalogFF.classList.remove('katalog-terkunci');
-                    katalogFF.closest('.taka-step-container').classList.remove('step-dimmed');
-                } else katalogFF.classList.add('katalog-terkunci');
-                
-                // AUTO CEK ID FF (Nge-cek sendiri pas udah ngetik 8 angka)
-                if (this.value.length >= 8) {
-                    clearTimeout(window.ffTimer);
-                    window.ffTimer = setTimeout(() => { cekIdIlusi('ff'); }, 800);
-                }
-            });
-        }
-
-        // AUTO CEK ID MLBB (Nge-cek sendiri pas kolom Server selesai diketik)
-        let inputMLServer = document.getElementById('mlbb-server');
-        if(inputMLServer) {
-            inputMLServer.addEventListener('input', function() {
-                if(this.value.length >= 4 && inputML && inputML.value.length >= 5) {
-                    clearTimeout(window.mlTimer);
-                    window.mlTimer = setTimeout(() => { cekIdIlusi('mlbb'); }, 800);
-                }
-            });
-        }
-
-        window.cariItemLive = function() {
-            let ketikan = document.getElementById('inputCariItem').value.toLowerCase();
-            let gridAktif = document.querySelector('.tab-content.active .nominal-grid');
-            if(!gridAktif) return; 
-            gridAktif.querySelectorAll('.card').forEach(kartu => {
-                let namaItem = kartu.getAttribute('data-val').toLowerCase();
-                if (namaItem.includes(ketikan)) kartu.style.display = ''; else kartu.style.display = 'none';
-            });
-        };
-
-        function switchTab(tabId, element) {
-            currentGame = tabId;
-            document.querySelectorAll('.game-card').forEach(b => b.classList.remove('active'));
-            if(element) element.classList.add('active');
-            
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.taka-banner').forEach(b => b.style.display = 'none');
-            
-            selectedNominal = null; selectedPayment = null;
-            document.querySelectorAll('.nominal-grid .card, .taka-pay-item').forEach(c => c.classList.remove('selected'));
-            
-            let tombolBeli = document.getElementById('btn-master-beli');
-            if(tombolBeli) {
-                tombolBeli.classList.add('disabled-btn');
-                tombolBeli.innerHTML = `Pilih Nominal Dulu`;
-            }
-            
-            let globalSteps = document.getElementById('global-steps');
-            let searchBox = document.getElementById('liveSearchBox');
-            let bgGame = document.getElementById('game-bg');
-            
-            if(tabId === 'beranda') {
-                if(globalSteps) globalSteps.style.display = 'none';
-                if(searchBox) searchBox.style.display = 'none';
-                if(bgGame) bgGame.style.backgroundImage = 'none'; 
-            } else {
-                let contentGame = document.getElementById('content-' + tabId);
-                let bannerGame = document.getElementById('game-banner-' + tabId);
-                
-                if(contentGame) contentGame.classList.add('active');
-                if(bannerGame) bannerGame.style.display = 'flex';
-                if(globalSteps) globalSteps.style.display = 'block';
-                
-                if(searchBox) {
-                    searchBox.style.display = 'block';
-                    document.getElementById('inputCariItem').value = ''; 
-                    document.querySelectorAll('.nominal-grid .card').forEach(k => k.style.display = '');
-                }
-                
-                if(bgGame) bgGame.style.backgroundImage = `url('bg-${tabId}.png')`;
-
-                resetFocusStep();
-                if(tabId === 'mlbb') if (typeof switchMLBBView === 'function') switchMLBBView('topup');
-
-                let gridCards = document.querySelectorAll('.nominal-grid[data-game="'+tabId+'"] .card');
-                gridCards.forEach(card => {
-                    card.classList.add('skeleton'); 
-                    setTimeout(() => { card.classList.remove('skeleton'); }, 800 + Math.random() * 500); 
-                });
-                
-                if(document.getElementById('pills-' + tabId)) {
-                    let pills = document.getElementById('pills-' + tabId).querySelectorAll('.pill-btn');
-                    pills.forEach(p => p.classList.remove('active'));
-                    pills[0].classList.add('active'); 
-                }
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => { switchTab('beranda'); });
-
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const parent = question.parentElement;
-                document.querySelectorAll('.faq-item').forEach(item => { if(item !== parent) item.classList.remove('active'); });
-                parent.classList.toggle('active');
-            });
-        });
-        
-        function playClickSound() {
+        // SIMPLE SYNTH AUDIO (EFEK SUARA SCI-FI)
+        function playSfx(startFreq, endFreq, vol) {
             try {
                 let ctx = new (window.AudioContext || window.webkitAudioContext)();
                 let osc = ctx.createOscillator();
-                let gainNode = ctx.createGain();
-                osc.type = 'sine'; osc.frequency.setValueAtTime(800, ctx.currentTime); osc.frequency.exponentialRampToValueAtTime(1500, ctx.currentTime + 0.1);
-                gainNode.gain.setValueAtTime(0.15, ctx.currentTime); gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
-                osc.connect(gainNode); gainNode.connect(ctx.destination);
+                let gain = ctx.createGain();
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(startFreq, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(endFreq, ctx.currentTime + 0.1);
+                gain.gain.setValueAtTime(vol, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+                osc.connect(gain); gain.connect(ctx.destination);
                 osc.start(); osc.stop(ctx.currentTime + 0.1);
-            } catch(e) {}
+            } catch(e) {} // Abaikan kalau browser gak support audio autoplay
         }
-
+        
+                // ==========================================
+        // CYBER REVENUE GENERATOR (FAKE OMSET)
         // ==========================================
-        // FITUR PM: ANIMASI ANGKA BERJALAN
-        // ==========================================
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                const current = Math.floor(easeOut * (end - start) + start);
-                
-                obj.innerHTML = `Total: Rp ${current.toLocaleString('id-ID')}`;
-                if (progress < 1) window.requestAnimationFrame(step);
-                else obj.innerHTML = `Total: Rp ${end.toLocaleString('id-ID')}`;
-            };
-            window.requestAnimationFrame(step);
-        }
+        function initCyberRevenue() {
+            // Ambil data dari LocalStorage (Memori HP). Mulai dari 0 kalau belum ada.
+            let currentRevenue = parseInt(localStorage.getItem('cyber_revenue')) || 0;
+            let displayElement = document.getElementById('cyber-omset');
+            
+            // Fungsi Format Rupiah
+            function formatRp(angka) {
+                return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+            }
 
-        document.querySelectorAll('.nominal-grid .card').forEach(card => {
-            card.addEventListener('click', function() {
-                playClickSound(); 
-                const parentGrid = this.closest('.nominal-grid');
-                parentGrid.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                selectedNominal = this.getAttribute('data-val');
+            // Tampilkan saldo saat pertama loading
+            if(displayElement) displayElement.innerText = formatRp(currentRevenue);
+
+            function injectFunds() {
+                // Acak penambahan saldo antara Rp 200 - Rp 500
+                let profit = Math.floor(Math.random() * (500 - 200 + 1)) + 200;
+                currentRevenue += profit;
                 
-                // MENGAMBIL ANGKA HARGA DARI TEKS (Misal: "Rp 22.000" jadi 22000)
-                let hargaText = this.querySelector('.card-price').innerText;
-                let hargaNum = parseInt(hargaText.replace(/[^0-9]/g, ''));
+                // Simpan ke memori HP
+                localStorage.setItem('cyber_revenue', currentRevenue);
                 
-                let tombolBeli = document.getElementById('btn-master-beli');
-                if(tombolBeli) {
-                    tombolBeli.classList.remove('disabled-btn');
-                    tombolBeli.innerHTML = `<span style="display: block; line-height: 1.2;">Beli Sekarang <i class="fas fa-arrow-right"></i></span><span style="display: block; font-size: 0.85rem; font-family: 'Inter', sans-serif; font-weight: 500; margin-top: 4px; opacity: 0.9;" id="anim-harga">Total: Rp 0</span>`;
+                // Animasi pas teksnya berubah (efek glitch/kedap-kedip putih)
+                if(displayElement) {
+                    displayElement.innerText = formatRp(currentRevenue);
+                    displayElement.style.color = '#fff';
+                    displayElement.style.textShadow = '0 0 15px #fff';
                     
-                    // JALANKAN ANIMASI ANGKA
-                    let hargaBox = document.getElementById('anim-harga');
-                    animateValue(hargaBox, 0, hargaNum, 800); // Animasi muter 0.8 detik
+                    setTimeout(() => {
+                        displayElement.style.color = '#0f0';
+                        displayElement.style.textShadow = '0 0 8px rgba(0,255,0,0.5)';
+                    }, 800);
                 }
                 
-                let step3 = document.querySelector('.taka-pay-item').closest('.taka-step-container');
-                if(step3) step3.classList.remove('step-dimmed');
-
-                setTimeout(() => {
-                    let sectionPembayaran = document.getElementById('global-steps');
-                    if(sectionPembayaran) { window.scrollTo({top: sectionPembayaran.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth'}); }
-                }, 300);
-            });
-        });
-
-        document.querySelectorAll('.taka-pay-item').forEach(card => {
-            card.addEventListener('click', function() {
-                playClickSound();
-                document.querySelectorAll('.taka-pay-item').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                selectedPayment = this.getAttribute('data-method');
-                
-                let step4 = document.getElementById('user-wa').closest('.taka-step-container');
-                if(step4) step4.classList.remove('step-dimmed');
-
-                setTimeout(() => {
-                    let inputWa = document.getElementById('user-wa');
-                    if(inputWa) { window.scrollTo({top: inputWa.getBoundingClientRect().top + window.scrollY - 200, behavior: 'smooth'}); inputWa.focus(); }
-                }, 300);
-            });
-        });
-        
-        function bukaModalUlasan() { document.getElementById('modal-ulasan').style.display = 'flex'; }
-        function tutupModalUlasan() { document.getElementById('modal-ulasan').style.display = 'none'; }
-
-        function kirimUlasan() {
-            let nama = document.getElementById('ulasan-nama').value;
-            let teks = document.getElementById('ulasan-teks').value;
-            if(!nama || !teks) return showToast('error', 'Nama dan ulasan wajib diisi bosku!');
-
-            let sensorNama = nama.substring(0, 3) + "**********";
-            let htmlBaru = `<div class="taka-review-item"><div class="taka-review-user"><span class="taka-review-name">${sensorNama}</span><span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div><div class="taka-review-product">Pembeli Terverifikasi • Baru saja</div><div class="taka-review-text">“${teks}”</div></div>`;
-
-            let wadahUlasan = document.querySelector('.taka-review-list');
-            if(wadahUlasan) wadahUlasan.insertAdjacentHTML('afterbegin', htmlBaru);
-            
-            let ulasanTersimpan = JSON.parse(localStorage.getItem('ulasan_nullstore')) || [];
-            ulasanTersimpan.unshift({ nama: sensorNama, teks: teks });
-            localStorage.setItem('ulasan_nullstore', JSON.stringify(ulasanTersimpan));
-
-            tutupModalUlasan(); document.getElementById('ulasan-nama').value = ''; document.getElementById('ulasan-teks').value = '';
-            showToast('success', 'Ulasan kamu berhasil ditambahkan! Makasih ya!');
-        }
-        
-        function updateTanggalUlasan() {
-            let elemenTanggal = document.querySelectorAll('.tgl-otomatis');
-            let sekarang = new Date();
-            elemenTanggal.forEach(el => {
-                let mundur = parseInt(el.getAttribute('data-mundur')); 
-                let tglBaru = new Date(sekarang); tglBaru.setDate(tglBaru.getDate() - mundur);
-                el.innerText = `${String(tglBaru.getDate()).padStart(2, '0')}-${String(tglBaru.getMonth() + 1).padStart(2, '0')}-${tglBaru.getFullYear()} ${String(Math.floor(Math.random() * 24)).padStart(2, '0')}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}`;
-            });
-        }
-        document.addEventListener('DOMContentLoaded', updateTanggalUlasan);
-
-        function muatUlasanTersimpan() {
-            let ulasanTersimpan = JSON.parse(localStorage.getItem('ulasan_nullstore'));
-            if(ulasanTersimpan && ulasanTersimpan.length > 0) {
-                let wadahUlasan = document.querySelector('.taka-review-list');
-                ulasanTersimpan.reverse().forEach(ulasan => {
-                    let htmlSimpanan = `<div class="taka-review-item"><div class="taka-review-user"><span class="taka-review-name">${ulasan.nama}</span><span class="taka-review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div><div class="taka-review-product">Pembeli Terverifikasi • Baru saja</div><div class="taka-review-text">“${ulasan.teks}”</div></div>`;
-                    if(wadahUlasan) wadahUlasan.insertAdjacentHTML('afterbegin', htmlSimpanan);
-                });
+                // Acak waktu tunggu selanjutnya (40 - 60 detik)
+                let nextInject = Math.floor(Math.random() * (60000 - 40000 + 1)) + 40000;
+                setTimeout(injectFunds, nextInject);
             }
-        }
-        document.addEventListener('DOMContentLoaded', muatUlasanTersimpan);
 
-        function cekIdIlusi(game) {
-            let btn = document.getElementById('btn-cek-' + game);
-            let hasilBox = document.getElementById('hasil-cek-' + game);
-            let idInput = document.getElementById(game + '-id').value;
-            let isValid = false;
-            
-            if(idInput.length >= 5) {
-                if(game === 'mlbb') { let serverInput = document.getElementById('mlbb-server').value; if(serverInput.length >= 3) isValid = true; } 
-                else { isValid = true; }
-            }
-            
-            let teksAsli = btn.innerHTML;
-            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Memeriksa Server...`; btn.style.pointerEvents = 'none'; hasilBox.style.display = 'none'; 
-            
-            setTimeout(() => {
-                btn.innerHTML = teksAsli; btn.style.pointerEvents = 'auto'; hasilBox.style.display = 'block';
-                if(isValid) {
-                    hasilBox.innerHTML = `<span style="color: var(--success);"><i class="fas fa-check-circle"></i> Format ID Valid! Server terhubung.</span>`;
-                    if(game === 'mlbb') document.querySelector('.nominal-grid[data-game="mlbb"]').closest('.taka-step-container').classList.remove('step-dimmed');
-                    if(game === 'ff') document.querySelector('.nominal-grid[data-game="ff"]').closest('.taka-step-container').classList.remove('step-dimmed');
-                } else { hasilBox.innerHTML = `<span style="color: var(--error);"><i class="fas fa-exclamation-triangle"></i> ID atau Server tidak lengkap / salah!</span>`; }
-            }, 2000); 
+            // Pancingan awal: Saldo nambah di 5-10 detik pertama buka web
+            let startDelay = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000;
+            setTimeout(injectFunds, startDelay);
         }
 
-        let deferredPrompt; const pwaBanner = document.getElementById('pwa-banner'); const installBtn = document.getElementById('btn-install-pwa');
-        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; pwaBanner.style.display = 'flex'; });
-        if(installBtn) {
-            installBtn.addEventListener('click', async () => {
-                if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') pwaBanner.style.display = 'none'; deferredPrompt = null; }
-            });
-        }
-        if ('serviceWorker' in navigator) { window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').then(reg => console.log('PWA Aktif')).catch(err => console.log('PWA Gagal', err)); }); }
+        // Jalankan script pas web beres loading
+        document.addEventListener('DOMContentLoaded', initCyberRevenue);
 
-        function updateSapaanCerdas() {
-            const jam = new Date().getHours(); let sapaan = "";
-            if (jam >= 4 && jam <= 10) sapaan = "🌅 Pagi bosku! Top up dulu yuk biar mabar jadi makin percaya diri.";
-            else if (jam > 10 && jam <= 14) sapaan = "☀️ Siang bosku! Istirahat dulu sambil push rank.";
-            else if (jam > 14 && jam <= 18) sapaan = "🌇 Sore bosku! Waktunya bantai-bantai di Land of Dawn.";
-            else sapaan = "🌙 Malam bosku! Begadang push rank? Gas top up dulu!";
-            const elemenSapaan = document.getElementById('sapaan-cerdas'); if(elemenSapaan) elemenSapaan.innerText = sapaan;
-        }
-        document.addEventListener('DOMContentLoaded', updateSapaanCerdas);
-
-        function hitungWR() {
-            let totalMatch = parseFloat(document.getElementById('wr-total-match').value); let wrSekarang = parseFloat(document.getElementById('wr-current').value); let wrTarget = parseFloat(document.getElementById('wr-target').value);
-            let resultBox = document.getElementById('wr-result'); let descEl = document.getElementById('wr-desc');
-            if (!totalMatch || !wrSekarang || !wrTarget) return showToast('error', 'Isi semua kolom bosku!');
-            if (wrSekarang < 0 || wrSekarang > 100 || wrTarget < 0 || wrTarget > 100) return showToast('error', 'Winrate harus 0-100%!');
-            if (wrTarget === 100) return showToast('error', 'Winrate 100% tidak mungkin dicapai!');
-            if (wrTarget <= wrSekarang) { descEl.innerHTML = `<span style="color: var(--error);">Target WinRate harus lebih besar!</span>`; resultBox.style.display = 'block'; return; }
-            let totalWinSaatIni = (totalMatch * wrSekarang) / 100; let butuhWin = (totalMatch * wrTarget - 100 * totalWinSaatIni) / (100 - wrTarget); let hasilAkhir = Math.ceil(butuhWin);
-            descEl.innerHTML = `Kamu butuh <b>${hasilAkhir}</b> kemenangan berturut-turut untuk capai WinRate <b>${wrTarget}%</b>.`; resultBox.style.display = 'block';
-        }
-
-        window.switchMLBBView = function(view) {
-            let btnTopup = document.getElementById('btn-tab-topup'); let btnFitur = document.getElementById('btn-tab-fitur');
-            let viewTopup = document.getElementById('mlbb-topup-view'); let viewFitur = document.getElementById('mlbb-features-view');
-            let globalSteps = document.getElementById('global-steps'); let searchBox = document.getElementById('liveSearchBox');
-            if(view === 'topup') {
-                btnTopup.classList.add('active'); btnFitur.classList.remove('active');
-                viewTopup.style.display = 'block'; viewFitur.style.display = 'none';
-                if(globalSteps) globalSteps.style.display = 'block'; if(searchBox) searchBox.style.display = 'block';
-            } else {
-                btnTopup.classList.remove('active'); btnFitur.classList.add('active');
-                viewTopup.style.display = 'none'; viewFitur.style.display = 'block';
-                if(globalSteps) globalSteps.style.display = 'none'; if(searchBox) searchBox.style.display = 'none';
-            }
-        };
-        
-        window.filterKategori = function(game, kategori, btn) {
-            let pills = document.getElementById('pills-' + game).querySelectorAll('.pill-btn');
-            pills.forEach(p => p.classList.remove('active')); btn.classList.add('active');
-            let grid = document.querySelector('.nominal-grid[data-game="' + game + '"]'); let cards = grid.querySelectorAll('.card');
-            cards.forEach(card => {
-                let namaItem = card.getAttribute('data-val').toLowerCase(); let isMatch = false;
-                if(kategori === 'semua') isMatch = true;
-                else if(kategori === 'pass') { if(namaItem.includes('pass') || namaItem.includes('member')) isMatch = true; } 
-                else if(kategori === 'diamond') { if(!namaItem.includes('pass') && !namaItem.includes('member')) isMatch = true; }
-                if(isMatch) { card.style.display = ''; card.classList.add('skeleton'); setTimeout(() => card.classList.remove('skeleton'), 400); } 
-                else card.style.display = 'none';
-            });
-        };
     </script>
-
 </body>
 </html>
