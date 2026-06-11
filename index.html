@@ -3,526 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NULL.STORE | Hyper-Futuristic Top Up</title>
+    <title>Fake Notif Saldo</title>
     
-    <!-- Fonts: Rajdhani untuk nuansa Cyberpunk, Inter untuk teks body -->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Menggunakan font tulisan tangan biar mirip kayak di foto -->
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        :root {
-            --bg-deep: #05050A;
-            --panel-bg: rgba(16, 18, 27, 0.6);
-            --neon-cyan: #00F0FF;
-            --neon-purple: #8A2BE2;
-            --neon-pink: #FF003C;
-            --text-main: #FFFFFF;
-            --text-dim: #8B949E;
-            --glass-border: rgba(0, 240, 255, 0.2);
-        }
-
+        /* === TEMA UI APLIKASI (MIRIP FOTO KE 2) === */
         * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-            padding-bottom: 120px;
+            background-color: #0b1120; /* Warna biru super gelap */
+            color: #fff;
+            font-family: 'Itim', cursive; /* Font ala tulisan tangan */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        /* BACKGROUND GRID & GLOW EFEK */
-        .cyber-grid {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
-            background-image: 
-                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-            animation: gridMove 20s linear infinite;
-        }
-        @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 100% { transform: perspective(500px) rotateX(60deg) translateY(40px); } }
-
-        .ambient-glow {
-            position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
-            z-index: -1; filter: blur(50px);
-        }
-        .ambient-glow.right { left: auto; right: -10%; top: 20%; background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%); }
-
-        /* HEADINGS */
-        h1, h2, h3, .cyber-font { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* NAVBAR CYBER */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            background: rgba(5, 5, 10, 0.8); backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 4px 30px rgba(0, 240, 255, 0.05);
-        }
-        .logo { font-size: 2rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
-        .logo i { color: var(--neon-pink); font-size: 1.5rem; }
-
-        /* HERO SECTION */
-        .hero { padding: 120px 5% 50px; text-align: center; position: relative; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 15px; }
-        .hero h1 span {
-            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-        }
-        .hero p { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-
-        /* CONTAINER UTAMA */
-        .main-container { max-width: 1000px; margin: 0 auto; padding: 0 5%; }
-
-        /* CYBER TABS */
-        .tab-wrapper { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
-        .cyber-tab {
-            background: var(--panel-bg); border: 1px solid var(--glass-border);
-            color: var(--text-dim); padding: 12px 30px; font-size: 1.2rem; font-weight: 600;
-            cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
-            border-radius: 4px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-        }
-        .cyber-tab:hover { color: #fff; border-color: var(--neon-purple); }
-        .cyber-tab.active {
-            color: #fff; border-color: var(--neon-cyan);
-            background: rgba(0, 240, 255, 0.1);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2) inset;
+        .main-card {
+            border: 2px solid #3b82f6; /* Garis biru terang */
+            border-radius: 15px;
+            padding: 30px 20px;
+            width: 100%;
+            max-width: 350px;
+            background-color: rgba(11, 17, 32, 0.8);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
         }
 
-        /* TAB CONTENT ANIMATION */
-        .tab-content { display: none; animation: glitchIn 0.4s ease-out forwards; }
-        .tab-content.active { display: block; }
-        @keyframes glitchIn {
-            0% { opacity: 0; transform: translateY(20px) scale(0.98); filter: blur(4px); }
-            100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: center;
         }
 
-        /* SECTION HEADERS */
-        .step-header {
-            display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
-            border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
-        .step-num {
-            background: var(--neon-cyan); color: #000; width: 30px; height: 30px;
-            display: flex; justify-content: center; align-items: center;
-            font-weight: 700; clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
-        }
-        .step-title { font-size: 1.5rem; color: #fff; }
 
-        /* INPUT FIELDS */
-        .input-group { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
-        .input-box { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 8px; }
-        .input-box label { color: var(--neon-cyan); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; }
-        .input-box input {
-            background: rgba(0,0,0,0.5); border: 1px solid var(--glass-border);
-            padding: 15px; color: #fff; outline: none; transition: 0.3s;
-            border-radius: 4px; border-left: 3px solid var(--glass-border);
+        /* Styling buat Dropdown & Input Teks */
+        .custom-input {
+            background-color: transparent;
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            padding: 12px 15px;
+            color: #94a3b8;
+            font-family: 'Itim', cursive;
+            font-size: 1rem;
+            text-align: center;
+            width: 100%;
+            outline: none;
+            transition: 0.3s;
         }
-        .input-box input:focus {
-            border-color: var(--neon-cyan); border-left-color: var(--neon-pink);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); background: rgba(0, 240, 255, 0.05);
-        }
-        input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
-        /* CYBER CARDS (DIAMOND & PAYMENT) */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .cyber-card {
-            background: linear-gradient(145deg, rgba(16, 18, 27, 0.8), rgba(5, 5, 10, 0.9));
-            border: 1px solid var(--glass-border); border-radius: 8px;
-            padding: 20px; cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
+        .custom-input:focus {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #fff;
         }
         
-        /* Efek Hover Garis Scanline */
-        .cyber-card::before {
-            content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 2px;
-            background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); transition: 0.5s; opacity: 0;
-        }
-        .cyber-card:hover::before { top: 100%; opacity: 1; }
-        .cyber-card:hover { border-color: var(--neon-purple); transform: translateY(-3px); }
-        
-        /* State Selected */
-        .cyber-card.selected {
-            background: rgba(0, 240, 255, 0.05); border-color: var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 10px rgba(0, 240, 255, 0.1);
-        }
-        .cyber-card.selected .item-name { color: var(--neon-cyan); text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
-
-        .item-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #fff; transition: 0.3s; }
-        .item-price { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }
-        
-        .badge-hot {
-            position: absolute; top: 10px; right: -25px; background: var(--neon-pink); color: #fff;
-            font-size: 0.7rem; font-weight: 700; padding: 3px 25px; transform: rotate(45deg);
-            box-shadow: 0 0 10px var(--neon-pink);
+        .custom-input option {
+            background-color: #0b1120;
+            color: #fff;
         }
 
-        /* FLOATING CHECKOUT BAR (HOLOGRAPHIC) */
-        .checkout-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999;
-            background: rgba(5, 5, 10, 0.85); backdrop-filter: blur(15px);
-            border-top: 1px solid var(--neon-cyan);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 -5px 30px rgba(0, 240, 255, 0.1);
+        /* Styling Timer Area */
+        .timer-label {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
-        .price-display { display: flex; flex-direction: column; }
-        .price-display span { color: var(--text-dim); font-size: 0.85rem; font-family: 'Rajdhani', sans-serif; letter-spacing: 1px; }
-        .price-display strong { color: var(--neon-cyan); font-size: 1.8rem; font-weight: 700; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); }
 
-        .btn-buy {
-            background: linear-gradient(45deg, var(--neon-cyan), #00A3FF);
-            color: #000; border: none; padding: 15px 40px; font-size: 1.2rem; font-weight: 700;
-            cursor: pointer; border-radius: 4px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            transition: 0.3s; position: relative; overflow: hidden;
+        .timer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
         }
-        .btn-buy:hover { box-shadow: 0 0 20px var(--neon-cyan); transform: scale(1.02); }
-        /* Animasi kilap di tombol */
-        .btn-buy::after {
-            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: skewX(-20deg); animation: shine 3s infinite;
-        }
-        @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
-        /* SYSTEM TOAST */
-        #system-toast { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
-        .alert-box {
-            background: rgba(16, 18, 27, 0.95); border-left: 4px solid var(--neon-cyan);
-            padding: 12px 25px; color: #fff; font-size: 0.95rem; border-radius: 4px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 15px;
-            animation: dropDown 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeOutUp 0.4s 3s forwards;
+        .btn-timer {
+            background-color: transparent;
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            color: #fff;
+            padding: 10px 5px;
+            font-family: 'Itim', cursive;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.2;
         }
-        .alert-box i { color: var(--neon-cyan); font-size: 1.2rem; }
-        .alert-box.error { border-left-color: var(--neon-pink); }
-        .alert-box.error i { color: var(--neon-pink); }
-        
-        @keyframes dropDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeOutUp { to { opacity: 0; transform: translateY(-20px); } }
 
-        @media (max-width: 768px) {
-            .checkout-bar { flex-direction: column; gap: 15px; padding: 20px 5%; text-align: center; }
-            .btn-buy { width: 100%; }
-            .grid-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .cyber-card { padding: 15px 10px; text-align: center; }
-            .item-name { font-size: 1.1rem; }
+        .btn-timer:hover, .btn-timer.active {
+            background-color: #3b82f6;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            border: 1px solid #3b82f6;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #4ade80; /* Warna hijau neon */
+            line-height: 1.5;
+        }
+
+        .warning-box span {
+            color: #fbbf24; /* Warna kuning buat highlight */
+        }
+
+        /* Layar Loading Hitung Mundur (Opsional biar asik) */
+        #countdown-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        #countdown-number {
+            font-size: 5rem;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        /* === TEMA NOTIFIKASI OS (MIRIP FOTO KE 3) === */
+        .os-notification {
+            position: fixed;
+            top: -150px; /* Sembunyi di atas layar */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 400px;
+            background-color: rgba(241, 245, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 15px 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+        }
+
+        /* Class buat munculin notifnya */
+        .os-notification.show {
+            top: 15px;
+        }
+
+        .notif-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .notif-icon-wrapper {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .notif-icon-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .notif-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .notif-body {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
         }
     </style>
 </head>
 <body>
 
-    <!-- BACKGROUND ELEMENTS -->
-    <div class="cyber-grid"></div>
-    <div class="ambient-glow"></div>
-    <div class="ambient-glow right"></div>
-
-    <!-- NAVBAR -->
-    <nav>
-        <a href="#" class="logo"><i class="fas fa-bolt"></i> NULL<span>.STORE</span></a>
+    <!-- KOTAK UTAMA APLIKASI (Mirip Foto 2) -->
+    <div class="main-card">
         
-        <div style="display: flex; gap: 15px; align-items: center;">
-            <!-- INI KOTAK OMSET RAHASIA -->
-            <div class="cyber-font" style="background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); padding: 5px 12px; border-radius: 4px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-chart-line" style="color: #0f0;"></i>
-                <span style="color: var(--text-dim); font-size: 0.8rem;">REVENUE:</span>
-                <span id="cyber-omset" style="color: #0f0; font-weight: 700; font-size: 1rem; text-shadow: 0 0 8px rgba(0,255,0,0.5); transition: 0.3s;">Rp 0</span>
-            </div>
-
-            <div class="cyber-font" style="color: var(--neon-cyan); font-size: 0.9rem; display: none;">SYS.STATUS: <span style="color: #0f0;">ONLINE</span></div>
+        <!-- Pilihan E-Wallet / Bank -->
+        <div class="input-group">
+            <label>Pilih Jenis Notif</label>
+            <select class="custom-input" id="app-type">
+                <option value="dana">💰 DANA</option>
+                <option value="gopay">🟢 GoPay</option>
+                <option value="shopeepay">🟠 ShopeePay</option>
+                <option value="bca">🏦 M-BCA</option>
+            </select>
         </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1 class="cyber-font">HYPER<span>CHARGE</span> YOUR ACCOUNT</h1>
-        <p>Sistem top up otomatis dengan enkripsi tingkat tinggi. Pilih game, masukkan ID, diamond masuk sebelum kamu berkedip.</p>
-    </section>
+        <div class="input-group">
+            <label>Masukkan nama pengirim</label>
+            <input type="text" class="custom-input" id="sender-name" placeholder="cth: Fajar" autocomplete="off">
+        </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="main-container">
+        <div class="input-group">
+            <label>Masukkan nominal</label>
+            <input type="text" class="custom-input" id="transfer-amount" placeholder="cth: Rp100.000" autocomplete="off">
+        </div>
+
+        <div class="timer-label">Timer Available:</div>
         
-        <!-- GAME TABS -->
-        <div class="tab-wrapper cyber-font">
-            <div class="cyber-tab active" onclick="switchSystem('mlbb', this)">MLBB</div>
-            <div class="cyber-tab" onclick="switchSystem('ff', this)">FREE FIRE</div>
+        <div class="timer-grid">
+            <button class="btn-timer" onclick="startFakeNotif(10)">
+                <span>10</span><span>DETIK</span>
+            </button>
+            <button class="btn-timer" onclick="startFakeNotif(15)">
+                <span>15</span><span>DETIK</span>
+            </button>
+            <button class="btn-timer" onclick="startFakeNotif(20)">
+                <span>20</span><span>DETIK</span>
+            </button>
+            <button class="btn-timer" onclick="startFakeNotif(50)">
+                <span>50</span><span>DETIK</span>
+            </button>
         </div>
 
-        <!-- ================= MLBB SYSTEM ================= -->
-        <div id="sys-mlbb" class="tab-content active">
-            <div class="step-header cyber-font">
-                <div class="step-num">01</div><h2 class="step-title">TARGET IDENTIFICATION</h2>
-            </div>
-            <div class="input-group">
-                <div class="input-box"><label>USER ID</label><input type="number" id="ml-id" placeholder="Ex: 12345678"></div>
-                <div class="input-box"><label>ZONE ID</label><input type="number" id="ml-zone" placeholder="Ex: 1234"></div>
-            </div>
-
-            <div class="step-header cyber-font">
-                <div class="step-num">02</div><h2 class="step-title">SELECT PAYLOAD (DIAMONDS)</h2>
-            </div>
-            <div class="grid-cards" data-type="item">
-                <div class="cyber-card" data-val="86 Diamonds" data-price="Rp 22.000">
-                    <div class="item-name">86 💎</div><div class="item-price">Rp 22.000</div>
-                </div>
-                <div class="cyber-card" data-val="257 Diamonds" data-price="Rp 65.500">
-                    <div class="item-name">257 💎</div><div class="item-price">Rp 65.500</div>
-                </div>
-                <div class="cyber-card" data-val="706 Diamonds" data-price="Rp 177.500">
-                    <div class="badge-hot">HOT</div>
-                    <div class="item-name">706 💎</div><div class="item-price">Rp 177.500</div>
-                </div>
-                <div class="cyber-card" data-val="Weekly Pass" data-price="Rp 28.250">
-                    <div class="item-name">Weekly Pass</div><div class="item-price">Rp 28.250</div>
-                </div>
-                <div class="cyber-card" data-val="Starlight" data-price="Rp 82.000">
-                    <div class="item-name">Starlight</div><div class="item-price">Rp 82.000</div>
-                </div>
-            </div>
+        <div class="warning-box">
+            Disarankan untuk mengisi <span>NAMA PENGIRIM & NOMINAL SALDO</span> sependek mungkin agar bisa terlihat seluruhnya dalam mode layar vertical.
         </div>
-
-        <!-- ================= FREE FIRE SYSTEM ================= -->
-        <div id="sys-ff" class="tab-content">
-            <div class="step-header cyber-font">
-                <div class="step-num">01</div><h2 class="step-title">TARGET IDENTIFICATION</h2>
-            </div>
-            <div class="input-group">
-                <div class="input-box"><label>PLAYER ID</label><input type="number" id="ff-id" placeholder="Ex: 1234567890"></div>
-            </div>
-
-            <div class="step-header cyber-font">
-                <div class="step-num">02</div><h2 class="step-title">SELECT PAYLOAD (DIAMONDS)</h2>
-            </div>
-            <div class="grid-cards" data-type="item">
-                <div class="cyber-card" data-val="70 Diamonds FF" data-price="Rp 9.500">
-                    <div class="item-name">70 💎</div><div class="item-price">Rp 9.500</div>
-                </div>
-                <div class="cyber-card" data-val="140 Diamonds FF" data-price="Rp 18.000">
-                    <div class="item-name">140 💎</div><div class="item-price">Rp 18.000</div>
-                </div>
-                <div class="cyber-card" data-val="355 Diamonds FF" data-price="Rp 44.000">
-                    <div class="badge-hot">HOT</div>
-                    <div class="item-name">355 💎</div><div class="item-price">Rp 44.000</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= GLOBAL SECURE PAYMENT ================= -->
-        <div id="secure-payment">
-            <div class="step-header cyber-font">
-                <div class="step-num">03</div><h2 class="step-title">PAYMENT GATEWAY</h2>
-            </div>
-            <div class="grid-cards" data-type="payment">
-                <div class="cyber-card" data-method="QRIS">
-                    <div class="item-name"><i class="fas fa-qrcode"></i> QRIS</div><div class="item-price">All Payment</div>
-                </div>
-                <div class="cyber-card" data-method="DANA">
-                    <div class="item-name"><i class="fas fa-wallet"></i> DANA</div><div class="item-price">E-Wallet</div>
-                </div>
-                <div class="cyber-card" data-method="GOPAY">
-                    <div class="item-name"><i class="fas fa-wallet"></i> GOPAY</div><div class="item-price">E-Wallet</div>
-                </div>
-            </div>
-
-            <div class="step-header cyber-font" style="margin-top: 20px;">
-                <div class="step-num">04</div><h2 class="step-title">CONTACT NODE</h2>
-            </div>
-            <div class="input-group">
-                <div class="input-box"><label>WHATSAPP NUMBER</label><input type="number" id="wa-number" placeholder="0812..."></div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- HOLOGRAPHIC CHECKOUT BAR -->
-    <div class="checkout-bar">
-        <div class="price-display">
-            <span>TOTAL AMOUNT</span>
-            <strong id="final-price">Rp 0</strong>
-        </div>
-        <button class="btn-buy cyber-font" onclick="initiateSequence()">INITIALIZE CHECKOUT <i class="fas fa-angle-double-right"></i></button>
+    <!-- OVERLAY MENGHITUNG MUNDUR (Biar bisa siap-siap tutup aplikasi) -->
+    <div id="countdown-overlay">
+        <div style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Notif muncul dalam...</div>
+        <div id="countdown-number">10</div>
+        <div style="color: #94a3b8; font-size: 0.9rem; margin-top: 20px;">Silakan keluar (Home) agar notif terlihat nyata</div>
     </div>
 
-    <!-- SYSTEM ALERTS -->
-    <div id="system-toast"></div>
+    <!-- ============================================== -->
+    <!-- DESAIN NOTIFIKASI PALSU (Sembunyi di atas layar) -->
+    <!-- ============================================== -->
+    <div class="os-notification" id="fake-notif">
+        <div class="notif-header">
+            <div class="notif-icon-wrapper">
+                <img id="n-icon" src="" alt="icon">
+            </div>
+            <span id="n-app-name" style="text-transform: uppercase;">DANA</span> • Sekarang
+        </div>
+        <div class="notif-title" id="n-title">DANA</div>
+        <div class="notif-body" id="n-message">
+            Hi, <span id="n-sender"></span> baru saja Kirim DANA ke kamu <span id="n-amount"></span> !
+        </div>
+    </div>
 
     <script>
-        let activeSystem = 'mlbb';
-        let orderData = { item: null, price: 'Rp 0', payment: null };
-
-        // FUNGSI SWITCH GAME TAB
-        function switchSystem(sysId, element) {
-            activeSystem = sysId;
-            
-            // UI Tab Update
-            document.querySelectorAll('.cyber-tab').forEach(t => t.classList.remove('active'));
-            element.classList.add('active');
-
-            // UI Content Update
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.getElementById('sys-' + sysId).classList.add('active');
-
-            // Reset Selections
-            resetSelections();
-            playSfx(800, 1200, 0.05); // Suara klik tab
-        }
-
-        // FUNGSI KLIK KARTU CYBER
-        document.querySelectorAll('.cyber-card').forEach(card => {
-            card.addEventListener('click', function() {
-                playSfx(1000, 1500, 0.1); // Suara klik kartu
-                let type = this.parentElement.getAttribute('data-type');
-                
-                // Hapus state aktif di grid yang sama
-                this.parentElement.querySelectorAll('.cyber-card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-
-                if(type === 'item') {
-                    orderData.item = this.getAttribute('data-val');
-                    orderData.price = this.getAttribute('data-price');
-                    document.getElementById('final-price').innerText = orderData.price;
-                } else if(type === 'payment') {
-                    orderData.payment = this.getAttribute('data-method');
-                }
-            });
-        });
-
-        function resetSelections() {
-            orderData = { item: null, price: 'Rp 0', payment: null };
-            document.querySelectorAll('.cyber-card').forEach(c => c.classList.remove('selected'));
-            document.getElementById('final-price').innerText = 'Rp 0';
-        }
-
-        // CUSTOM CYBER ALERT
-        function sysAlert(msg, type = 'success') {
-            const container = document.getElementById('system-toast');
-            const alert = document.createElement('div');
-            alert.className = `alert-box ${type}`;
-            
-            const icon = type === 'error' ? 'fa-exclamation-triangle' : 'fa-check-circle';
-            alert.innerHTML = `<i class="fas ${icon}"></i> <span>${msg}</span>`;
-            
-            container.appendChild(alert);
-            setTimeout(() => { alert.remove(); }, 3500);
-            
-            if(type === 'error') playSfx(300, 100, 0.2); // Nada error turun
-        }
-
-        // FUNGSI PROSES CHECKOUT (KE WHATSAPP)
-        function initiateSequence() {
-            let accountId = '';
-            let waNum = document.getElementById('wa-number').value;
-
-            // Validasi Akun berdasarkan Game
-            if(activeSystem === 'mlbb') {
-                let id = document.getElementById('ml-id').value;
-                let zone = document.getElementById('ml-zone').value;
-                if(!id || !zone) return sysAlert('Error: Target ID or Zone missing!', 'error');
-                accountId = `${id} (${zone})`;
-            } else {
-                let id = document.getElementById('ff-id').value;
-                if(!id) return sysAlert('Error: Target Player ID missing!', 'error');
-                accountId = id;
+        // Database Template Notifikasi dari Berbagai Aplikasi
+        const appData = {
+            dana: {
+                appName: 'DANA',
+                icon: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg', // Link logo asli DANA
+                templateTitle: 'DANA',
+                templateMsg: 'Hi, [NAMA] baru saja Kirim DANA ke kamu [NOMINAL] !' // Persis foto 3
+            },
+            gopay: {
+                appName: 'Gojek',
+                icon: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Gopay_logo.svg',
+                templateTitle: 'GoPay',
+                templateMsg: 'Yeay! Saldo GoPay kamu nambah [NOMINAL] dari [NAMA].'
+            },
+            shopeepay: {
+                appName: 'Shopee',
+                icon: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Shopee.svg',
+                templateTitle: 'ShopeePay',
+                templateMsg: 'Isi Saldo berhasil. Saldo ShopeePay-mu telah bertambah [NOMINAL] dari [NAMA].'
+            },
+            bca: {
+                appName: 'BCA mobile',
+                icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg',
+                templateTitle: 'BCA mobile',
+                templateMsg: 'Transfer dari [NAMA] sebesar [NOMINAL] berhasil.'
             }
+        };
 
-            // Validasi Umum
-            if(!orderData.item) return sysAlert('Error: Payload (Diamond) not selected!', 'error');
-            if(!orderData.payment) return sysAlert('Error: Payment Gateway not selected!', 'error');
-            if(!waNum) return sysAlert('Error: Contact Node (WhatsApp) missing!', 'error');
-
-            // Animasi Loading Tombol
-            const btn = document.querySelector('.btn-buy');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ESTABLISHING LINK...`;
-            sysAlert('Sequence Initiated. Routing to secure gateway...', 'success');
-
-            // Format Pesan WA
-            let message = `*CYBER ORDER NODE*\n` +
-                          `Game: ${activeSystem.toUpperCase()}\n` +
-                          `Target ID: ${accountId}\n` +
-                          `Payload: ${orderData.item}\n` +
-                          `Total: ${orderData.price}\n` +
-                          `Gateway: ${orderData.payment}\n\n` +
-                          `_Execute order._`;
-
-            let waLink = `https://wa.me/6285757568455?text=${encodeURIComponent(message)}`;
-
-            // Eksekusi buka WA setelah delay efek loading
-            setTimeout(() => {
-                window.open(waLink, '_blank');
-                btn.innerHTML = originalText; // Kembalikan teks asli
-            }, 1500);
-        }
-
-        // SIMPLE SYNTH AUDIO (EFEK SUARA SCI-FI)
-        function playSfx(startFreq, endFreq, vol) {
+        // Mesin Suara Notif (Biar makin *real* pas muncul)
+        function playNotifSound() {
             try {
                 let ctx = new (window.AudioContext || window.webkitAudioContext)();
                 let osc = ctx.createOscillator();
-                let gain = ctx.createGain();
-                osc.type = 'square';
-                osc.frequency.setValueAtTime(startFreq, ctx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(endFreq, ctx.currentTime + 0.1);
-                gain.gain.setValueAtTime(vol, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
-                osc.connect(gain); gain.connect(ctx.destination);
-                osc.start(); osc.stop(ctx.currentTime + 0.1);
-            } catch(e) {} // Abaikan kalau browser gak support audio autoplay
+                let gainNode = ctx.createGain();
+                
+                // Bikin nada notif standard kayak suara "Ting!"
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(900, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(2000, ctx.currentTime + 0.1);
+                
+                gainNode.gain.setValueAtTime(0.5, ctx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                
+                osc.connect(gainNode);
+                gainNode.connect(ctx.destination);
+                
+                osc.start();
+                osc.stop(ctx.currentTime + 0.3);
+            } catch(e) {
+                console.log("Suara tidak didukung di browser ini");
+            }
         }
-        
-                // ==========================================
-        // CYBER REVENUE GENERATOR (FAKE OMSET)
-        // ==========================================
-        function initCyberRevenue() {
-            // Ambil data dari LocalStorage (Memori HP). Mulai dari 0 kalau belum ada.
-            let currentRevenue = parseInt(localStorage.getItem('cyber_revenue')) || 0;
-            let displayElement = document.getElementById('cyber-omset');
+
+        // Fungsi Utama Jalanin Fake Notif
+        function startFakeNotif(detik) {
+            // Ambil data yang diketik
+            const tipeApp = document.getElementById('app-type').value;
+            let nama = document.getElementById('sender-name').value;
+            let nominal = document.getElementById('transfer-amount').value;
+
+            // Kalo kosong, kita kasih default aja wkwk
+            if(!nama) nama = "Fajar";
+            if(!nominal) nominal = "Rp100.000";
+
+            // Ambil data dari database yang udah kita bikin di atas
+            const dataApp = appData[tipeApp];
+
+            // Rangkai Teks Notifnya
+            let pesanNotif = dataApp.templateMsg;
+            pesanNotif = pesanNotif.replace('[NAMA]', nama);
+            pesanNotif = pesanNotif.replace('[NOMINAL]', nominal);
+
+            // Masukin ke elemen HTML Notifnya
+            document.getElementById('n-icon').src = dataApp.icon;
+            document.getElementById('n-app-name').innerText = dataApp.appName;
+            document.getElementById('n-title').innerText = dataApp.templateTitle;
+            document.getElementById('n-message').innerText = pesanNotif;
+
+            // Nyalain Layar Hitung Mundur
+            let waktuTersisa = detik;
+            const overlay = document.getElementById('countdown-overlay');
+            const angkaMundur = document.getElementById('countdown-number');
             
-            // Fungsi Format Rupiah
-            function formatRp(angka) {
-                return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
-            }
+            overlay.style.display = 'flex';
+            angkaMundur.innerText = waktuTersisa;
 
-            // Tampilkan saldo saat pertama loading
-            if(displayElement) displayElement.innerText = formatRp(currentRevenue);
+            // Timer berjalan...
+            const interval = setInterval(() => {
+                waktuTersisa--;
+                angkaMundur.innerText = waktuTersisa;
 
-            function injectFunds() {
-                // Acak penambahan saldo antara Rp 200 - Rp 500
-                let profit = Math.floor(Math.random() * (500 - 200 + 1)) + 200;
-                currentRevenue += profit;
-                
-                // Simpan ke memori HP
-                localStorage.setItem('cyber_revenue', currentRevenue);
-                
-                // Animasi pas teksnya berubah (efek glitch/kedap-kedip putih)
-                if(displayElement) {
-                    displayElement.innerText = formatRp(currentRevenue);
-                    displayElement.style.color = '#fff';
-                    displayElement.style.textShadow = '0 0 15px #fff';
+                // Kalo timer udah 0
+                if (waktuTersisa <= 0) {
+                    clearInterval(interval);
                     
+                    // Sembunyiin layar hitung mundur
+                    overlay.style.display = 'none';
+
+                    // Munculin Notif Aslinya (Slide dari atas) + Suara
+                    const notifElement = document.getElementById('fake-notif');
+                    notifElement.classList.add('show');
+                    playNotifSound();
+
+                    // Notif ilang sendiri setelah 6 detik
                     setTimeout(() => {
-                        displayElement.style.color = '#0f0';
-                        displayElement.style.textShadow = '0 0 8px rgba(0,255,0,0.5)';
-                    }, 800);
+                        notifElement.classList.remove('show');
+                    }, 6000);
                 }
-                
-                // Acak waktu tunggu selanjutnya (40 - 60 detik)
-                let nextInject = Math.floor(Math.random() * (60000 - 40000 + 1)) + 40000;
-                setTimeout(injectFunds, nextInject);
-            }
-
-            // Pancingan awal: Saldo nambah di 5-10 detik pertama buka web
-            let startDelay = Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000;
-            setTimeout(injectFunds, startDelay);
+            }, 1000); // Ngulang setiap 1 detik (1000ms)
         }
-
-        // Jalankan script pas web beres loading
-        document.addEventListener('DOMContentLoaded', initCyberRevenue);
-
     </script>
 </body>
 </html>
