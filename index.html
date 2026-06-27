@@ -3,449 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒🦢✨ | Pusat Top Up Termurah & Aman</title>
+    <title>𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒 🦢✨ | Premium Apps</title>
     
-    <!-- === SEO & META TAGS === -->
-    <meta name="description" content="Menjual berbagai kebutuhan App Premium & Diamond Game">
-    <meta name="theme-color" content="#FF69B4">
-
-    <!-- Fonts Canggih: Syne & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- === FONT ESTETIK (PLAYFAIR & QUICKSAND) === -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Mesin QR Code -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>    
-        /* === TEMA ELEGAN ROYALE STORE (PINK & WHITE COQUETTE VIBES) === */
+        /* === TEMA COQUETTE AESTHETIC === */
         :root {
-            --bg-base: #FFF0F5; /* Lavender Blush (Soft Pink background) */
-            --bg-card: #FFFFFF; /* Pure White for cards */
-            --primary: #FF69B4; /* Hot Pink */
-            --primary-light: #FFB6C1; /* Light Pink */
-            --text-main: #4A4A4A; /* Soft Dark Grey for readability */
-            --text-dim: #888888;
-            --glass-border: rgba(255, 105, 180, 0.3);
-            --success: #10B981;
-            --error: #FF4C4C;
+            --bg-body: #FFF5F7; /* Soft pastel pink */
+            --bg-card: #FFFFFF;
+            --primary: #FF85B3; /* Soft Hot Pink */
+            --primary-light: #FFD1E3;
+            --text-dark: #594A4E; /* Coklat/Abu elegan */
+            --text-soft: #9E8C90;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-base); color: var(--text-main); overflow-x: hidden; }
-
-        /* === EFEK PARTIKEL BUNGA (AESTHETIC) === */
-        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; overflow: hidden; }
-        .particles span { 
-            position: absolute; display: block; width: 8px; height: 8px; 
-            background: rgba(255, 105, 180, 0.4); box-shadow: 0 0 10px rgba(255, 105, 180, 0.6); 
-            border-radius: 50%; animation: animateParticle 15s linear infinite; bottom: -10px; 
-        }
-        .particles span:nth-child(1) { left: 10%; animation-duration: 12s; }
-        .particles span:nth-child(2) { left: 30%; width: 12px; height: 12px; animation-duration: 18s; animation-delay: 2s; }
-        .particles span:nth-child(3) { left: 50%; animation-duration: 15s; animation-delay: 4s; }
-        .particles span:nth-child(4) { left: 70%; width: 6px; height: 6px; animation-duration: 14s; }
-        .particles span:nth-child(5) { left: 90%; animation-duration: 19s; animation-delay: 3s; }
-        @keyframes animateParticle {
-            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-1000px) scale(0) rotate(360deg); opacity: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { 
+            background-color: var(--bg-body); 
+            color: var(--text-dark); 
+            font-family: 'Quicksand', sans-serif; 
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
+            background-size: 30px 30px; /* Efek motif polkadot super tipis */
         }
 
-        /* === NAVBAR KACA ESTETIK === */
+        /* === NAVBAR PILL FLOATING === */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); 
-            border-bottom: 2px solid var(--primary-light); box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 600px; z-index: 1000;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px);
+            padding: 15px 30px; border-radius: 50px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 30px rgba(255, 133, 179, 0.15);
+            border: 1px solid rgba(255,255,255,0.5);
         }
-        .logo { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px;}
-        .logo span { color: var(--text-main); font-weight: 600; font-size: 1.2rem; }
+        .logo { 
+            font-family: 'Playfair Display', serif; font-size: 1.5rem; 
+            font-weight: 700; font-style: italic; color: var(--primary); 
+            text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .logo i { font-size: 1.2rem; color: var(--text-dark); }
 
         /* === HERO SECTION ELEGAN === */
-        .hero { padding: 130px 5% 60px; text-align: center; position: relative; }
-        .hero-container { 
-            max-width: 800px; margin: 0 auto; 
-            background: var(--bg-card);
-            padding: 50px 30px; border-radius: 40px; 
-            border: 2px solid var(--primary-light);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+        .hero { padding: 150px 5% 60px; text-align: center; }
+        .hero h1 { 
+            font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); 
+            color: var(--text-dark); margin-bottom: 15px; 
         }
-        .title-elegant { 
-            font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); 
-            font-weight: 800; margin-bottom: 15px; color: var(--primary); 
+        .hero h1 span { color: var(--primary); font-style: italic; }
+        .hero p { 
+            color: var(--text-soft); font-size: 1.1rem; 
+            max-width: 500px; margin: 0 auto; line-height: 1.6; font-weight: 500;
         }
-        .subtitle-elegant { color: var(--text-dim); font-size: 1.1rem; max-width: 550px; margin: 0 auto 30px; line-height: 1.6; }
 
-        /* === KATEGORI PRODUK (CARDS) === */
-        .menu-utama { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;}
-        .kategori-box {
-            background: var(--bg-card); border: 2px solid var(--primary-light);
-            border-radius: 25px; padding: 30px 20px; width: 220px; text-align: center;
-            cursor: pointer; transition: all 0.4s ease; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
-        }
-        .kategori-box:hover {
-            transform: translateY(-10px); border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
-        }
-        .kategori-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; }
-        .kategori-box h2 { font-family: 'Syne', sans-serif; color: var(--text-main); font-size: 1.2rem; margin-bottom: 5px;}
-        .kategori-box p { color: var(--text-dim); font-size: 0.8rem; }
-
-        /* === CATALOG WRAPPER === */
-        .catalog-container { max-width: 1000px; margin: 0 auto; padding: 0 5% 50px; display: none; animation: fadeIn 0.5s;}
-        @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+        /* === TESTIMONI BERJALAN (MARQUEE) === */
+        .marquee-wrapper { width: 100%; overflow: hidden; position: relative; margin-bottom: 40px; padding: 20px 0;}
+        .marquee-wrapper::before, .marquee-wrapper::after { content: ''; position: absolute; top: 0; width: 50px; height: 100%; z-index: 2; }
+        .marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-body), transparent); }
+        .marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-body), transparent); }
         
-        .back-btn {
-            background: var(--bg-card); border: 2px solid var(--primary-light); color: var(--primary);
-            padding: 10px 20px; border-radius: 20px; font-weight: 600; cursor: pointer;
-            margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
+        .marquee-content { display: flex; width: max-content; animation: scrollLeft 25s linear infinite; gap: 20px; padding: 0 20px;}
+        .testi-card {
+            background: var(--bg-card); padding: 15px 25px; border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(255, 133, 179, 0.08);
+            border: 1px solid var(--primary-light); display: flex; flex-direction: column; gap: 5px;
         }
-        .back-btn:hover { background: var(--primary); color: #fff; }
-
-        /* === STEPS & FORM UI === */
-        .step-box { 
-            background: var(--bg-card); border: 1px solid var(--glass-border); 
-            border-radius: 20px; margin-bottom: 25px; overflow: hidden;
-            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.05);
-        }
-        .step-header { 
-            display: flex; align-items: center; background: rgba(255, 105, 180, 0.05); 
-            border-bottom: 1px solid var(--glass-border); padding: 15px 20px;
-        }
-        .step-num { 
-            background: var(--primary); color: #fff; width: 35px; height: 35px; 
-            display: flex; justify-content: center; align-items: center; 
-            border-radius: 50%; font-weight: 800; font-family: 'Syne'; margin-right: 15px;
-        }
-        .step-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
-        .step-body { padding: 25px; }
-
-        .input-group { margin-bottom: 15px; }
-        .input-group label { display: block; color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
-        .input-group input { 
-            width: 100%; padding: 15px; border-radius: 12px; border: 2px solid var(--primary-light); 
-            background: #FAFAFA; color: var(--text-main); outline: none; transition: 0.3s; 
-        }
-        .input-group input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255, 105, 180, 0.2); }
-
-        /* === GRID ITEM (PINK COQUETTE CARDS) === */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
-        .item-card { 
-            background: var(--bg-card); border: 2px solid var(--primary-light); 
-            border-radius: 16px; padding: 20px; text-align: center; cursor: pointer; 
-            transition: 0.3s; position: relative; overflow: hidden;
-        }
-        .item-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 105, 180, 0.15); }
-        .item-card.selected { 
-            background: var(--primary); border-color: var(--primary); 
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4); 
-        }
-        .item-card.selected .card-title, .item-card.selected .card-price { color: #fff; }
-        .card-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 5px;}
-        .card-price { color: var(--primary); font-weight: 600; font-size: 1rem; }
-
-        /* === PAYMENT CARDS === */
-        .pay-card { 
-            background: var(--bg-card); border: 2px solid var(--primary-light); 
-            border-radius: 12px; padding: 15px; margin-bottom: 10px; cursor: pointer; 
-            display: flex; align-items: center; justify-content: space-between; transition: 0.3s;
-        }
-        .pay-card.selected { background: rgba(255, 105, 180, 0.1); border-color: var(--primary); }
-        .pay-name { font-weight: 700; color: var(--text-main); }
-        .pay-card i { font-size: 1.5rem; color: var(--primary); }
-
-        /* === CHECKOUT BUTTON BAR === */
-        .checkout-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px); border-top: 2px solid var(--primary-light);
-            padding: 15px 5%; display: flex; justify-content: flex-end; align-items: center; z-index: 999;
-            box-shadow: 0 -5px 20px rgba(255, 105, 180, 0.1);
-        }
-        .btn-checkout { 
-            background: var(--primary); color: #fff; border: none; padding: 15px 40px; 
-            border-radius: 30px; font-family: 'Syne', sans-serif; font-weight: 800; 
-            font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
-        }
-        .btn-checkout:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6); }
-
-        /* === TESTIMONIAL & KALKULATOR === */
-        .extra-box { background: var(--bg-card); border: 2px solid var(--primary-light); border-radius: 20px; padding: 30px; margin-bottom: 30px; }
-        .extra-title { font-family: 'Syne', sans-serif; color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+        .testi-card .stars { color: #FFB347; font-size: 0.8rem; }
+        .testi-card .text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: var(--text-dark); }
+        .testi-card .user { font-size: 0.8rem; font-weight: 700; color: var(--primary); text-align: right; }
         
-        .testi-item { border-bottom: 1px dashed var(--glass-border); padding: 15px 0; }
-        .testi-user { font-weight: 700; color: var(--text-main); display: flex; justify-content: space-between; }
-        .testi-stars { color: #FACC15; font-size: 0.8rem; }
-        .testi-text { font-style: italic; color: var(--text-dim); margin-top: 5px; font-size: 0.95rem; }
+        @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* === FLOATING WA === */
+        /* === COLLECTION (KATALOG APP) === */
+        .collection { max-width: 900px; margin: 0 auto; padding: 0 5% 50px; }
+        .section-title { 
+            font-family: 'Playfair Display', serif; text-align: center; 
+            font-size: 2rem; margin-bottom: 30px; color: var(--text-dark); 
+        }
+        .section-title span { color: var(--primary); }
+
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .app-card {
+            background: var(--bg-card); border-radius: 30px; padding: 25px;
+            text-align: center; border: 1px solid var(--primary-light);
+            transition: all 0.4s ease; cursor: pointer; position: relative;
+            box-shadow: 0 10px 30px rgba(255, 133, 179, 0.05);
+        }
+        .app-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(255, 133, 179, 0.2); border-color: var(--primary); }
+        .app-card.selected { background: var(--primary); color: #fff; transform: scale(1.05); }
+        .app-card.selected h3, .app-card.selected p { color: #fff; }
+        
+        .app-icon { 
+            width: 70px; height: 70px; border-radius: 20px; margin: 0 auto 15px; 
+            background: var(--bg-body); display: flex; justify-content: center; align-items: center;
+            font-size: 2rem; color: var(--primary); box-shadow: inset 0 0 10px rgba(255,133,179,0.2);
+        }
+        .app-card.selected .app-icon { background: rgba(255,255,255,0.2); color: #fff; }
+        
+        .app-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 5px; }
+        .app-card p { font-size: 0.85rem; color: var(--text-soft); font-weight: 600; margin-bottom: 15px; }
+
+        /* === FORM PEMESANAN (MUNCUL KALAU APP DIKLIK) === */
+        .order-section {
+            background: var(--bg-card); border-radius: 40px; padding: 40px;
+            margin-top: 40px; box-shadow: 0 20px 50px rgba(255, 133, 179, 0.1);
+            border: 1px solid var(--primary-light); display: none; animation: fadeUp 0.5s ease;
+        }
+        @keyframes fadeUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+        .form-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px dashed var(--primary-light); padding-bottom: 10px; }
+        
+        /* Pilihan Paket */
+        .paket-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .paket-btn {
+            background: var(--bg-body); border: 1px solid var(--primary-light);
+            padding: 15px; border-radius: 20px; text-align: center; cursor: pointer;
+            transition: 0.3s; color: var(--text-dark);
+        }
+        .paket-btn:hover { border-color: var(--primary); }
+        .paket-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 5px 15px rgba(255, 133, 179, 0.4); }
+        .paket-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; }
+        .paket-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; }
+
+        /* Input Elegan */
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-soft); }
+        .input-group input {
+            width: 100%; padding: 15px 20px; border-radius: 20px; border: 1px solid var(--primary-light);
+            background: #FAFAFA; color: var(--text-dark); font-family: 'Quicksand'; outline: none; transition: 0.3s;
+        }
+        .input-group input:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 15px rgba(255, 133, 179, 0.15); }
+
+        /* Pilihan Pembayaran */
+        .payment-options { display: flex; gap: 15px; margin-bottom: 30px; }
+        .pay-method {
+            flex: 1; padding: 15px; text-align: center; border-radius: 20px;
+            border: 1px solid var(--primary-light); cursor: pointer; transition: 0.3s;
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+        .pay-method i { font-size: 1.5rem; color: var(--primary); }
+        .pay-method.active { background: rgba(255, 133, 179, 0.1); border-color: var(--primary); }
+
+        .btn-order {
+            width: 100%; background: var(--primary); color: #fff; border: none;
+            padding: 18px; border-radius: 30px; font-family: 'Quicksand'; font-weight: 700;
+            font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 10px 25px rgba(255, 133, 179, 0.3);
+        }
+        .btn-order:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 133, 179, 0.5); }
+
+        /* === INVOICE MODAL ESTETIK === */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .modal-box { background: var(--bg-card); width: 90%; max-width: 400px; border-radius: 30px; padding: 30px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.1); animation: fadeUp 0.4s ease; text-align: center; }
+        
+        .modal-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
+        .invoice-detail { text-align: left; background: var(--bg-body); padding: 20px; border-radius: 20px; margin-bottom: 20px; font-size: 0.95rem; }
+        .invoice-detail p { margin-bottom: 10px; border-bottom: 1px dashed var(--primary-light); padding-bottom: 5px; display: flex; justify-content: space-between; }
+        .invoice-detail p strong { color: var(--primary); }
+        
+        .btn-wa { background: #25D366; color: #fff; width: 100%; padding: 15px; border-radius: 20px; border: none; font-family: 'Quicksand'; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); transition: 0.3s;}
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
+        
+        .close-btn { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.2rem; color: var(--text-soft); cursor: pointer; }
+
+        /* === FLOATING CS === */
         .floating-wa {
-            position: fixed; bottom: 100px; right: 20px; width: 60px; height: 60px;
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
             background: #25D366; color: #fff; border-radius: 50%; display: flex;
             justify-content: center; align-items: center; font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5); z-index: 998;
-            text-decoration: none; animation: pulse 2s infinite;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); z-index: 998;
+            text-decoration: none; transition: 0.3s;
         }
-        @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(37,211,102,0.6);} 70% {box-shadow: 0 0 0 15px rgba(37,211,102,0);} 100% {box-shadow: 0 0 0 0 rgba(37,211,102,0);} }
-
-        /* === INVOICE MODAL === */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; }
-        .modal-box { background: var(--bg-card); width: 90%; max-width: 400px; border-radius: 25px; overflow: hidden; border: 2px solid var(--primary-light); box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3); animation: slideUp 0.4s ease; }
-        @keyframes slideUp { from{transform: translateY(50px); opacity:0;} to{transform: translateY(0); opacity:1;} }
+        .floating-wa:hover { transform: scale(1.1); }
         
-        .modal-header { background: var(--primary); padding: 20px; text-align: center; color: #fff; position: relative; }
-        .close-modal { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-        .modal-body { padding: 25px; }
-        
-        .invoice-row { display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px dashed var(--glass-border); padding-bottom: 8px; font-size: 0.9rem; }
-        .btn-confirm { width: 100%; background: var(--primary); color: #fff; border: none; padding: 15px; border-radius: 15px; font-weight: 700; font-size: 1.1rem; cursor: pointer; margin-top: 15px; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3); }
-
-        /* FOOTER */
-        footer { text-align: center; padding: 40px 20px 100px; background: rgba(255,255,255,0.5); border-top: 2px solid var(--primary-light); margin-top: 50px; color: var(--text-dim); }
+        footer { text-align: center; padding: 20px; color: var(--text-soft); font-size: 0.9rem; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <!-- AESTHETIC BACKGROUND -->
-    <div class="particles">
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
-
     <!-- NAVBAR -->
     <nav>
-        <a href="#" class="logo">𝑅𝑜𝓎𝒶𝓁𝑒<span> 𝒮𝓉𝑜𝓇𝑒🦢</span></a>
+        <a href="#" class="logo">𝑅𝑜𝓎𝒶𝓁𝑒<span> 𝒮𝓉𝑜𝓇𝑒</span> <i class="fas fa-swan"></i></a>
+        <a href="#katalog" style="color: var(--text-dark); text-decoration: none; font-weight: 600;">Shop Now</a>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero" id="hero-section">
-        <div class="hero-container">
-            <h1 class="title-elegant">Pusat Top Up Termurah & Aman ✨</h1>
-            <p class="subtitle-elegant">Menjual berbagai kebutuhan App Premium & Diamond Game dengan pelayanan VVIP khusus untukmu luvv!</p>
-            
-            <div class="menu-utama">
-                <div class="kategori-box" onclick="bukaKatalog('game')">
-                    <i class="fas fa-gamepad"></i>
-                    <h2>TOP UP GAME</h2>
-                    <p>Mobile Legends, dll</p>
-                </div>
-                <div class="kategori-box" onclick="bukaKatalog('app')">
-                    <i class="fas fa-crown"></i>
-                    <h2>APP PREMIUM</h2>
-                    <p>Netflix, Canva, Spotify</p>
-                </div>
-            </div>
-            
-            <div class="extra-box" style="text-align: left; max-width: 600px; margin: 40px auto 0;">
-                <h3 class="extra-title" style="font-size: 1.2rem; text-align: left;"><i class="fas fa-star"></i> Testimoni Pelanggan</h3>
-                <div id="testi-container">
-                    <div class="testi-item">
-                        <div class="testi-user">Nadia S. <span class="testi-stars">⭐⭐⭐⭐⭐</span></div>
-                        <div class="testi-text">"Adminnya ramah bangetttt, fast respon, harganya juga miring parah! Luvv banget sama Royale Store! 💖"</div>
-                    </div>
-                    <div class="testi-item">
-                        <div class="testi-user">Bima W. <span class="testi-stars">⭐⭐⭐⭐⭐</span></div>
-                        <div class="testi-text">"Topup ML disini sat set banget, belom ada semenit udah masuk dm nya. Mantap min!"</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Kalkulator Event ML (Sesuai Request) -->
-            <div class="extra-box" style="text-align: left; max-width: 600px; margin: 20px auto 0;">
-                <h3 class="extra-title" style="font-size: 1.2rem; text-align: left;"><i class="fas fa-calculator"></i> Kalkulator MLBB</h3>
-                <div class="input-group">
-                    <label>Sisa Poin Magic Wheel Kamu</label>
-                    <input type="number" id="calc-poin" placeholder="Contoh: 150">
-                </div>
-                <button onclick="hitungPoin()" style="width: 100%; background: var(--primary); color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Hitung Butuh Berapa DM</button>
-                <div id="calc-hasil" style="margin-top: 15px; font-weight: bold; color: var(--primary); text-align: center;"></div>
-            </div>
-        </div>
+    <section class="hero">
+        <h1>Elevate Your Lifestyle <span>with Premium Apps</span> 🎀</h1>
+        <p>Penuhi kebutuhan hiburan digitalmu dengan layanan Premium App dari Royale Store. Estetik, cepat, dan 100% aman.</p>
     </section>
 
-    <!-- CATALOG SECTION -->
-    <section class="catalog-container" id="catalog-section">
-        <button class="back-btn" onclick="kembaliKeHome()"><i class="fas fa-arrow-left"></i> Kembali</button>
+    <!-- MARQUEE TESTIMONIALS -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <!-- Set 1 -->
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Netflixnya lanjay bgt, admin ramah puol!"</div><div class="user">- Dinda 🌷</div></div>
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Canva Pro nugas jadi satset. Makasiii min!"</div><div class="user">- Rara ✨</div></div>
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Langganan trs di Royale Store karna trusted!"</div><div class="user">- Nisa 🎀</div></div>
+            <!-- Set 2 (Duplicate for smooth scroll) -->
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Netflixnya lanjay bgt, admin ramah puol!"</div><div class="user">- Dinda 🌷</div></div>
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Canva Pro nugas jadi satset. Makasiii min!"</div><div class="user">- Rara ✨</div></div>
+            <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Langganan trs di Royale Store karna trusted!"</div><div class="user">- Nisa 🎀</div></div>
+        </div>
+    </div>
+
+    <!-- CATALOG APP PREMIUM -->
+    <section class="collection" id="katalog">
+        <h2 class="section-title">Our Premium <span>Collections</span> 💌</h2>
         
-        <!-- STEP 1 -->
-        <div class="step-box">
-            <div class="step-header"><div class="step-num">1</div><div class="step-title">Detail Tujuan</div></div>
-            <div class="step-body" id="input-area">
-                <!-- Injected via JS based on category -->
+        <div class="app-grid">
+            <div class="app-card" onclick="pilihApp('Netflix Premium', this)">
+                <div class="app-icon"><i class="fas fa-film"></i></div>
+                <h3>Netflix Premium</h3>
+                <p>Nonton drakor tanpa hambatan.</p>
+            </div>
+            <div class="app-card" onclick="pilihApp('Canva Pro', this)">
+                <div class="app-icon"><i class="fas fa-palette"></i></div>
+                <h3>Canva Pro</h3>
+                <p>Desain tugas & feed jadi estetik.</p>
+            </div>
+            <div class="app-card" onclick="pilihApp('Spotify Premium', this)">
+                <div class="app-icon"><i class="fas fa-music"></i></div>
+                <h3>Spotify Premium</h3>
+                <p>Dengerin lagu galau tanpa iklan.</p>
             </div>
         </div>
 
-        <!-- STEP 2 -->
-        <div class="step-box">
-            <div class="step-header"><div class="step-num">2</div><div class="step-title">Pilih Item</div></div>
-            <div class="step-body">
-                <div class="grid" id="item-grid">
-                    <!-- Injected via JS based on category -->
+        <!-- FORM ORDER (Hidden initially) -->
+        <div class="order-section" id="form-order">
+            <h3 class="form-title">Pilih Durasi <span id="app-name-title" style="color:var(--primary);"></span></h3>
+            
+            <div class="paket-grid" id="paket-container">
+                <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+
+            <div class="input-group">
+                <label>Email Kamu (Untuk proses App)</label>
+                <input type="email" id="user-email" placeholder="contoh: cantik@gmail.com">
+            </div>
+
+            <div class="input-group">
+                <label>No. WhatsApp</label>
+                <input type="number" id="user-wa" placeholder="0812xxxxxx">
+            </div>
+
+            <h3 class="form-title" style="font-size: 1.2rem; border: none;">Metode Pembayaran</h3>
+            <div class="payment-options">
+                <div class="pay-method active" id="pay-qris" onclick="pilihPayment('QRIS')">
+                    <i class="fas fa-qrcode"></i> <span>QRIS</span>
+                </div>
+                <div class="pay-method" id="pay-dana" onclick="pilihPayment('DANA')">
+                    <i class="fas fa-wallet"></i> <span>DANA</span>
                 </div>
             </div>
-        </div>
 
-        <!-- STEP 3 -->
-        <div class="step-box">
-            <div class="step-header"><div class="step-num">3</div><div class="step-title">Pembayaran</div></div>
-            <div class="step-body">
-                <div class="pay-card" onclick="pilihPayment('QRIS (All Payment)', this)">
-                    <span class="pay-name">QRIS (Ovo, Dana, Shopee, dll)</span> <i class="fas fa-qrcode"></i>
-                </div>
-                <div class="pay-card" onclick="pilihPayment('DANA Manual', this)">
-                    <span class="pay-name">DANA (Manual)</span> <i class="fas fa-wallet"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- STEP 4 -->
-        <div class="step-box">
-            <div class="step-header"><div class="step-num">4</div><div class="step-title">Kontak Kamu</div></div>
-            <div class="step-body">
-                <div class="input-group" style="margin: 0;">
-                    <label>Nomor WhatsApp</label>
-                    <input type="number" id="user-wa" placeholder="Contoh: 08123456789">
-                </div>
-                <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 5px;">*Admin akan menghubungimu jika terjadi kendala pesanan.</p>
-            </div>
-        </div>
-
-        <!-- CHECKOUT BAR -->
-        <div class="checkout-bar">
-            <button class="btn-checkout" onclick="prosesBeli()">Beli Sekarang ✨</button>
+            <button class="btn-order" onclick="prosesCheckout()">Checkout Sekarang 🛍️</button>
         </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <h2 style="font-family: 'Syne'; color: var(--primary); margin-bottom: 10px;">𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒🦢</h2>
-        <p>Pusat Top Up Termurah & Aman.</p>
-        <div style="margin-top: 15px;">
-            <a href="#" style="color: var(--text-main); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: var(--text-main); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </footer>
 
     <!-- INVOICE MODAL -->
     <div class="modal-overlay" id="modal-invoice">
         <div class="modal-box">
-            <div class="modal-header">
-                <button class="close-modal" onclick="document.getElementById('modal-invoice').style.display='none'"><i class="fas fa-times"></i></button>
-                <h3 style="font-family: 'Syne';">Detail Pesanan</h3>
+            <button class="close-btn" onclick="document.getElementById('modal-invoice').style.display='none'"><i class="fas fa-times"></i></button>
+            <h3 class="modal-title">Receipt 🧾</h3>
+            
+            <div class="invoice-detail">
+                <p>Aplikasi: <strong id="inv-app"></strong></p>
+                <p>Paket: <strong id="inv-paket"></strong></p>
+                <p>Metode: <strong id="inv-pay"></strong></p>
+                <p style="border:none; margin:0; padding-top:10px; font-size:1.2rem; text-align:center;">
+                    Total: <strong style="font-size: 1.5rem;" id="inv-total"></strong>
+                </p>
             </div>
-            <div class="modal-body">
-                <div class="invoice-row"><span>Resi</span><strong id="inv-resi"></strong></div>
-                <div class="invoice-row"><span>Target</span><strong id="inv-target"></strong></div>
-                <div class="invoice-row"><span>Item</span><strong style="color: var(--primary);" id="inv-item"></strong></div>
-                <div class="invoice-row"><span>Pembayaran</span><strong id="inv-pay"></strong></div>
-                <div class="invoice-row" style="background: rgba(255,105,180,0.1); padding: 10px; border-radius: 10px;">
-                    <span style="font-weight: bold; color: var(--text-main);">Total Bayar</span>
-                    <strong style="font-size: 1.2rem; color: var(--primary);" id="inv-total"></strong>
-                </div>
 
-                <!-- Box Instruksi QRIS (Akan dimunculkan lewat JS) -->
-                <div id="box-qris" style="display: none; text-align: center; margin-top: 15px;">
-                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px;">Silakan scan QRIS di bawah ini:</p>
-                    <div id="qris-canvas" style="display: flex; justify-content: center; background: #fff; padding: 10px; border: 2px solid var(--primary); border-radius: 15px; margin: 0 auto;"></div>
-                </div>
-
-                <button class="btn-confirm" id="btn-lanjut-wa" onclick="lanjutBayarWA()">Konfirmasi ke WA Admin <i class="fab fa-whatsapp"></i></button>
+            <!-- Tempat QRIS -->
+            <div id="qris-box" style="display:none; margin-bottom: 20px;">
+                <p style="font-size: 0.85rem; color: var(--text-soft); margin-bottom: 10px;">Scan QR Code di bawah ini ya cantik:</p>
+                <div id="qris-canvas" style="display:flex; justify-content:center; padding:10px; border:2px dashed var(--primary-light); border-radius:20px;"></div>
             </div>
+
+            <button class="btn-wa" id="btn-lanjut" onclick="kirimKeWA()">Kirim Bukti ke WhatsApp <i class="fab fa-whatsapp"></i></button>
         </div>
     </div>
 
-    <!-- FLOATING WA BUTTON -->
-    <a href="https://wa.me/6285753157247?text=Halo%20min%20Royale%20Store%2C%20mau%20tanya%20dong..." target="_blank" class="floating-wa">
+    <!-- FLOATING CS WA -->
+    <a href="https://wa.me/6285753157247?text=Halo%20min%20Royale%20Store%2C%20aku%20mau%20tanya%20dong..." target="_blank" class="floating-wa">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <footer>
+        <p>&copy; 2026 Royale Store. Crafted with 💖 & Aesthetics.</p>
+    </footer>
+
     <script>
-        // STATE VARIABLES
-        let activeKategori = '';
-        let selectedItemName = '';
-        let selectedItemPrice = '';
-        let selectedPaymentMethod = '';
+        // === DATA DUMMY APP PREMIUM ===
+        const catalogData = {
+            'Netflix Premium': [
+                { nama: 'Sharing 1 Bulan', harga: 25000 },
+                { nama: 'Private 1 Bulan', harga: 120000 }
+            ],
+            'Canva Pro': [
+                { nama: '1 Bulan', harga: 5000 },
+                { nama: '1 Tahun', harga: 15000 }
+            ],
+            'Spotify Premium': [
+                { nama: 'Individual 1 Bulan', harga: 20000 },
+                { nama: 'Family Plan 1 Bulan', harga: 25000 }
+            ]
+        };
 
-        // DATA KATALOG (REQUEST CLIENT)
-        const dataMLBB = [
-            { name: '5 💎', price: 'Rp 2.000', num: 2000 },
-            { name: '12 💎', price: 'Rp 11.000', num: 11000 },
-            { name: '19 💎', price: 'Rp 6.000', num: 6000 },
-            { name: '25 💎', price: 'Rp 9.000', num: 9000 }
-        ];
+        let selectedApp = '';
+        let selectedPaketNama = '';
+        let selectedPaketHarga = 0;
+        let selectedPay = 'QRIS'; // Default
 
-        const dataApp = [
-            { name: 'Netflix Premium 1 Bulan', price: 'Rp 25.000', num: 25000 },
-            { name: 'Canva Pro 1 Bulan', price: 'Rp 5.000', num: 5000 },
-            { name: 'Spotify Premium 1 Bulan', price: 'Rp 15.000', num: 15000 }
-        ];
-
-        // FUNGSI NAVIGASI MENU
-        function bukaKatalog(jenis) {
-            activeKategori = jenis;
-            document.getElementById('hero-section').style.display = 'none';
-            document.getElementById('catalog-section').style.display = 'block';
-            
-            let inputArea = document.getElementById('input-area');
-            let gridArea = document.getElementById('item-grid');
-            
-            // Reset Selections
-            selectedItemName = ''; selectedItemPrice = ''; selectedPaymentMethod = '';
-            document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
-
-            if (jenis === 'game') {
-                inputArea.innerHTML = `
-                    <div style="display: flex; gap: 10px;">
-                        <div class="input-group" style="flex: 2;"><label>User ID</label><input type="number" id="input-id" placeholder="Ketikan ID"></div>
-                        <div class="input-group" style="flex: 1;"><label>Server</label><input type="number" id="input-server" placeholder="(1234)"></div>
-                    </div>`;
-                renderGrid(dataMLBB, gridArea);
-            } else {
-                inputArea.innerHTML = `
-                    <div class="input-group"><label>Email / Username (Opsional)</label><input type="text" id="input-id" placeholder="Ketikan Email untuk App"></div>`;
-                renderGrid(dataApp, gridArea);
-            }
-        }
-
-        function kembaliKeHome() {
-            document.getElementById('hero-section').style.display = 'block';
-            document.getElementById('catalog-section').style.display = 'none';
-        }
-
-        // FUNGSI RENDER KARTU
-        function renderGrid(dataArray, container) {
-            container.innerHTML = '';
-            dataArray.forEach(item => {
-                let card = document.createElement('div');
-                card.className = 'item-card';
-                card.innerHTML = `<div class="card-title">${item.name}</div><div class="card-price">${item.price}</div>`;
-                card.onclick = function() {
-                    document.querySelectorAll('.item-card').forEach(c => c.classList.remove('selected'));
-                    this.classList.add('selected');
-                    selectedItemName = item.name;
-                    selectedItemPrice = item.price;
-                };
-                container.appendChild(card);
-            });
-        }
-
-        function pilihPayment(nama, element) {
-            document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
+        // PILIH APLIKASI
+        function pilihApp(namaApp, element) {
+            document.querySelectorAll('.app-card').forEach(c => c.classList.remove('selected'));
             element.classList.add('selected');
-            selectedPaymentMethod = nama;
+            selectedApp = namaApp;
+            document.getElementById('app-name-title').innerText = namaApp;
+            
+            // Reset Paket
+            selectedPaketNama = ''; selectedPaketHarga = 0;
+            
+            // Render Paket
+            const container = document.getElementById('paket-container');
+            container.innerHTML = '';
+            
+            catalogData[namaApp].forEach((paket, index) => {
+                let div = document.createElement('div');
+                div.className = 'paket-btn';
+                div.innerHTML = `<div class="paket-name">${paket.nama}</div><div class="paket-price">Rp ${paket.harga.toLocaleString('id-ID')}</div>`;
+                div.onclick = function() {
+                    document.querySelectorAll('.paket-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedPaketNama = paket.nama;
+                    selectedPaketHarga = paket.harga;
+                };
+                container.appendChild(div);
+            });
+
+            document.getElementById('form-order').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('form-order').offsetTop - 100, behavior: 'smooth' });
         }
 
-        // KALKULATOR MLBB
-        function hitungPoin() {
-            let poin = document.getElementById('calc-poin').value;
-            let hasilBox = document.getElementById('calc-hasil');
-            if(!poin) return hasilBox.innerText = "Isi poinnya dulu dong luvv!";
-            
-            let sisa = 200 - parseInt(poin);
-            if(sisa <= 0) return hasilBox.innerText = "Wah poin kamu udah mentok 200 bosku!";
-            
-            let estDiamond = (Math.floor(sisa / 5) * 270) + ((sisa % 5) * 60);
-            hasilBox.innerHTML = `Sisa: ${sisa} Poin<br>Butuh sekitar: 💎 ${estDiamond} Diamond`;
+        // PILIH PAYMENT
+        function pilihPayment(metode) {
+            selectedPay = metode;
+            document.getElementById('pay-qris').classList.remove('active');
+            document.getElementById('pay-dana').classList.remove('active');
+            if(metode === 'QRIS') document.getElementById('pay-qris').classList.add('active');
+            if(metode === 'DANA') document.getElementById('pay-dana').classList.add('active');
         }
 
-        // FUNGSI PEMBUAT QRIS (Dari Null Store)
+        // FUNGSI BUAT QRIS
         function hitungCRC(str) {
             let crc = 0xFFFF;
             for (let i = 0; i < str.length; i++) {
@@ -455,83 +370,68 @@
                 } crc &= 0xFFFF;
             } return crc.toString(16).toUpperCase().padStart(4, '0');
         }
-
         function buatQRISDinamis(qrisStatis, nominal) {
-            let qrisBase = qrisStatis.slice(0, -8);
-            qrisBase = qrisBase.replace("010211", "010212");
+            let qrisBase = qrisStatis.slice(0, -8).replace("010211", "010212");
             let nomStr = nominal.toString();
             let nomLen = nomStr.length.toString().padStart(2, '0');
             qrisBase += "54" + nomLen + nomStr + "6304";
             return qrisBase + hitungCRC(qrisBase);
         }
 
-        // PROSES CHECKOUT
-        function prosesBeli() {
-            let targetID = document.getElementById('input-id')?.value || '-';
-            let targetServer = document.getElementById('input-server')?.value || '';
-            let targetLengkap = targetServer ? `${targetID} (${targetServer})` : targetID;
+        // CHECKOUT
+        function prosesCheckout() {
+            let email = document.getElementById('user-email').value;
             let wa = document.getElementById('user-wa').value;
 
-            if(!targetID || targetID === '-') return alert('Isi ID Tujuan dulu ya luvv!');
-            if(!selectedItemName) return alert('Pilih nominal produknya dulu beb!');
-            if(!selectedPaymentMethod) return alert('Pilih metode pembayaran dulu!');
-            if(!wa) return alert('Nomor WA jangan lupa diisi ya!');
+            if(!selectedPaketNama) return alert('Pilih durasi paketnya dulu ya cantik 🎀');
+            if(!email) return alert('Email wajib diisi yaa!');
+            if(!wa) return alert('Nomor WhatsApp jangan sampai kosong!');
 
-            let resi = "RYS-" + Math.floor(Math.random() * 900000 + 100000);
-            document.getElementById('inv-resi').innerText = resi;
-            document.getElementById('inv-target').innerText = targetLengkap;
-            document.getElementById('inv-item').innerText = selectedItemName;
-            document.getElementById('inv-pay').innerText = selectedPaymentMethod;
-            document.getElementById('inv-total').innerText = selectedItemPrice;
+            document.getElementById('inv-app').innerText = selectedApp;
+            document.getElementById('inv-paket').innerText = selectedPaketNama;
+            document.getElementById('inv-pay').innerText = selectedPay;
+            document.getElementById('inv-total').innerText = 'Rp ' + selectedPaketHarga.toLocaleString('id-ID');
 
-            // LOGIKA QRIS
-            let boxQris = document.getElementById('box-qris');
-            if (selectedPaymentMethod.includes('QRIS')) {
-                boxQris.style.display = 'block';
-                let hargaAngka = parseInt(selectedItemPrice.replace(/[^0-9]/g, ''));
-                
-                // MENGGUNAKAN QRIS AKUN LU SEMENTARA SAMPAI DIA LUNAS
+            let qrisBox = document.getElementById('qris-box');
+            if(selectedPay === 'QRIS') {
+                qrisBox.style.display = 'block';
+                // PAKE KODE QRIS SEMENTARA KAMU DULU (Nanti diganti foto pas lunas)
                 let myPersonalQRIS = "00020101021126570011ID.DANA.WWW011893600915303264378902090326437890303UMI51440014ID.CO.QRIS.WWW0215ID10265327541770303UMI5204481253033605802ID5910Null Store6015Kota Banjarmasi6105702396304C29E"; 
-                let qrisDinamis = buatQRISDinamis(myPersonalQRIS, hargaAngka);
+                let qrisDinamis = buatQRISDinamis(myPersonalQRIS, selectedPaketHarga);
                 
                 document.getElementById('qris-canvas').innerHTML = ""; 
                 new QRCode(document.getElementById("qris-canvas"), {
-                    text: qrisDinamis, width: 200, height: 200, colorDark: "#FF69B4", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+                    text: qrisDinamis, width: 180, height: 180, colorDark: "#FF85B3", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
                 });
             } else {
-                boxQris.style.display = 'none';
+                qrisBox.style.display = 'none';
             }
 
             document.getElementById('modal-invoice').style.display = 'flex';
         }
 
-        // LANJUT KE WA ADMIN (DIARAHKAN KE WA KAMU SEBAGAI DP)
-        window.lanjutBayarWA = function() {
-            let btnWa = document.getElementById('btn-lanjut-wa');
-            let teksAsli = btnWa.innerHTML;
+        // KIRIM KE WA ADMIN (DP PAKE NOMOR KAMU DULU BUBB)
+        function kirimKeWA() {
+            let btnWa = document.getElementById('btn-lanjut');
             btnWa.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menyiapkan...`;
-            btnWa.style.pointerEvents = 'none';
-
-            let resiBaru = document.getElementById('inv-resi').innerText;
-            let accountData = document.getElementById('inv-target').innerText;
             
-            // PAKE NOMOR KAMU DULU BUBB
+            let email = document.getElementById('user-email').value;
             const targetWaNumber = '6285753157247'; 
-            const formatPesan = `🛒 *ROYALE STORE | ORDER BARU*\n` +
-                                `🧾 *Resi: ${resiBaru}*\n\n` +
-                                `ID/Server  : ${accountData}\n` +
-                                `Pesanan    : ${selectedItemName}\n` +
-                                `Tagihan    : ${selectedItemPrice}\n` +
-                                `Pembayaran : ${selectedPaymentMethod}\n\n` +
-                                `Halo min, ini detail orderan saya. Ditunggu instruksi pembayarannya ya ✨🦢`;
+            
+            const formatPesan = `🎀 *ROYALE STORE | ORDER BARU* 🎀\n\n` +
+                                `Aplikasi : ${selectedApp}\n` +
+                                `Paket    : ${selectedPaketNama}\n` +
+                                `Email    : ${email}\n` +
+                                `Total    : Rp ${selectedPaketHarga.toLocaleString('id-ID')}\n` +
+                                `Payment  : ${selectedPay}\n\n` +
+                                `Halo min, ini orderan aku. Ditunggu instruksinya ya cantik ✨🦢`;
                                 
             const encodedText = encodeURIComponent(formatPesan);
             const urlWhatsApp = `https://wa.me/${targetWaNumber}?text=${encodedText}`;
             
             setTimeout(() => {
                 window.open(urlWhatsApp, '_blank');
-                btnWa.innerHTML = teksAsli;
-                btnWa.style.pointerEvents = 'auto';
+                btnWa.innerHTML = `Kirim Bukti ke WhatsApp <i class="fab fa-whatsapp"></i>`;
                 document.getElementById('modal-invoice').style.display = 'none';
             }, 1000);
         }
