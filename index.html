@@ -204,27 +204,19 @@
         
         footer { text-align: center; padding: 20px; color: var(--text-soft); font-size: 0.9rem; margin-top: 50px; }
         
-                /* === EFEK SAKURA GUGUR COQUETTE === */
+        /* === EFEK SAKURA GUGUR COQUETTE (UPDATED BIAR LEBIH NAMPAK) === */
         .sakura-petal {
             position: fixed; 
             top: -10%; 
-            z-index: -1; /* Berada di belakang konten biar gak nutupin teks */
-            background: linear-gradient(135deg, var(--primary-light), #ffffff);
+            z-index: -1; 
+            /* Warna pinknya ditebelin pakai var(--primary) biar kontras */
+            background: linear-gradient(135deg, var(--primary), #FFD1E3);
+            /* Ditambahin efek bayangan pink (Glow) biar misah dari background */
+            box-shadow: 0 2px 10px rgba(255, 133, 179, 0.7);
             border-radius: 15px 0 15px 0;
-            opacity: 0.7; 
-            pointer-events: none; /* Biar tetap bisa diklik area bawahnya */
+            opacity: 0.95; /* Dinaikin dari 0.7 biar nggak terlalu tembus pandang */
+            pointer-events: none; 
             animation: sakuraFall linear infinite;
-        }
-        
-        @keyframes sakuraFall {
-            0% { 
-                transform: translateY(0) translateX(0) rotate(0deg); 
-                opacity: 0.7; 
-            }
-            100% { 
-                transform: translateY(110vh) translateX(30px) rotate(360deg); 
-                opacity: 0; 
-            }
         }
         
                 /* === ANIMASI KETIK (TYPEWRITER) DI JUDUL === */
