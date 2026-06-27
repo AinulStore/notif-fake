@@ -6,19 +6,20 @@
     <title>𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒 🦢✨ | Premium Apps</title>
     
     <!-- === FONT ESTETIK (PLAYFAIR & QUICKSAND) === -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>    
-        /* === TEMA COQUETTE AESTHETIC === */
+        /* === TEMA COQUETTE AESTHETIC VVIP === */
         :root {
-            --bg-body: #FFF5F7; /* Soft pastel pink */
+            --bg-body: #FFF5F7; 
             --bg-card: #FFFFFF;
-            --primary: #FF85B3; /* Soft Hot Pink */
+            --primary: #FF85B3; 
             --primary-light: #FFD1E3;
-            --text-dark: #594A4E; /* Coklat/Abu elegan */
+            --text-dark: #594A4E; 
             --text-soft: #9E8C90;
+            --error: #FF4C4C;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
@@ -28,8 +29,17 @@
             font-family: 'Quicksand', sans-serif; 
             overflow-x: hidden;
             background-image: radial-gradient(var(--primary-light) 1px, transparent 1px);
-            background-size: 30px 30px; /* Efek motif polkadot super tipis */
+            background-size: 30px 30px; 
         }
+
+        /* BANNER TOKO TUTUP */
+        #banner-tutup {
+            display: none; background: var(--error); color: #fff; text-align: center;
+            padding: 10px; font-weight: 700; font-size: 0.9rem; position: fixed;
+            top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 4px 15px rgba(255, 76, 76, 0.4);
+            animation: slideDown 0.5s ease;
+        }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
 
         /* === NAVBAR PILL FLOATING === */
         nav {
@@ -40,6 +50,7 @@
             display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 10px 30px rgba(255, 133, 179, 0.15);
             border: 1px solid rgba(255,255,255,0.5);
+            transition: top 0.3s ease;
         }
         .logo { 
             font-family: 'Playfair Display', serif; font-size: 1.5rem; 
@@ -86,7 +97,7 @@
         }
         .section-title span { color: var(--primary); }
 
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
         .app-card {
             background: var(--bg-card); border-radius: 30px; padding: 25px;
             text-align: center; border: 1px solid var(--primary-light);
@@ -97,17 +108,21 @@
         .app-card.selected { background: var(--primary); color: #fff; transform: scale(1.05); }
         .app-card.selected h3, .app-card.selected p { color: #fff; }
         
+        /* ANIMASI MELAYANG (FLOATING) UNTUK ICON */
+        @keyframes floatObj { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        
         .app-icon { 
-            width: 70px; height: 70px; border-radius: 20px; margin: 0 auto 15px; 
-            background: var(--bg-body); display: flex; justify-content: center; align-items: center;
-            font-size: 2rem; color: var(--primary); box-shadow: inset 0 0 10px rgba(255,133,179,0.2);
+            width: 80px; height: 80px; border-radius: 20px; margin: 0 auto 15px; 
+            display: flex; justify-content: center; align-items: center;
+            animation: floatObj 3s ease-in-out infinite; /* Efek melayang */
+            background: #fff; padding: 5px; box-shadow: 0 5px 15px rgba(255, 133, 179, 0.15);
         }
-        .app-card.selected .app-icon { background: rgba(255,255,255,0.2); color: #fff; }
+        .app-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 15px; }
         
         .app-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 5px; }
         .app-card p { font-size: 0.85rem; color: var(--text-soft); font-weight: 600; margin-bottom: 15px; }
 
-        /* === FORM PEMESANAN (MUNCUL KALAU APP DIKLIK) === */
+        /* === FORM PEMESANAN === */
         .order-section {
             background: var(--bg-card); border-radius: 40px; padding: 40px;
             margin-top: 40px; box-shadow: 0 20px 50px rgba(255, 133, 179, 0.1);
@@ -117,24 +132,32 @@
 
         .form-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px dashed var(--primary-light); padding-bottom: 10px; }
         
-        /* Pilihan Paket */
+        /* Pilihan Paket (Stok System) */
         .paket-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .paket-btn {
             background: var(--bg-body); border: 1px solid var(--primary-light);
             padding: 15px; border-radius: 20px; text-align: center; cursor: pointer;
-            transition: 0.3s; color: var(--text-dark);
+            transition: 0.3s; color: var(--text-dark); position: relative; overflow: hidden;
         }
         .paket-btn:hover { border-color: var(--primary); }
         .paket-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 5px 15px rgba(255, 133, 179, 0.4); }
         .paket-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 5px; }
-        .paket-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; }
+        .paket-price { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-style: italic; font-weight: 600; }
 
-        /* Input Elegan */
+        /* Kalo Stok Habis / Sold Out */
+        .paket-btn.sold-out {
+            background: #F1F1F1; border-color: #E2E2E2; color: #A0A0A0;
+            cursor: not-allowed; text-decoration: line-through;
+        }
+        .paket-btn.sold-out .paket-price { color: var(--error); text-decoration: none; font-size: 0.9rem; font-style: normal; font-family: 'Quicksand', sans-serif;}
+        .paket-btn.sold-out:hover { border-color: #E2E2E2; }
+
+        /* Input Elegan (Hanya WA) */
         .input-group { margin-bottom: 20px; }
         .input-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--text-soft); }
         .input-group input {
             width: 100%; padding: 15px 20px; border-radius: 20px; border: 1px solid var(--primary-light);
-            background: #FAFAFA; color: var(--text-dark); font-family: 'Quicksand'; outline: none; transition: 0.3s;
+            background: #FAFAFA; color: var(--text-dark); font-family: 'Quicksand'; outline: none; transition: 0.3s; font-size: 1rem;
         }
         .input-group input:focus { border-color: var(--primary); background: #fff; box-shadow: 0 0 15px rgba(255, 133, 179, 0.15); }
 
@@ -150,7 +173,7 @@
 
         .btn-order {
             width: 100%; background: var(--primary); color: #fff; border: none;
-            padding: 18px; border-radius: 30px; font-family: 'Quicksand'; font-weight: 700;
+            padding: 18px; border-radius: 30px; font-family: 'Quicksand'; font-weight: 800;
             font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 10px 25px rgba(255, 133, 179, 0.3);
         }
         .btn-order:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 133, 179, 0.5); }
@@ -161,8 +184,8 @@
         
         .modal-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
         .invoice-detail { text-align: left; background: var(--bg-body); padding: 20px; border-radius: 20px; margin-bottom: 20px; font-size: 0.95rem; }
-        .invoice-detail p { margin-bottom: 10px; border-bottom: 1px dashed var(--primary-light); padding-bottom: 5px; display: flex; justify-content: space-between; }
-        .invoice-detail p strong { color: var(--primary); }
+        .invoice-detail p { margin-bottom: 10px; border-bottom: 1px dashed var(--primary-light); padding-bottom: 5px; display: flex; justify-content: space-between; align-items: center;}
+        .invoice-detail p strong { color: var(--primary); text-align: right;}
         
         .btn-wa { background: #25D366; color: #fff; width: 100%; padding: 15px; border-radius: 20px; border: none; font-family: 'Quicksand'; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); transition: 0.3s;}
         .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5); }
@@ -184,8 +207,13 @@
 </head>
 <body>
 
+    <!-- BANNER TOKO TUTUP (Otomatis muncul kalau di setting tutup) -->
+    <div id="banner-tutup">
+        <i class="fas fa-store-slash"></i> Maaf ya cantik, toko saat ini sedang TUTUP. Silakan kembali lagi nanti! 🎀
+    </div>
+
     <!-- NAVBAR -->
-    <nav>
+    <nav id="navbar">
         <a href="#" class="logo">𝑅𝑜𝓎𝒶𝓁𝑒<span> 𝒮𝓉𝑜𝓇𝑒</span> <i class="fas fa-swan"></i></a>
         <a href="#katalog" style="color: var(--text-dark); text-decoration: none; font-weight: 600;">Shop Now</a>
     </nav>
@@ -199,11 +227,9 @@
     <!-- MARQUEE TESTIMONIALS -->
     <div class="marquee-wrapper">
         <div class="marquee-content">
-            <!-- Set 1 -->
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Netflixnya lanjay bgt, admin ramah puol!"</div><div class="user">- Dinda 🌷</div></div>
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Canva Pro nugas jadi satset. Makasiii min!"</div><div class="user">- Rara ✨</div></div>
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Langganan trs di Royale Store karna trusted!"</div><div class="user">- Nisa 🎀</div></div>
-            <!-- Set 2 (Duplicate for smooth scroll) -->
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Netflixnya lanjay bgt, admin ramah puol!"</div><div class="user">- Dinda 🌷</div></div>
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Canva Pro nugas jadi satset. Makasiii min!"</div><div class="user">- Rara ✨</div></div>
             <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><div class="text">"Langganan trs di Royale Store karna trusted!"</div><div class="user">- Nisa 🎀</div></div>
@@ -214,40 +240,22 @@
     <section class="collection" id="katalog">
         <h2 class="section-title">Our Premium <span>Collections</span> 💌</h2>
         
-        <div class="app-grid">
-            <div class="app-card" onclick="pilihApp('Netflix Premium', this)">
-                <div class="app-icon"><i class="fas fa-film"></i></div>
-                <h3>Netflix Premium</h3>
-                <p>Nonton drakor tanpa hambatan.</p>
-            </div>
-            <div class="app-card" onclick="pilihApp('Canva Pro', this)">
-                <div class="app-icon"><i class="fas fa-palette"></i></div>
-                <h3>Canva Pro</h3>
-                <p>Desain tugas & feed jadi estetik.</p>
-            </div>
-            <div class="app-card" onclick="pilihApp('Spotify Premium', this)">
-                <div class="app-icon"><i class="fas fa-music"></i></div>
-                <h3>Spotify Premium</h3>
-                <p>Dengerin lagu galau tanpa iklan.</p>
-            </div>
+        <div class="app-grid" id="katalog-container">
+            <!-- Akan diisi otomatis oleh Javascript di bawah -->
         </div>
 
-        <!-- FORM ORDER (Hidden initially) -->
+        <!-- FORM ORDER -->
         <div class="order-section" id="form-order">
             <h3 class="form-title">Pilih Durasi <span id="app-name-title" style="color:var(--primary);"></span></h3>
             
             <div class="paket-grid" id="paket-container">
-                <!-- Diisi otomatis oleh JavaScript -->
+                <!-- Paket muncul disini -->
             </div>
 
+            <!-- INPUT NO WHATSAPP -->
             <div class="input-group">
-                <label>Email Kamu (Untuk proses App)</label>
-                <input type="email" id="user-email" placeholder="contoh: cantik@gmail.com">
-            </div>
-
-            <div class="input-group">
-                <label>No. WhatsApp</label>
-                <input type="number" id="user-wa" placeholder="0812xxxxxx">
+                <label>No. WhatsApp (Aktif)</label>
+                <input type="number" id="user-wa" placeholder="Contoh: 0812xxxxxx">
             </div>
 
             <h3 class="form-title" style="font-size: 1.2rem; border: none;">Metode Pembayaran</h3>
@@ -274,7 +282,7 @@
                 <p>Aplikasi: <strong id="inv-app"></strong></p>
                 <p>Paket: <strong id="inv-paket"></strong></p>
                 <p>Metode: <strong id="inv-pay"></strong></p>
-                <p style="border:none; margin:0; padding-top:10px; font-size:1.2rem; text-align:center;">
+                <p style="border:none; margin:0; padding-top:10px; font-size:1.2rem; align-items: center;">
                     Total: <strong style="font-size: 1.5rem;" id="inv-total"></strong>
                 </p>
             </div>
@@ -298,52 +306,119 @@
         <p>&copy; 2026 Royale Store. Crafted with 💖 & Aesthetics.</p>
     </footer>
 
+    <!-- ==================================================== -->
+    <!-- BAGIAN PENGATURAN (KHUSUS UNTUK KAMU) -->
+    <!-- ==================================================== -->
     <script>
-        // === DATA DUMMY APP PREMIUM ===
+        // 1. PENGATURAN BUKA / TUTUP TOKO MANUAL
+        // Ganti jadi false kalau toko mau ditutup, ganti true kalau buka.
+        const TOKO_BUKA = true; 
+
+        // 2. PENGATURAN BOT TELEGRAM (NOTIFIKASI ORDER)
+        // Isi dengan Token Bot dan Chat ID Telegram kamu.
+        const TELEGRAM_BOT_TOKEN = "GANTI_DENGAN_TOKEN_BOT_KAMU"; 
+        const TELEGRAM_CHAT_ID = "GANTI_DENGAN_CHAT_ID_KAMU";
+
+        // 3. DATABASE PRODUK & STOK
+        // Cara atur stok: Ketik 'ready' kalau ada barang, ketik 'sold' kalau habis.
+        // Nanti fotonya tinggal ganti "foto-netflix.png" sama nama foto asli yang kamu upload.
         const catalogData = {
-            'Netflix Premium': [
-                { nama: 'Sharing 1 Bulan', harga: 25000 },
-                { nama: 'Private 1 Bulan', harga: 120000 }
-            ],
-            'Canva Pro': [
-                { nama: '1 Bulan', harga: 5000 },
-                { nama: '1 Tahun', harga: 15000 }
-            ],
-            'Spotify Premium': [
-                { nama: 'Individual 1 Bulan', harga: 20000 },
-                { nama: 'Family Plan 1 Bulan', harga: 25000 }
-            ]
+            'Netflix Premium': {
+                foto: 'foto-netflix.png', // Ganti dengan path foto/icon netflix kamu
+                desc: 'Nonton drakor tanpa hambatan.',
+                paket: [
+                    { nama: 'Sharing 1 Bulan', harga: 25000, stok: 'ready' },
+                    { nama: 'Private 1 Bulan', harga: 120000, stok: 'sold' } // Contoh stok habis
+                ]
+            },
+            'Canva Pro': {
+                foto: 'foto-canva.png', // Ganti dengan path foto/icon canva kamu
+                desc: 'Desain tugas & feed jadi estetik.',
+                paket: [
+                    { nama: '1 Bulan', harga: 5000, stok: 'ready' },
+                    { nama: '1 Tahun', harga: 15000, stok: 'ready' }
+                ]
+            },
+            'Spotify Premium': {
+                foto: 'foto-spotify.png', // Ganti dengan path foto/icon spotify kamu
+                desc: 'Dengerin lagu galau tanpa iklan.',
+                paket: [
+                    { nama: 'Individual 1 Bulan', harga: 20000, stok: 'ready' },
+                    { nama: 'Family Plan 1 Bulan', harga: 25000, stok: 'ready' }
+                ]
+            }
         };
 
+        // ====================================================
+        // MESIN KODINGAN (NGGAK USAH DIUTAK-ATIK LAGI YA BUBB)
+        // ====================================================
         let selectedApp = '';
         let selectedPaketNama = '';
         let selectedPaketHarga = 0;
-        let selectedPay = 'QRIS'; // Default
+        let selectedPay = 'QRIS';
 
-        // PILIH APLIKASI
+        // CEK STATUS TOKO SAAT WEB DIBUKA
+        window.onload = function() {
+            if(!TOKO_BUKA) {
+                document.getElementById('banner-tutup').style.display = 'block';
+                document.getElementById('navbar').style.top = '60px'; // Turunin navbar dikit biar banner ga ketutupan
+            }
+
+            // Render Katalog Otomatis dari Data di atas
+            let container = document.getElementById('katalog-container');
+            for(let key in catalogData) {
+                let data = catalogData[key];
+                let card = document.createElement('div');
+                card.className = 'app-card';
+                card.onclick = function() { pilihApp(key, this); };
+                card.innerHTML = `
+                    <div class="app-icon"><img src="${data.foto}" alt="${key} Icon" onerror="this.src='https://via.placeholder.com/80?text=Icon'"></div>
+                    <h3>${key}</h3>
+                    <p>${data.desc}</p>
+                `;
+                container.appendChild(card);
+            }
+        };
+
+        // FUNGSI PILIH APLIKASI
         function pilihApp(namaApp, element) {
+            // Kalau toko tutup, cegah klik
+            if(!TOKO_BUKA) {
+                alert("Maaf ya cantik, toko saat ini sedang tutup. Silakan kembali lagi nanti! 🎀");
+                return;
+            }
+
             document.querySelectorAll('.app-card').forEach(c => c.classList.remove('selected'));
             element.classList.add('selected');
             selectedApp = namaApp;
             document.getElementById('app-name-title').innerText = namaApp;
             
-            // Reset Paket
+            // Reset state
             selectedPaketNama = ''; selectedPaketHarga = 0;
             
-            // Render Paket
+            // Render Pilihan Paket (Berdsarkan Stok)
             const container = document.getElementById('paket-container');
             container.innerHTML = '';
             
-            catalogData[namaApp].forEach((paket, index) => {
+            catalogData[namaApp].paket.forEach(paket => {
                 let div = document.createElement('div');
-                div.className = 'paket-btn';
-                div.innerHTML = `<div class="paket-name">${paket.nama}</div><div class="paket-price">Rp ${paket.harga.toLocaleString('id-ID')}</div>`;
-                div.onclick = function() {
-                    document.querySelectorAll('.paket-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedPaketNama = paket.nama;
-                    selectedPaketHarga = paket.harga;
-                };
+                
+                if(paket.stok === 'sold') {
+                    // Kalau stok habis
+                    div.className = 'paket-btn sold-out';
+                    div.innerHTML = `<div class="paket-name">${paket.nama}</div><div class="paket-price">Sold Out</div>`;
+                    div.onclick = function() { alert("Maaf luvv, paket ini sedang kosong/habis. Pilih paket lain ya! 🥺"); };
+                } else {
+                    // Kalau stok ready
+                    div.className = 'paket-btn';
+                    div.innerHTML = `<div class="paket-name">${paket.nama}</div><div class="paket-price">Rp ${paket.harga.toLocaleString('id-ID')}</div>`;
+                    div.onclick = function() {
+                        document.querySelectorAll('.paket-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        selectedPaketNama = paket.nama;
+                        selectedPaketHarga = paket.harga;
+                    };
+                }
                 container.appendChild(div);
             });
 
@@ -351,7 +426,7 @@
             window.scrollTo({ top: document.getElementById('form-order').offsetTop - 100, behavior: 'smooth' });
         }
 
-        // PILIH PAYMENT
+        // FUNGSI PILIH PAYMENT
         function pilihPayment(metode) {
             selectedPay = metode;
             document.getElementById('pay-qris').classList.remove('active');
@@ -360,7 +435,7 @@
             if(metode === 'DANA') document.getElementById('pay-dana').classList.add('active');
         }
 
-        // FUNGSI BUAT QRIS
+        // FUNGSI PEMBUAT QRIS
         function hitungCRC(str) {
             let crc = 0xFFFF;
             for (let i = 0; i < str.length; i++) {
@@ -378,13 +453,11 @@
             return qrisBase + hitungCRC(qrisBase);
         }
 
-        // CHECKOUT
+        // CHECKOUT KLIK
         function prosesCheckout() {
-            let email = document.getElementById('user-email').value;
             let wa = document.getElementById('user-wa').value;
 
             if(!selectedPaketNama) return alert('Pilih durasi paketnya dulu ya cantik 🎀');
-            if(!email) return alert('Email wajib diisi yaa!');
             if(!wa) return alert('Nomor WhatsApp jangan sampai kosong!');
 
             document.getElementById('inv-app').innerText = selectedApp;
@@ -395,8 +468,8 @@
             let qrisBox = document.getElementById('qris-box');
             if(selectedPay === 'QRIS') {
                 qrisBox.style.display = 'block';
-                // PAKE KODE QRIS SEMENTARA KAMU DULU (Nanti diganti foto pas lunas)
-                let myPersonalQRIS = "00020101021126570011ID.DANA.WWW011893600915303264378902090326437890303UMI51440014ID.CO.QRIS.WWW0215ID10265327541770303UMI5204481253033605802ID5910Null Store6015Kota Banjarmasi6105702396304C29E"; 
+                // PAKE KODE QRIS SEMENTARA KAMU YAA (Royale Store DP)
+                let myPersonalQRIS = "00020101021126570011ID.DANA.WWW011893600915302461190802090246119080303UMI51440014ID.CO.QRIS.WWW0215ID10265240534220303UMI5204654053033605802ID5907yr.apps6010Kab. Paser610576251630441EB"; 
                 let qrisDinamis = buatQRISDinamis(myPersonalQRIS, selectedPaketHarga);
                 
                 document.getElementById('qris-canvas').innerHTML = ""; 
@@ -407,21 +480,29 @@
                 qrisBox.style.display = 'none';
             }
 
+            // === KIRIM NOTIFIKASI KE BOT TELEGRAM ===
+            if(TELEGRAM_BOT_TOKEN !== "GANTI_DENGAN_TOKEN_BOT_KAMU" && TELEGRAM_CHAT_ID !== "GANTI_DENGAN_CHAT_ID_KAMU") {
+                const telePesan = `🎀 *ORDER BARU MASUK!* 🎀\n\n📱 *Aplikasi:* ${selectedApp}\n📦 *Paket:* ${selectedPaketNama}\n💳 *Pembayaran:* ${selectedPay}\n💰 *Total:* Rp ${selectedPaketHarga.toLocaleString('id-ID')}\n☎️ *No. WA:* ${wa}\n\n✨ _Segera cek pembayaran dan hubungi pembeli ya cantik!_`;
+                
+                fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: "POST", headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: telePesan, parse_mode: "Markdown" })
+                }).catch(err => console.log("Telegram Error", err));
+            }
+
             document.getElementById('modal-invoice').style.display = 'flex';
         }
 
-        // KIRIM KE WA ADMIN (DP PAKE NOMOR KAMU DULU BUBB)
+        // KIRIM STRUK KE WA ADMIN
         function kirimKeWA() {
             let btnWa = document.getElementById('btn-lanjut');
             btnWa.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menyiapkan...`;
             
-            let email = document.getElementById('user-email').value;
-            const targetWaNumber = '6285753157247'; 
+            const targetWaNumber = '6285753157247'; // BAGIAN NOMOR GANTI PAKAI NOMOR KAMU YA BUB, JANGAN SAMPE ILANG TANDA KUTIP NYA!! 
             
             const formatPesan = `🎀 *ROYALE STORE | ORDER BARU* 🎀\n\n` +
                                 `Aplikasi : ${selectedApp}\n` +
                                 `Paket    : ${selectedPaketNama}\n` +
-                                `Email    : ${email}\n` +
                                 `Total    : Rp ${selectedPaketHarga.toLocaleString('id-ID')}\n` +
                                 `Payment  : ${selectedPay}\n\n` +
                                 `Halo min, ini orderan aku. Ditunggu instruksinya ya cantik ✨🦢`;
