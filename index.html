@@ -3,192 +3,537 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium App Store</title>
+    <title>𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒🦢✨ | Pusat Top Up Termurah & Aman</title>
     
-    <!-- Font Simple & Elegan -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- === SEO & META TAGS === -->
+    <meta name="description" content="Menjual berbagai kebutuhan App Premium & Diamond Game">
+    <meta name="theme-color" content="#FF69B4">
+
+    <!-- Fonts Canggih: Syne & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        /* === TEMA BLACK & WHITE === */
+    <!-- Mesin QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>    
+        /* === TEMA ELEGAN ROYALE STORE (PINK & WHITE COQUETTE VIBES) === */
         :root {
-            --bg-color: #050505;
-            --card-bg: #121212;
-            --border-color: #333333;
-            --text-main: #FFFFFF;
-            --text-muted: #888888;
-            --accent: #FFFFFF; /* Warna aksen putih */
-            --accent-text: #000000; /* Teks di atas warna aksen */
+            --bg-base: #FFF0F5; /* Lavender Blush (Soft Pink background) */
+            --bg-card: #FFFFFF; /* Pure White for cards */
+            --primary: #FF69B4; /* Hot Pink */
+            --primary-light: #FFB6C1; /* Light Pink */
+            --text-main: #4A4A4A; /* Soft Dark Grey for readability */
+            --text-dim: #888888;
+            --glass-border: rgba(255, 105, 180, 0.3);
+            --success: #10B981;
+            --error: #FF4C4C;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding-bottom: 50px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-base); color: var(--text-main); overflow-x: hidden; }
 
-        /* HEADER */
-        header { text-align: center; padding: 40px 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 40px; }
-        header h1 { font-weight: 800; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        header p { color: var(--text-muted); font-size: 0.95rem; }
+        /* === EFEK PARTIKEL BUNGA (AESTHETIC) === */
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; overflow: hidden; }
+        .particles span { 
+            position: absolute; display: block; width: 8px; height: 8px; 
+            background: rgba(255, 105, 180, 0.4); box-shadow: 0 0 10px rgba(255, 105, 180, 0.6); 
+            border-radius: 50%; animation: animateParticle 15s linear infinite; bottom: -10px; 
+        }
+        .particles span:nth-child(1) { left: 10%; animation-duration: 12s; }
+        .particles span:nth-child(2) { left: 30%; width: 12px; height: 12px; animation-duration: 18s; animation-delay: 2s; }
+        .particles span:nth-child(3) { left: 50%; animation-duration: 15s; animation-delay: 4s; }
+        .particles span:nth-child(4) { left: 70%; width: 6px; height: 6px; animation-duration: 14s; }
+        .particles span:nth-child(5) { left: 90%; animation-duration: 19s; animation-delay: 3s; }
+        @keyframes animateParticle {
+            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) scale(0) rotate(360deg); opacity: 0; }
+        }
 
-        /* KONTAINER UTAMA */
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        /* === NAVBAR KACA ESTETIK === */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); 
+            border-bottom: 2px solid var(--primary-light); box-shadow: 0 4px 15px rgba(255, 105, 180, 0.1);
+        }
+        .logo { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px;}
+        .logo span { color: var(--text-main); font-weight: 600; font-size: 1.2rem; }
 
-        /* GRID PRODUK */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        
-        /* KARTU PRODUK */
-        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        
-        .card-img { width: 100%; aspect-ratio: 1/1; background: #000; object-fit: cover; border-bottom: 1px solid var(--border-color); }
-        .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; text-align: center; }
-        .card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
-        .card-price { font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; }
-        
-        /* TOMBOL BELI */
-        .btn { background: var(--accent); color: var(--accent-text); border: none; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; margin-top: auto; }
-        .btn:hover { background: #dddddd; }
+        /* === HERO SECTION ELEGAN === */
+        .hero { padding: 130px 5% 60px; text-align: center; position: relative; }
+        .hero-container { 
+            max-width: 800px; margin: 0 auto; 
+            background: var(--bg-card);
+            padding: 50px 30px; border-radius: 40px; 
+            border: 2px solid var(--primary-light);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+        }
+        .title-elegant { 
+            font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); 
+            font-weight: 800; margin-bottom: 15px; color: var(--primary); 
+        }
+        .subtitle-elegant { color: var(--text-dim); font-size: 1.1rem; max-width: 550px; margin: 0 auto 30px; line-height: 1.6; }
 
-        /* MODAL POP UP (STRUKTUR SAMA KAYA NULL STORE TAPI VERSI SIMPLE) */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 1000; }
-        .modal-box { background: var(--card-bg); border: 1px solid var(--border-color); width: 90%; max-width: 400px; border-radius: 16px; padding: 25px; position: relative; }
-        .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; }
-        .close-btn:hover { color: var(--accent); }
-        
-        .modal-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 5px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
-        .modal-desc { font-size: 0.9rem; color: var(--text-muted); margin: 15px 0; white-space: pre-line; }
-        
-        .input-group { margin-bottom: 20px; text-align: left; }
-        .input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-muted); }
-        .input-group input { width: 100%; padding: 12px; background: #000; border: 1px solid var(--border-color); color: #fff; border-radius: 8px; font-family: 'Inter'; outline: none; }
-        .input-group input:focus { border-color: var(--accent); }
+        /* === KATEGORI PRODUK (CARDS) === */
+        .menu-utama { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;}
+        .kategori-box {
+            background: var(--bg-card); border: 2px solid var(--primary-light);
+            border-radius: 25px; padding: 30px 20px; width: 220px; text-align: center;
+            cursor: pointer; transition: all 0.4s ease; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+        }
+        .kategori-box:hover {
+            transform: translateY(-10px); border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+        }
+        .kategori-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; }
+        .kategori-box h2 { font-family: 'Syne', sans-serif; color: var(--text-main); font-size: 1.2rem; margin-bottom: 5px;}
+        .kategori-box p { color: var(--text-dim); font-size: 0.8rem; }
 
-        .total-box { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 1.2rem; font-weight: 800; }
+        /* === CATALOG WRAPPER === */
+        .catalog-container { max-width: 1000px; margin: 0 auto; padding: 0 5% 50px; display: none; animation: fadeIn 0.5s;}
+        @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+        
+        .back-btn {
+            background: var(--bg-card); border: 2px solid var(--primary-light); color: var(--primary);
+            padding: 10px 20px; border-radius: 20px; font-weight: 600; cursor: pointer;
+            margin-bottom: 20px; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--primary); color: #fff; }
+
+        /* === STEPS & FORM UI === */
+        .step-box { 
+            background: var(--bg-card); border: 1px solid var(--glass-border); 
+            border-radius: 20px; margin-bottom: 25px; overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.05);
+        }
+        .step-header { 
+            display: flex; align-items: center; background: rgba(255, 105, 180, 0.05); 
+            border-bottom: 1px solid var(--glass-border); padding: 15px 20px;
+        }
+        .step-num { 
+            background: var(--primary); color: #fff; width: 35px; height: 35px; 
+            display: flex; justify-content: center; align-items: center; 
+            border-radius: 50%; font-weight: 800; font-family: 'Syne'; margin-right: 15px;
+        }
+        .step-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+        .step-body { padding: 25px; }
+
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; color: var(--text-main); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; }
+        .input-group input { 
+            width: 100%; padding: 15px; border-radius: 12px; border: 2px solid var(--primary-light); 
+            background: #FAFAFA; color: var(--text-main); outline: none; transition: 0.3s; 
+        }
+        .input-group input:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255, 105, 180, 0.2); }
+
+        /* === GRID ITEM (PINK COQUETTE CARDS) === */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .item-card { 
+            background: var(--bg-card); border: 2px solid var(--primary-light); 
+            border-radius: 16px; padding: 20px; text-align: center; cursor: pointer; 
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .item-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255, 105, 180, 0.15); }
+        .item-card.selected { 
+            background: var(--primary); border-color: var(--primary); 
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4); 
+        }
+        .item-card.selected .card-title, .item-card.selected .card-price { color: #fff; }
+        .card-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 5px;}
+        .card-price { color: var(--primary); font-weight: 600; font-size: 1rem; }
+
+        /* === PAYMENT CARDS === */
+        .pay-card { 
+            background: var(--bg-card); border: 2px solid var(--primary-light); 
+            border-radius: 12px; padding: 15px; margin-bottom: 10px; cursor: pointer; 
+            display: flex; align-items: center; justify-content: space-between; transition: 0.3s;
+        }
+        .pay-card.selected { background: rgba(255, 105, 180, 0.1); border-color: var(--primary); }
+        .pay-name { font-weight: 700; color: var(--text-main); }
+        .pay-card i { font-size: 1.5rem; color: var(--primary); }
+
+        /* === CHECKOUT BUTTON BAR === */
+        .checkout-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px); border-top: 2px solid var(--primary-light);
+            padding: 15px 5%; display: flex; justify-content: flex-end; align-items: center; z-index: 999;
+            box-shadow: 0 -5px 20px rgba(255, 105, 180, 0.1);
+        }
+        .btn-checkout { 
+            background: var(--primary); color: #fff; border: none; padding: 15px 40px; 
+            border-radius: 30px; font-family: 'Syne', sans-serif; font-weight: 800; 
+            font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+        .btn-checkout:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6); }
+
+        /* === TESTIMONIAL & KALKULATOR === */
+        .extra-box { background: var(--bg-card); border: 2px solid var(--primary-light); border-radius: 20px; padding: 30px; margin-bottom: 30px; }
+        .extra-title { font-family: 'Syne', sans-serif; color: var(--primary); font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
+        
+        .testi-item { border-bottom: 1px dashed var(--glass-border); padding: 15px 0; }
+        .testi-user { font-weight: 700; color: var(--text-main); display: flex; justify-content: space-between; }
+        .testi-stars { color: #FACC15; font-size: 0.8rem; }
+        .testi-text { font-style: italic; color: var(--text-dim); margin-top: 5px; font-size: 0.95rem; }
+
+        /* === FLOATING WA === */
+        .floating-wa {
+            position: fixed; bottom: 100px; right: 20px; width: 60px; height: 60px;
+            background: #25D366; color: #fff; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5); z-index: 998;
+            text-decoration: none; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% {box-shadow: 0 0 0 0 rgba(37,211,102,0.6);} 70% {box-shadow: 0 0 0 15px rgba(37,211,102,0);} 100% {box-shadow: 0 0 0 0 rgba(37,211,102,0);} }
+
+        /* === INVOICE MODAL === */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); display: none; justify-content: center; align-items: center; z-index: 2000; }
+        .modal-box { background: var(--bg-card); width: 90%; max-width: 400px; border-radius: 25px; overflow: hidden; border: 2px solid var(--primary-light); box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3); animation: slideUp 0.4s ease; }
+        @keyframes slideUp { from{transform: translateY(50px); opacity:0;} to{transform: translateY(0); opacity:1;} }
+        
+        .modal-header { background: var(--primary); padding: 20px; text-align: center; color: #fff; position: relative; }
+        .close-modal { position: absolute; top: 15px; right: 20px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .modal-body { padding: 25px; }
+        
+        .invoice-row { display: flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px dashed var(--glass-border); padding-bottom: 8px; font-size: 0.9rem; }
+        .btn-confirm { width: 100%; background: var(--primary); color: #fff; border: none; padding: 15px; border-radius: 15px; font-weight: 700; font-size: 1.1rem; cursor: pointer; margin-top: 15px; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3); }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 20px 100px; background: rgba(255,255,255,0.5); border-top: 2px solid var(--primary-light); margin-top: 50px; color: var(--text-dim); }
     </style>
 </head>
 <body>
 
-    <!-- HEADER / JUDUL TOKO -->
-    <header>
-        <!-- NAMA TOKO TEMEN LU GANTI DI SINI -->
-        <h1>Premium App Store</h1>
-        <p>Layanan Aplikasi Premium Terpercaya & Termurah.</p>
-    </header>
-
-    <div class="container">
-        <!-- WADAH DAFTAR PRODUK -->
-        <div class="grid">
-
-            <!-- ================= MULAI PRODUK 1 ================= -->
-            <div class="card">
-                <!-- GAMBAR PRODUK: Ganti nama file gambar di src="gambar.png" -->
-                <img src="netflix.png" alt="Netflix" class="card-img" onerror="this.src='https://via.placeholder.com/300x300/000000/ffffff?text=NETFLIX'">
-                <div class="card-body">
-                    <div class="card-title">Netflix 1 Bulan (Sharing)</div>
-                    <div class="card-price">Rp 25.000</div>
-                    
-                    <!-- FUNGSI KLIK: bukaModal('Judul', HargaAngka, 'Deskripsi') -->
-                    <button class="btn" onclick="bukaModal('Netflix 1 Bulan (Sharing)', 25000, '• 1 Profil 1 User\n• Dilarang ubah password\n• Garansi full 1 bulan')">Beli Sekarang</button>
-                </div>
-            </div>
-            <!-- ================= AKHIR PRODUK 1 ================= -->
-
-            <!-- ================= MULAI PRODUK 2 ================= -->
-            <div class="card">
-                <img src="spotify.png" alt="Spotify" class="card-img" onerror="this.src='https://via.placeholder.com/300x300/000000/ffffff?text=SPOTIFY'">
-                <div class="card-body">
-                    <div class="card-title">Spotify Premium 1 Bulan</div>
-                    <div class="card-price">Rp 15.000</div>
-                    <button class="btn" onclick="bukaModal('Spotify Premium 1 Bulan', 15000, '• Akun dari pembeli / email sendiri\n• Garansi full tanpa back to free\n• Bebas iklan')">Beli Sekarang</button>
-                </div>
-            </div>
-            <!-- ================= AKHIR PRODUK 2 ================= -->
-
-            <!-- ================= MULAI PRODUK 3 ================= -->
-            <div class="card">
-                <img src="canva.png" alt="Canva" class="card-img" onerror="this.src='https://via.placeholder.com/300x300/000000/ffffff?text=CANVA'">
-                <div class="card-body">
-                    <div class="card-title">Canva Pro 1 Bulan</div>
-                    <div class="card-price">Rp 10.000</div>
-                    <button class="btn" onclick="bukaModal('Canva Pro 1 Bulan', 10000, '• Join via invite link\n• Pakai email sendiri\n• Fitur pro terbuka semua')">Beli Sekarang</button>
-                </div>
-            </div>
-            <!-- ================= AKHIR PRODUK 3 ================= -->
-
-            <!-- TEMEN LU BISA COPY PASTE BLOK PRODUK DI ATAS KALAU MAU NAMBAH PRODUK BARU -->
-
-        </div>
+    <!-- AESTHETIC BACKGROUND -->
+    <div class="particles">
+        <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- ================= MODAL / POP UP CHECKOUT ================= -->
-    <div class="modal-overlay" id="checkoutModal">
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="logo">𝑅𝑜𝓎𝒶𝓁𝑒<span> 𝒮𝓉𝑜𝓇𝑒🦢</span></a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero-section">
+        <div class="hero-container">
+            <h1 class="title-elegant">Pusat Top Up Termurah & Aman ✨</h1>
+            <p class="subtitle-elegant">Menjual berbagai kebutuhan App Premium & Diamond Game dengan pelayanan VVIP khusus untukmu luvv!</p>
+            
+            <div class="menu-utama">
+                <div class="kategori-box" onclick="bukaKatalog('game')">
+                    <i class="fas fa-gamepad"></i>
+                    <h2>TOP UP GAME</h2>
+                    <p>Mobile Legends, dll</p>
+                </div>
+                <div class="kategori-box" onclick="bukaKatalog('app')">
+                    <i class="fas fa-crown"></i>
+                    <h2>APP PREMIUM</h2>
+                    <p>Netflix, Canva, Spotify</p>
+                </div>
+            </div>
+            
+            <div class="extra-box" style="text-align: left; max-width: 600px; margin: 40px auto 0;">
+                <h3 class="extra-title" style="font-size: 1.2rem; text-align: left;"><i class="fas fa-star"></i> Testimoni Pelanggan</h3>
+                <div id="testi-container">
+                    <div class="testi-item">
+                        <div class="testi-user">Nadia S. <span class="testi-stars">⭐⭐⭐⭐⭐</span></div>
+                        <div class="testi-text">"Adminnya ramah bangetttt, fast respon, harganya juga miring parah! Luvv banget sama Royale Store! 💖"</div>
+                    </div>
+                    <div class="testi-item">
+                        <div class="testi-user">Bima W. <span class="testi-stars">⭐⭐⭐⭐⭐</span></div>
+                        <div class="testi-text">"Topup ML disini sat set banget, belom ada semenit udah masuk dm nya. Mantap min!"</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kalkulator Event ML (Sesuai Request) -->
+            <div class="extra-box" style="text-align: left; max-width: 600px; margin: 20px auto 0;">
+                <h3 class="extra-title" style="font-size: 1.2rem; text-align: left;"><i class="fas fa-calculator"></i> Kalkulator MLBB</h3>
+                <div class="input-group">
+                    <label>Sisa Poin Magic Wheel Kamu</label>
+                    <input type="number" id="calc-poin" placeholder="Contoh: 150">
+                </div>
+                <button onclick="hitungPoin()" style="width: 100%; background: var(--primary); color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Hitung Butuh Berapa DM</button>
+                <div id="calc-hasil" style="margin-top: 15px; font-weight: bold; color: var(--primary); text-align: center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section class="catalog-container" id="catalog-section">
+        <button class="back-btn" onclick="kembaliKeHome()"><i class="fas fa-arrow-left"></i> Kembali</button>
+        
+        <!-- STEP 1 -->
+        <div class="step-box">
+            <div class="step-header"><div class="step-num">1</div><div class="step-title">Detail Tujuan</div></div>
+            <div class="step-body" id="input-area">
+                <!-- Injected via JS based on category -->
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-box">
+            <div class="step-header"><div class="step-num">2</div><div class="step-title">Pilih Item</div></div>
+            <div class="step-body">
+                <div class="grid" id="item-grid">
+                    <!-- Injected via JS based on category -->
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-box">
+            <div class="step-header"><div class="step-num">3</div><div class="step-title">Pembayaran</div></div>
+            <div class="step-body">
+                <div class="pay-card" onclick="pilihPayment('QRIS (All Payment)', this)">
+                    <span class="pay-name">QRIS (Ovo, Dana, Shopee, dll)</span> <i class="fas fa-qrcode"></i>
+                </div>
+                <div class="pay-card" onclick="pilihPayment('DANA Manual', this)">
+                    <span class="pay-name">DANA (Manual)</span> <i class="fas fa-wallet"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step-box">
+            <div class="step-header"><div class="step-num">4</div><div class="step-title">Kontak Kamu</div></div>
+            <div class="step-body">
+                <div class="input-group" style="margin: 0;">
+                    <label>Nomor WhatsApp</label>
+                    <input type="number" id="user-wa" placeholder="Contoh: 08123456789">
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 5px;">*Admin akan menghubungimu jika terjadi kendala pesanan.</p>
+            </div>
+        </div>
+
+        <!-- CHECKOUT BAR -->
+        <div class="checkout-bar">
+            <button class="btn-checkout" onclick="prosesBeli()">Beli Sekarang ✨</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2 style="font-family: 'Syne'; color: var(--primary); margin-bottom: 10px;">𝑅𝑜𝓎𝒶𝓁𝑒 𝒮𝓉𝑜𝓇𝑒🦢</h2>
+        <p>Pusat Top Up Termurah & Aman.</p>
+        <div style="margin-top: 15px;">
+            <a href="#" style="color: var(--text-main); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: var(--text-main); margin: 0 10px; font-size: 1.5rem;"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <!-- INVOICE MODAL -->
+    <div class="modal-overlay" id="modal-invoice">
         <div class="modal-box">
-            <button class="close-btn" onclick="tutupModal()">×</button>
-            
-            <div class="modal-title" id="modalTitle">Nama Produk</div>
-            <div class="modal-desc" id="modalDesc">Deskripsi produk di sini...</div>
-            
-            <div class="input-group">
-                <label>Nomor WhatsApp Kamu</label>
-                <input type="number" id="inputWa" placeholder="Contoh: 08123456789">
+            <div class="modal-header">
+                <button class="close-modal" onclick="document.getElementById('modal-invoice').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3 style="font-family: 'Syne';">Detail Pesanan</h3>
             </div>
+            <div class="modal-body">
+                <div class="invoice-row"><span>Resi</span><strong id="inv-resi"></strong></div>
+                <div class="invoice-row"><span>Target</span><strong id="inv-target"></strong></div>
+                <div class="invoice-row"><span>Item</span><strong style="color: var(--primary);" id="inv-item"></strong></div>
+                <div class="invoice-row"><span>Pembayaran</span><strong id="inv-pay"></strong></div>
+                <div class="invoice-row" style="background: rgba(255,105,180,0.1); padding: 10px; border-radius: 10px;">
+                    <span style="font-weight: bold; color: var(--text-main);">Total Bayar</span>
+                    <strong style="font-size: 1.2rem; color: var(--primary);" id="inv-total"></strong>
+                </div>
 
-            <div class="total-box">
-                <span>Total:</span>
-                <span id="modalPrice">Rp 0</span>
+                <!-- Box Instruksi QRIS (Akan dimunculkan lewat JS) -->
+                <div id="box-qris" style="display: none; text-align: center; margin-top: 15px;">
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px;">Silakan scan QRIS di bawah ini:</p>
+                    <div id="qris-canvas" style="display: flex; justify-content: center; background: #fff; padding: 10px; border: 2px solid var(--primary); border-radius: 15px; margin: 0 auto;"></div>
+                </div>
+
+                <button class="btn-confirm" id="btn-lanjut-wa" onclick="lanjutBayarWA()">Konfirmasi ke WA Admin <i class="fab fa-whatsapp"></i></button>
             </div>
-
-            <button class="btn" style="width: 100%;" onclick="lanjutKeWA()">Lanjut ke WhatsApp</button>
         </div>
     </div>
 
-    <!-- ================= JAVASCRIPT SISTEM ================= -->
+    <!-- FLOATING WA BUTTON -->
+    <a href="https://wa.me/6285753157247?text=Halo%20min%20Royale%20Store%2C%20mau%20tanya%20dong..." target="_blank" class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
-        // Variabel untuk nyimpen data pesanan sementara
-        let orderData = {
-            judul: '',
-            harga: 0
-        };
+        // STATE VARIABLES
+        let activeKategori = '';
+        let selectedItemName = '';
+        let selectedItemPrice = '';
+        let selectedPaymentMethod = '';
 
-        // Fungsi Buka Pop Up
-        function bukaModal(judul, harga, deskripsi) {
-            orderData.judul = judul;
-            orderData.harga = harga;
+        // DATA KATALOG (REQUEST CLIENT)
+        const dataMLBB = [
+            { name: '5 💎', price: 'Rp 2.000', num: 2000 },
+            { name: '12 💎', price: 'Rp 11.000', num: 11000 },
+            { name: '19 💎', price: 'Rp 6.000', num: 6000 },
+            { name: '25 💎', price: 'Rp 9.000', num: 9000 }
+        ];
+
+        const dataApp = [
+            { name: 'Netflix Premium 1 Bulan', price: 'Rp 25.000', num: 25000 },
+            { name: 'Canva Pro 1 Bulan', price: 'Rp 5.000', num: 5000 },
+            { name: 'Spotify Premium 1 Bulan', price: 'Rp 15.000', num: 15000 }
+        ];
+
+        // FUNGSI NAVIGASI MENU
+        function bukaKatalog(jenis) {
+            activeKategori = jenis;
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('catalog-section').style.display = 'block';
             
-            document.getElementById('modalTitle').innerText = judul;
-            document.getElementById('modalDesc').innerText = deskripsi;
-            document.getElementById('modalPrice').innerText = 'Rp ' + harga.toLocaleString('id-ID');
+            let inputArea = document.getElementById('input-area');
+            let gridArea = document.getElementById('item-grid');
             
-            document.getElementById('checkoutModal').style.display = 'flex';
+            // Reset Selections
+            selectedItemName = ''; selectedItemPrice = ''; selectedPaymentMethod = '';
+            document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
+
+            if (jenis === 'game') {
+                inputArea.innerHTML = `
+                    <div style="display: flex; gap: 10px;">
+                        <div class="input-group" style="flex: 2;"><label>User ID</label><input type="number" id="input-id" placeholder="Ketikan ID"></div>
+                        <div class="input-group" style="flex: 1;"><label>Server</label><input type="number" id="input-server" placeholder="(1234)"></div>
+                    </div>`;
+                renderGrid(dataMLBB, gridArea);
+            } else {
+                inputArea.innerHTML = `
+                    <div class="input-group"><label>Email / Username (Opsional)</label><input type="text" id="input-id" placeholder="Ketikan Email untuk App"></div>`;
+                renderGrid(dataApp, gridArea);
+            }
         }
 
-        // Fungsi Tutup Pop Up
-        function tutupModal() {
-            document.getElementById('checkoutModal').style.display = 'none';
+        function kembaliKeHome() {
+            document.getElementById('hero-section').style.display = 'block';
+            document.getElementById('catalog-section').style.display = 'none';
         }
 
-        // Fungsi Lanjut ke WA Admin
-        function lanjutKeWA() {
-            let noWaPembeli = document.getElementById('inputWa').value;
+        // FUNGSI RENDER KARTU
+        function renderGrid(dataArray, container) {
+            container.innerHTML = '';
+            dataArray.forEach(item => {
+                let card = document.createElement('div');
+                card.className = 'item-card';
+                card.innerHTML = `<div class="card-title">${item.name}</div><div class="card-price">${item.price}</div>`;
+                card.onclick = function() {
+                    document.querySelectorAll('.item-card').forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedItemName = item.name;
+                    selectedItemPrice = item.price;
+                };
+                container.appendChild(card);
+            });
+        }
+
+        function pilihPayment(nama, element) {
+            document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedPaymentMethod = nama;
+        }
+
+        // KALKULATOR MLBB
+        function hitungPoin() {
+            let poin = document.getElementById('calc-poin').value;
+            let hasilBox = document.getElementById('calc-hasil');
+            if(!poin) return hasilBox.innerText = "Isi poinnya dulu dong luvv!";
             
-            if(!noWaPembeli) {
-                alert("Isi nomor WhatsApp dulu ya!");
-                return;
+            let sisa = 200 - parseInt(poin);
+            if(sisa <= 0) return hasilBox.innerText = "Wah poin kamu udah mentok 200 bosku!";
+            
+            let estDiamond = (Math.floor(sisa / 5) * 270) + ((sisa % 5) * 60);
+            hasilBox.innerHTML = `Sisa: ${sisa} Poin<br>Butuh sekitar: 💎 ${estDiamond} Diamond`;
+        }
+
+        // FUNGSI PEMBUAT QRIS (Dari Null Store)
+        function hitungCRC(str) {
+            let crc = 0xFFFF;
+            for (let i = 0; i < str.length; i++) {
+                crc ^= str.charCodeAt(i) << 8;
+                for (let j = 0; j < 8; j++) {
+                    if ((crc & 0x8000) !== 0) { crc = (crc << 1) ^ 0x1021; } else { crc = crc << 1; }
+                } crc &= 0xFFFF;
+            } return crc.toString(16).toUpperCase().padStart(4, '0');
+        }
+
+        function buatQRISDinamis(qrisStatis, nominal) {
+            let qrisBase = qrisStatis.slice(0, -8);
+            qrisBase = qrisBase.replace("010211", "010212");
+            let nomStr = nominal.toString();
+            let nomLen = nomStr.length.toString().padStart(2, '0');
+            qrisBase += "54" + nomLen + nomStr + "6304";
+            return qrisBase + hitungCRC(qrisBase);
+        }
+
+        // PROSES CHECKOUT
+        function prosesBeli() {
+            let targetID = document.getElementById('input-id')?.value || '-';
+            let targetServer = document.getElementById('input-server')?.value || '';
+            let targetLengkap = targetServer ? `${targetID} (${targetServer})` : targetID;
+            let wa = document.getElementById('user-wa').value;
+
+            if(!targetID || targetID === '-') return alert('Isi ID Tujuan dulu ya luvv!');
+            if(!selectedItemName) return alert('Pilih nominal produknya dulu beb!');
+            if(!selectedPaymentMethod) return alert('Pilih metode pembayaran dulu!');
+            if(!wa) return alert('Nomor WA jangan lupa diisi ya!');
+
+            let resi = "RYS-" + Math.floor(Math.random() * 900000 + 100000);
+            document.getElementById('inv-resi').innerText = resi;
+            document.getElementById('inv-target').innerText = targetLengkap;
+            document.getElementById('inv-item').innerText = selectedItemName;
+            document.getElementById('inv-pay').innerText = selectedPaymentMethod;
+            document.getElementById('inv-total').innerText = selectedItemPrice;
+
+            // LOGIKA QRIS
+            let boxQris = document.getElementById('box-qris');
+            if (selectedPaymentMethod.includes('QRIS')) {
+                boxQris.style.display = 'block';
+                let hargaAngka = parseInt(selectedItemPrice.replace(/[^0-9]/g, ''));
+                
+                // MENGGUNAKAN QRIS AKUN LU SEMENTARA SAMPAI DIA LUNAS
+                let myPersonalQRIS = "00020101021126570011ID.DANA.WWW011893600915303264378902090326437890303UMI51440014ID.CO.QRIS.WWW0215ID10265327541770303UMI5204481253033605802ID5910Null Store6015Kota Banjarmasi6105702396304C29E"; 
+                let qrisDinamis = buatQRISDinamis(myPersonalQRIS, hargaAngka);
+                
+                document.getElementById('qris-canvas').innerHTML = ""; 
+                new QRCode(document.getElementById("qris-canvas"), {
+                    text: qrisDinamis, width: 200, height: 200, colorDark: "#FF69B4", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M
+                });
+            } else {
+                boxQris.style.display = 'none';
             }
 
-            // GANTI NOMOR WA ADMIN (TEMEN LU) DI BAWAH INI
-            // Format wajib pakai awalan 62 tanpa spasi/tanda plus
-            let noWaAdmin = "6281234567890"; 
+            document.getElementById('modal-invoice').style.display = 'flex';
+        }
 
-            let pesan = `Halo Admin, saya mau order:\n\n` +
-                        `🛒 Produk: ${orderData.judul}\n` +
-                        `💰 Harga: Rp ${orderData.harga.toLocaleString('id-ID')}\n` +
-                        `📱 WA Saya: ${noWaPembeli}\n\n` +
-                        `Minta instruksi pembayarannya ya!`;
+        // LANJUT KE WA ADMIN (DIARAHKAN KE WA KAMU SEBAGAI DP)
+        window.lanjutBayarWA = function() {
+            let btnWa = document.getElementById('btn-lanjut-wa');
+            let teksAsli = btnWa.innerHTML;
+            btnWa.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menyiapkan...`;
+            btnWa.style.pointerEvents = 'none';
 
-            let linkWa = `https://wa.me/${noWaAdmin}?text=${encodeURIComponent(pesan)}`;
+            let resiBaru = document.getElementById('inv-resi').innerText;
+            let accountData = document.getElementById('inv-target').innerText;
             
-            // Buka tab baru ke WhatsApp
-            window.open(linkWa, '_blank');
-            tutupModal();
+            // PAKE NOMOR KAMU DULU BUBB
+            const targetWaNumber = '6285753157247'; 
+            const formatPesan = `🛒 *ROYALE STORE | ORDER BARU*\n` +
+                                `🧾 *Resi: ${resiBaru}*\n\n` +
+                                `ID/Server  : ${accountData}\n` +
+                                `Pesanan    : ${selectedItemName}\n` +
+                                `Tagihan    : ${selectedItemPrice}\n` +
+                                `Pembayaran : ${selectedPaymentMethod}\n\n` +
+                                `Halo min, ini detail orderan saya. Ditunggu instruksi pembayarannya ya ✨🦢`;
+                                
+            const encodedText = encodeURIComponent(formatPesan);
+            const urlWhatsApp = `https://wa.me/${targetWaNumber}?text=${encodedText}`;
+            
+            setTimeout(() => {
+                window.open(urlWhatsApp, '_blank');
+                btnWa.innerHTML = teksAsli;
+                btnWa.style.pointerEvents = 'auto';
+                document.getElementById('modal-invoice').style.display = 'none';
+            }, 1000);
         }
     </script>
 </body>
