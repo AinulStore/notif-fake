@@ -391,7 +391,7 @@
     </div>
 
     <!-- FLOATING CS WA -->
-    <a href="https://wa.me/6285753157247?text=Halo%20min%20Royale%20Store%2C%20aku%20mau%20tanya%20dong..." target="_blank" class="floating-wa">
+    <a href="https://wa.me/6283114488191?text=Halo%20min%20Royale%20Store%2C%20aku%20mau%20tanya%20dong..." target="_blank" class="floating-wa">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -409,8 +409,8 @@
 
         // 2. PENGATURAN BOT TELEGRAM (NOTIFIKASI ORDER)
         // Isi dengan Token Bot dan Chat ID Telegram kamu.
-        const TELEGRAM_BOT_TOKEN = "GANTI_DENGAN_TOKEN_BOT_KAMU"; 
-        const TELEGRAM_CHAT_ID = "GANTI_DENGAN_CHAT_ID_KAMU";
+        const TELEGRAM_BOT_TOKEN = "8838119861:AAEPV8Lxjjged0QXDXDj_LLapr11LDVD_p8"; 
+        const TELEGRAM_CHAT_ID = "7237783696";
 
         // 3. DATABASE PRODUK & STOK
         // Cara atur stok: Ketik 'ready' kalau ada barang, ketik 'sold' kalau habis.
@@ -574,7 +574,7 @@
             }
 
             // === KIRIM NOTIFIKASI KE BOT TELEGRAM ===
-            if(TELEGRAM_BOT_TOKEN !== "GANTI_DENGAN_TOKEN_BOT_KAMU" && TELEGRAM_CHAT_ID !== "GANTI_DENGAN_CHAT_ID_KAMU") {
+            if(TELEGRAM_BOT_TOKEN !== "8838119861:AAEPV8Lxjjged0QXDXDj_LLapr11LDVD_p8" && TELEGRAM_CHAT_ID !== "7237783696") {
                 const telePesan = `🎀 *ORDER BARU MASUK!* 🎀\n\n📱 *Aplikasi:* ${selectedApp}\n📦 *Paket:* ${selectedPaketNama}\n💳 *Pembayaran:* ${selectedPay}\n💰 *Total:* Rp ${selectedPaketHarga.toLocaleString('id-ID')}\n☎️ *No. WA:* ${wa}\n\n✨ _Segera cek pembayaran dan hubungi pembeli ya cantik!_`;
                 
                 fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -591,7 +591,7 @@
             let btnWa = document.getElementById('btn-lanjut');
             btnWa.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Menyiapkan...`;
             
-            const targetWaNumber = '6285753157247'; // BAGIAN NOMOR GANTI PAKAI NOMOR KAMU YA BUB, JANGAN SAMPE ILANG TANDA KUTIP NYA!! 
+            const targetWaNumber = '6283114488191'; // BAGIAN NOMOR GANTI PAKAI NOMOR KAMU YA BUB, JANGAN SAMPE ILANG TANDA KUTIP NYA!! 
             
             const formatPesan = `🎀 *ROYALE STORE | ORDER BARU* 🎀\n\n` +
                                 `Aplikasi : ${selectedApp}\n` +
