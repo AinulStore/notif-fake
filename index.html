@@ -574,7 +574,7 @@
             }
 
             // === KIRIM NOTIFIKASI KE BOT TELEGRAM ===
-            if(TELEGRAM_BOT_TOKEN !== "8838119861:AAEPV8Lxjjged0QXDXDj_LLapr11LDVD_p8" && TELEGRAM_CHAT_ID !== "7237783696") {
+            if(TELEGRAM_BOT_TOKEN !== "" && TELEGRAM_CHAT_ID !== "") {
                 const telePesan = `🎀 *ORDER BARU MASUK!* 🎀\n\n📱 *Aplikasi:* ${selectedApp}\n📦 *Paket:* ${selectedPaketNama}\n💳 *Pembayaran:* ${selectedPay}\n💰 *Total:* Rp ${selectedPaketHarga.toLocaleString('id-ID')}\n☎️ *No. WA:* ${wa}\n\n✨ _Segera cek pembayaran dan hubungi pembeli ya cantik!_`;
                 
                 fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
